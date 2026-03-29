@@ -44,11 +44,11 @@
             }
         }
 
-        // Check local storage on load
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
+        // Force Dark Mode default unless the user explicitly toggled it to light before
+        if (localStorage.theme === 'light') {
             document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
         }
     </script>
 </head>
