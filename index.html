@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draftera Analytics | Measure the AI Handoff Tax</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#020617',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f1f5f9; }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L787TEY7BD"></script>
@@ -17,29 +31,54 @@
       gtag('js', new Date());
       gtag('config', 'G-L787TEY7BD');
     </script>
-</head>
-<body class="antialiased selection:bg-teal-500 selection:text-white">
 
-    <nav class="sticky top-0 z-50 w-full border-b border-slate-800 bg-[#020617]/90 backdrop-blur-md">
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        // Check local storage on load
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-teal-500 selection:text-white bg-slate-50 dark:bg-brandDark transition-colors duration-300">
+
+    <nav class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-brandDark/90 backdrop-blur-md transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold tracking-tighter text-white">Draftera<span class="text-teal-400">.</span></span>
+                    <span class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">Draftera<span class="text-teal-500 dark:text-teal-400">.</span></span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#features" class="text-slate-300 hover:text-white transition">Features</a>
-                    <a href="#roi" class="text-slate-300 hover:text-white transition">ROI Math</a>
-                    <a href="#security" class="text-slate-300 hover:text-white transition">Security</a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-white transition font-medium">Features</a>
+                    <a href="#roi" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-white transition font-medium">ROI Math</a>
+                    <a href="#security" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-white transition font-medium">Security</a>
+                    
+                    <button onclick="toggleTheme()" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Toggle Dark Mode">
+                        <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/></svg>
+                        <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
                 </div>
-                <div>
-                    <a href="#demo" class="bg-white text-black px-6 py-2.5 rounded-full font-semibold hover:bg-gray-200 transition shadow-lg">Book a Demo</a>
+                <div class="flex items-center gap-3">
+                    <a href="#book-demo" class="bg-slate-900 dark:bg-white text-white dark:text-black px-6 py-2.5 rounded-full font-semibold hover:bg-slate-800 dark:hover:bg-gray-200 transition shadow-lg">Book a Demo</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-        <div class="inline-block border border-teal-900/50 rounded-full px-4 py-1.5 text-sm text-teal-400 mb-8 tracking-wide font-medium bg-teal-950/20 flex items-center gap-2 w-max mx-auto">
+        <div class="inline-block border border-teal-200 dark:border-teal-900/50 rounded-full px-4 py-1.5 text-sm text-teal-700 dark:text-teal-400 mb-8 tracking-wide font-semibold bg-teal-50 dark:bg-teal-950/20 flex items-center gap-2 w-max mx-auto">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
@@ -47,199 +86,241 @@
             Now integrating directly with Zendesk API
         </div>
         
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight text-white">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight text-slate-900 dark:text-white">
             Stop Celebrating Deflection Rates.<br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Start Measuring the AI Handoff Tax.</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-500 dark:from-teal-400 dark:to-emerald-400">Start Measuring the AI Handoff Tax.</span>
         </h1>
         
-        <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+        <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
             When support bots fail, agents waste 3–5 minutes just deciphering the hallucinated transcript. Draftera automatically tracks your AI Recovery Time so you can stop the OPEX bleeding out during the AI-to-Human handoff.
         </p>
         
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#demo" class="bg-teal-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-teal-700 transition shadow-[0_0_20px_rgba(20,184,166,0.3)]">Connect Zendesk</a>
-            <a href="#roi" class="bg-slate-800 border border-slate-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-700 transition">See the ROI</a>
+            <a href="https://handoff-analytics-eqrcxt9du-kenjhop-gifs-projects.vercel.app/" class="bg-teal-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-teal-700 transition shadow-[0_0_20px_rgba(20,184,166,0.3)]">Connect Zendesk</a>
+            <a href="#roi" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition">See the ROI</a>
         </div>
     </section>
 
     <section class="pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto -mt-4 relative z-10">
-        <div class="rounded-xl border border-slate-700 bg-slate-900 shadow-2xl shadow-teal-900/20 overflow-hidden">
-            <div class="bg-slate-800 border-b border-slate-700 px-4 py-3 flex items-center gap-2">
-                <div class="w-3 h-3 rounded-full bg-slate-600"></div>
-                <div class="w-3 h-3 rounded-full bg-slate-600"></div>
-                <div class="w-3 h-3 rounded-full bg-slate-600"></div>
-                <div class="mx-auto text-xs text-slate-400 font-medium font-mono hidden sm:block">app.draftera.ca/dashboard</div>
+        <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl dark:shadow-teal-900/20 overflow-hidden transition-colors duration-300">
+            <div class="bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-4 py-3 flex items-center gap-2 transition-colors duration-300">
+                <div class="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
+                <div class="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
+                <div class="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
+                <div class="mx-auto text-xs text-slate-500 dark:text-slate-400 font-medium font-mono hidden sm:block">app.draftera.ca/dashboard</div>
             </div>
-            <div class="p-6 sm:p-8 bg-[#020617] text-left">
+            <div class="p-6 sm:p-8 bg-white dark:bg-[#020617] text-left transition-colors duration-300">
                 
-                <div class="mb-8 bg-teal-900/20 border border-teal-500/30 p-4 rounded-lg flex items-start gap-3">
-                    <div class="text-teal-400 mt-0.5 text-lg">💡</div>
-                    <p class="text-teal-100 text-sm md:text-base font-medium leading-relaxed">
-                        <span class="font-bold text-teal-400">Diagnostic Insight:</span> Your team spent 314 hours this month doing damage control on failed AI handoffs in the <span class="bg-teal-950 px-2 py-0.5 rounded border border-teal-800">Billing</span> category.
+                <div class="mb-8 bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-500/30 p-4 rounded-lg flex items-start gap-3">
+                    <div class="text-teal-600 dark:text-teal-400 mt-0.5 text-lg">💡</div>
+                    <p class="text-teal-900 dark:text-teal-100 text-sm md:text-base font-medium leading-relaxed">
+                        <span class="font-bold text-teal-700 dark:text-teal-400">Diagnostic Insight:</span> Your team spent 314 hours this month doing damage control on failed AI handoffs in the <span class="bg-white dark:bg-teal-950 px-2 py-0.5 rounded border border-teal-200 dark:border-teal-800">Billing</span> category.
                     </p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-8">
                     <div>
-                        <h3 class="text-2xl font-bold text-white">AI Handoff Analytics</h3>
-                        <p class="text-slate-400 text-sm mt-1">Last 30 Days • Universal Helpdesk Engine</p>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">AI Handoff Analytics</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Last 30 Days • Universal Helpdesk Engine</p>
                     </div>
-                    <div class="inline-block px-3 py-1 bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded text-sm font-semibold self-start sm:self-auto">Live Data</div>
+                    <div class="inline-block px-3 py-1 bg-teal-50 dark:bg-teal-500/10 text-teal-700 dark:text-teal-400 border border-teal-200 dark:border-teal-500/20 rounded text-sm font-semibold self-start sm:self-auto">Live Data</div>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
-                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-lg">
-                        <div class="text-slate-400 text-sm mb-2">Avg. AI Recovery Time</div>
-                        <div class="text-3xl font-bold text-white">4m 12s <span class="text-rose-400 text-sm font-normal ml-2">↑ 12%</span></div>
+                    <div class="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-lg transition-colors duration-300">
+                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-2 font-medium">Avg. AI Recovery Time</div>
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white">4m 12s <span class="text-rose-500 dark:text-rose-400 text-sm font-normal ml-2">↑ 12%</span></div>
                     </div>
-                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-lg">
-                        <div class="text-slate-400 text-sm mb-2">Context-Loading Tax</div>
-                        <div class="text-3xl font-bold text-white">1m 45s <span class="text-emerald-400 text-sm font-normal ml-2">↓ 3%</span></div>
+                    <div class="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-lg transition-colors duration-300">
+                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-2 font-medium">Context-Loading Tax</div>
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white">1m 45s <span class="text-emerald-500 dark:text-emerald-400 text-sm font-normal ml-2">↓ 3%</span></div>
                     </div>
-                    <div class="bg-slate-900 border border-slate-800 p-5 rounded-lg">
-                        <div class="text-slate-400 text-sm mb-2">Wasted OPEX (30 Days)</div>
-                        <div class="text-3xl font-bold text-white">$4,280 <span class="text-rose-400 text-sm font-normal ml-2">↑ 8%</span></div>
+                    <div class="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-lg transition-colors duration-300">
+                        <div class="text-slate-500 dark:text-slate-400 text-sm mb-2 font-medium">Wasted OPEX (30 Days)</div>
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white">$4,280 <span class="text-rose-500 dark:text-rose-400 text-sm font-normal ml-2">↑ 8%</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center border-t border-slate-800 mt-12">
-        <div class="text-sm text-rose-400 mb-2 tracking-wide uppercase font-semibold">( The Reality Check )</div>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Native dashboards bury the mess your bots leave behind.</h2>
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center border-t border-slate-200 dark:border-slate-800 mt-12 transition-colors duration-300">
+        <div class="text-sm text-rose-500 dark:text-rose-400 mb-2 tracking-wide uppercase font-bold">( The Reality Check )</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8">Native dashboards bury the mess your bots leave behind.</h2>
         
-        <div class="text-left bg-slate-900/50 border border-slate-800 p-8 md:p-10 rounded-2xl shadow-lg">
-            <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+        <div class="text-left bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 p-8 md:p-10 rounded-2xl shadow-lg transition-colors duration-300">
+            <p class="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                 Right now, the cost of a bad bot escalation is buried inside your Average Handle Time like a sad little matryoshka doll. Zendesk and Intercom will tell you a ticket was "deflected," but they won't tell you about the angry customer and the useless, cyclical transcript your human agent just inherited.
             </p>
-            <p class="text-lg text-slate-300 leading-relaxed">
-                To find the root cause, CS leaders are forced to rely on manual ticket tagging, exporting CSVs, and hours of qualitative transcript reviews. <span class="text-white font-semibold">If you can't measure the hidden tax of a bad handoff, you aren't managing your AI—you’re just arguing vibes in QBRs.</span>
+            <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                To find the root cause, CS leaders are forced to rely on manual ticket tagging, exporting CSVs, and hours of qualitative transcript reviews. <span class="text-slate-900 dark:text-white font-bold">If you can't measure the hidden tax of a bad handoff, you aren't managing your AI—you’re just arguing vibes in QBRs.</span>
             </p>
         </div>
     </section>
 
-    <section id="roi" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
+    <section id="roi" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="text-center mb-16 max-w-3xl mx-auto">
-            <div class="text-sm text-rose-400 mb-2 tracking-wide uppercase font-semibold">( The Damage Control Tax )</div>
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">The Tale of Two Tickets.</h2>
-            <p class="text-xl text-slate-400">If your bot vendor charges outcome-based pricing, what happens when it fails? You don't pay their fee—but you pay drastically more in human damage control.</p>
+            <div class="text-sm text-rose-500 dark:text-rose-400 mb-2 tracking-wide uppercase font-bold">( The Damage Control Tax )</div>
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">The Tale of Two Tickets.</h2>
+            <p class="text-xl text-slate-600 dark:text-slate-400">If your bot vendor charges outcome-based pricing, what happens when it fails? You don't pay their fee—but you pay drastically more in human damage control.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-slate-800 text-slate-300 px-4 py-1.5 rounded-bl-lg text-xs font-bold uppercase tracking-wider">Standard</div>
-                <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-3"><span class="text-3xl">👤</span> Human Only</h3>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm p-8 rounded-2xl relative overflow-hidden transition-colors duration-300">
+                <div class="absolute top-0 right-0 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-4 py-1.5 rounded-bl-lg text-xs font-bold uppercase tracking-wider border-b border-l border-slate-200 dark:border-slate-700">Standard</div>
+                <h3 class="text-xl font-bold mb-6 text-slate-900 dark:text-white flex items-center gap-3"><span class="text-3xl">👤</span> Human Only</h3>
                 <div class="space-y-5">
-                    <div class="flex justify-between border-b border-slate-800 pb-3">
-                        <span class="text-slate-400">Triage & Resolution</span>
-                        <span class="text-white font-mono">5 mins</span>
+                    <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <span class="text-slate-500 dark:text-slate-400 font-medium">Triage & Resolution</span>
+                        <span class="text-slate-900 dark:text-white font-mono font-semibold">5 mins</span>
                     </div>
-                    <div class="flex justify-between border-b border-slate-800 pb-3">
-                        <span class="text-slate-400">Damage Control</span>
-                        <span class="text-white font-mono">0 mins</span>
+                    <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                        <span class="text-slate-500 dark:text-slate-400 font-medium">Damage Control</span>
+                        <span class="text-slate-900 dark:text-white font-mono font-semibold">0 mins</span>
                     </div>
                     <div class="flex justify-between pt-2">
-                        <span class="text-teal-400 font-bold text-lg">Total Cost</span>
-                        <span class="text-teal-400 font-mono font-bold text-lg">$2.50</span>
+                        <span class="text-teal-600 dark:text-teal-400 font-bold text-lg">Total Cost</span>
+                        <span class="text-teal-600 dark:text-teal-400 font-mono font-bold text-lg">$2.50</span>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-slate-900 border border-rose-900/40 p-8 rounded-2xl relative overflow-hidden shadow-[0_0_30px_rgba(225,29,72,0.05)]">
-                <div class="absolute top-0 right-0 bg-rose-900/50 text-rose-200 px-4 py-1.5 rounded-bl-lg text-xs font-bold uppercase tracking-wider">Failed Escalation</div>
-                <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-3"><span class="text-3xl">🤖</span> Bot → Human</h3>
+            <div class="bg-rose-50 dark:bg-slate-900 border border-rose-200 dark:border-rose-900/40 p-8 rounded-2xl relative overflow-hidden shadow-[0_0_30px_rgba(225,29,72,0.05)] transition-colors duration-300">
+                <div class="absolute top-0 right-0 bg-rose-100 dark:bg-rose-900/50 text-rose-700 dark:text-rose-200 px-4 py-1.5 rounded-bl-lg text-xs font-bold uppercase tracking-wider border-b border-l border-rose-200 dark:border-rose-900/40">Failed Escalation</div>
+                <h3 class="text-xl font-bold mb-6 text-slate-900 dark:text-white flex items-center gap-3"><span class="text-3xl">🤖</span> Bot → Human</h3>
                 <div class="space-y-5">
-                    <div class="flex justify-between border-b border-slate-800 pb-3">
-                        <span class="text-slate-400">Bot Hallucination Loop</span>
-                        <span class="text-rose-400 font-mono">8 mins</span>
+                    <div class="flex justify-between border-b border-rose-200 dark:border-slate-800 pb-3">
+                        <span class="text-slate-600 dark:text-slate-400 font-medium">Bot Hallucination Loop</span>
+                        <span class="text-rose-600 dark:text-rose-400 font-mono font-semibold">8 mins</span>
                     </div>
-                    <div class="flex justify-between border-b border-slate-800 pb-3">
-                        <span class="text-slate-400">Agent Context-Loading</span>
-                        <span class="text-rose-400 font-mono">12 mins</span>
+                    <div class="flex justify-between border-b border-rose-200 dark:border-slate-800 pb-3">
+                        <span class="text-slate-600 dark:text-slate-400 font-medium">Agent Context-Loading</span>
+                        <span class="text-rose-600 dark:text-rose-400 font-mono font-semibold">12 mins</span>
                     </div>
                     <div class="flex justify-between pt-2">
-                        <span class="text-rose-500 font-bold text-lg">Total Cost</span>
-                        <span class="text-rose-500 font-mono font-bold text-lg">$10.00</span>
+                        <span class="text-rose-600 dark:text-rose-500 font-bold text-lg">Total Cost</span>
+                        <span class="text-rose-600 dark:text-rose-500 font-mono font-bold text-lg">$10.00</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
+    <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="text-center mb-16 max-w-3xl mx-auto">
-            <div class="text-sm text-teal-400 mb-2 tracking-wide uppercase font-semibold">( The Solution )</div>
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Built specifically for the AI-to-Human Handoff.</h2>
-            <p class="text-xl text-slate-400">Draftera plugs into your existing helpdesk to automatically visualize the downstream cost of your AI support tools. No manual tagging required.</p>
+            <div class="text-sm text-teal-600 dark:text-teal-400 mb-2 tracking-wide uppercase font-bold">( The Solution )</div>
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Built specifically for the AI-to-Human Handoff.</h2>
+            <p class="text-xl text-slate-600 dark:text-slate-400">Draftera plugs into your existing helpdesk to automatically visualize the downstream cost of your AI support tools. No manual tagging required.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-slate-600 transition">
-                <div class="w-12 h-12 bg-teal-500/10 text-teal-400 rounded-lg flex items-center justify-center mb-6 text-2xl">⏱️</div>
-                <h3 class="text-xl font-bold mb-3 text-white">Track AI Recovery Time</h3>
-                <p class="text-slate-400 leading-relaxed">Stop guessing how long triage takes. Automatically measure the exact time wasted between the bot's escalation and the agent's first productive message.</p>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm p-8 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition duration-300">
+                <div class="w-12 h-12 bg-teal-50 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400 rounded-lg flex items-center justify-center mb-6 text-2xl border border-teal-100 dark:border-transparent">⏱️</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Track AI Recovery Time</h3>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Stop guessing how long triage takes. Automatically measure the exact time wasted between the bot's escalation and the agent's first productive message.</p>
             </div>
             
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-slate-600 transition">
-                <div class="w-12 h-12 bg-rose-500/10 text-rose-400 rounded-lg flex items-center justify-center mb-6 text-2xl">🎯</div>
-                <h3 class="text-xl font-bold mb-3 text-white">Expose the "Hidden Tax"</h3>
-                <p class="text-slate-400 leading-relaxed">Not all bot failures are equal. Map your wasted handle time directly back to the specific bot intents causing the longest hallucination loops, so you know exactly what to fix first.</p>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm p-8 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition duration-300">
+                <div class="w-12 h-12 bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 rounded-lg flex items-center justify-center mb-6 text-2xl border border-rose-100 dark:border-transparent">🎯</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Expose the "Hidden Tax"</h3>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Not all bot failures are equal. Map your wasted handle time directly back to the specific bot intents causing the longest hallucination loops.</p>
             </div>
             
-            <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-slate-600 transition">
-                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center mb-6 text-2xl">🧠</div>
-                <h3 class="text-xl font-bold mb-3 text-white">Failure Topography</h3>
-                <p class="text-slate-400 leading-relaxed">Stop rewriting bot logic when your docs are the problem. Draftera highlights which escalations actually needed a human, and which ones could have been resolved with a better article.</p>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm p-8 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition duration-300">
+                <div class="w-12 h-12 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-lg flex items-center justify-center mb-6 text-2xl border border-emerald-100 dark:border-transparent">🧠</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Failure Topography</h3>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Stop rewriting bot logic when your docs are the problem. Draftera highlights which escalations actually needed a human, and which could be solved with a better article.</p>
             </div>
         </div>
     </section>
 
-    <section id="security" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
+    <section id="security" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="text-center mb-16 max-w-3xl mx-auto">
-            <div class="text-sm text-teal-400 mb-2 tracking-wide uppercase font-semibold">( Enterprise Infosec )</div>
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Bypass procurement blockers.</h2>
-            <p class="text-xl text-slate-400">We don't want your customers' data. Draftera is built with a zero-text policy so your Infosec team can approve it in days, not months.</p>
+            <div class="text-sm text-teal-600 dark:text-teal-400 mb-2 tracking-wide uppercase font-bold">( Enterprise Infosec )</div>
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Bypass procurement blockers.</h2>
+            <p class="text-xl text-slate-600 dark:text-slate-400">We don't want your customers' data. Draftera is built with a zero-text policy so your Infosec team can approve it in days, not months.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-[#020617] border border-slate-800 p-8 rounded-2xl relative">
-                <div class="absolute -top-3 -left-3 text-4xl">🛡️</div>
-                <h3 class="text-xl font-bold mb-3 text-white mt-2">No-Text Policy</h3>
-                <p class="text-slate-400 leading-relaxed text-sm">Our app never saves message bodies, emails, or PII. We strictly ingest timestamps and category tags to calculate latency mathematics.</p>
+            <div class="bg-white dark:bg-[#020617] border border-slate-200 dark:border-slate-800 shadow-sm p-8 rounded-2xl relative transition-colors duration-300">
+                <div class="absolute -top-3 -left-3 text-4xl bg-white dark:bg-brandDark rounded-full">🛡️</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white mt-2">No-Text Policy</h3>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Our app never saves message bodies, emails, or PII. We strictly ingest timestamps and category tags to calculate latency mathematics.</p>
             </div>
-            <div class="bg-[#020617] border border-slate-800 p-8 rounded-2xl relative">
-                <div class="absolute -top-3 -left-3 text-4xl">🔥</div>
-                <h3 class="text-xl font-bold mb-3 text-white mt-2">The Data "Bouncer"</h3>
-                <p class="text-slate-400 leading-relaxed text-sm">Our ingest API acts as a secure translator, instantly incinerating sensitive ticket data in memory before it ever reaches our database.</p>
+            <div class="bg-white dark:bg-[#020617] border border-slate-200 dark:border-slate-800 shadow-sm p-8 rounded-2xl relative transition-colors duration-300">
+                <div class="absolute -top-3 -left-3 text-4xl bg-white dark:bg-brandDark rounded-full">🔥</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white mt-2">The Data "Bouncer"</h3>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Our ingest API acts as a secure translator, instantly incinerating sensitive ticket data in memory before it ever reaches our database.</p>
             </div>
-            <div class="bg-[#020617] border border-slate-800 p-8 rounded-2xl relative">
-                <div class="absolute -top-3 -left-3 text-4xl">🔐</div>
-                <h3 class="text-xl font-bold mb-3 text-white mt-2">Row Level Security</h3>
-                <p class="text-slate-400 leading-relaxed text-sm">Built on isolated Postgres architecture. Your metadata is cryptographically locked to your tenant ID via strict Row Level Security (RLS).</p>
+            <div class="bg-white dark:bg-[#020617] border border-slate-200 dark:border-slate-800 shadow-sm p-8 rounded-2xl relative transition-colors duration-300">
+                <div class="absolute -top-3 -left-3 text-4xl bg-white dark:bg-brandDark rounded-full">🔐</div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white mt-2">Row Level Security</h3>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Built on isolated Postgres architecture. Your metadata is cryptographically locked to your tenant ID via strict Row Level Security (RLS).</p>
             </div>
         </div>
     </section>
 
-    <section id="demo" class="py-24 relative overflow-hidden bg-slate-950 border-t border-slate-800 text-center px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto relative z-10">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">The era of "Answer Everything" bots is over.</h2>
-            <p class="text-xl text-slate-400 mb-10">Stop paying the hidden Damage Control Tax. Connect your helpdesk and start measuring the AI cleanup today.</p>
+    <section id="book-demo" class="py-24 relative overflow-hidden bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://handoff-analytics-eqrcxt9du-kenjhop-gifs-projects.vercel.app/" class="bg-teal-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-teal-700 transition shadow-[0_0_20px_rgba(20,184,166,0.3)]">Connect Zendesk</a>
-                <a href="mailto:hello@draftera.ca" class="bg-slate-800 border border-slate-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-700 transition">Book a Demo</a>
+            <div class="text-left">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">The era of "Answer Everything" bots is over.</h2>
+                <p class="text-xl text-slate-600 dark:text-slate-400 mb-8">Stop paying the hidden Damage Control Tax. Let us show you exactly how much OPEX is bleeding out during your bot handoffs.</p>
+                
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="bg-teal-100 dark:bg-teal-900/50 p-2 rounded-full text-teal-700 dark:text-teal-400">✓</div>
+                    <span class="text-slate-700 dark:text-slate-300 font-medium">15-minute diagnostic call</span>
+                </div>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="bg-teal-100 dark:bg-teal-900/50 p-2 rounded-full text-teal-700 dark:text-teal-400">✓</div>
+                    <span class="text-slate-700 dark:text-slate-300 font-medium">Custom ROI breakdown</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="bg-teal-100 dark:bg-teal-900/50 p-2 rounded-full text-teal-700 dark:text-teal-400">✓</div>
+                    <span class="text-slate-700 dark:text-slate-300 font-medium">Zendesk integration preview</span>
+                </div>
             </div>
-            <p class="text-slate-500 text-sm mt-6">Takes 60 seconds to connect via OAuth. No credit card required.</p>
+
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl shadow-xl transition-colors duration-300">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Request a Demo</h3>
+                
+                <form action="https://formspree.io/f/meergklo" method="POST" class="flex flex-col gap-4">
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Full Name *</label>
+                        <input type="text" name="name" required class="w-full bg-slate-50 dark:bg-brandDark border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white px-4 py-3 rounded-lg focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition placeholder-slate-400 dark:placeholder-slate-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Work Email *</label>
+                        <input type="email" name="email" required class="w-full bg-slate-50 dark:bg-brandDark border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white px-4 py-3 rounded-lg focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition placeholder-slate-400 dark:placeholder-slate-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Phone Number</label>
+                        <input type="tel" name="phone" class="w-full bg-slate-50 dark:bg-brandDark border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white px-4 py-3 rounded-lg focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition placeholder-slate-400 dark:placeholder-slate-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Anything specific you want to see?</label>
+                        <textarea name="comment" rows="3" class="w-full bg-slate-50 dark:bg-brandDark border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white px-4 py-3 rounded-lg focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition placeholder-slate-400 dark:placeholder-slate-600"></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="_replyto" value="hello@draftera.ca">
+
+                    <button type="submit" class="w-full bg-teal-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-teal-700 transition shadow-lg mt-2">Book My Demo</button>
+                </form>
+            </div>
+
         </div>
     </section>
 
-    <footer class="border-t border-slate-800 bg-black py-12">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+    <footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-brandDark py-12 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-slate-500 dark:text-slate-500 text-sm">
             <div class="mb-4 md:mb-0">
-                <span class="text-xl font-bold text-white tracking-tighter">Draftera<span class="text-teal-400">.</span></span>
+                <span class="text-xl font-bold text-slate-900 dark:text-white tracking-tighter">Draftera<span class="text-teal-500 dark:text-teal-400">.</span></span>
             </div>
-            <div class="mt-4 md:mt-0">
+            <div class="mt-4 md:mt-0 font-medium">
                 &copy; 2026 Draftera Inc. All rights reserved.
             </div>
         </div>
