@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title | Draftera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brandDark: '#020617', } } } }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark'); localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark'); localStorage.theme = 'dark';
+            }
+        }
+        if (localStorage.theme === 'light') { document.documentElement.classList.remove('dark'); } 
+        else { document.documentElement.classList.add('dark'); }
+    </script>
+</head>
+<body class="antialiased bg-slate-50 dark:bg-brandDark transition-colors duration-300">
+
+    <nav class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-brandDark/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html"><span class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">Draftera<span class="text-teal-500 dark:text-teal-400">.</span></span></a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="toggleTheme()" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">🌓</button>
+                    <a href="blog.html" class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white px-6 py-2.5 rounded-full font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition">Back to Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto border-b border-slate-200 dark:border-slate-800 text-center">
+        <div class="text-sm font-bold text-teal-600 dark:text-teal-400 mb-4 uppercase tracking-wider">Category Name</div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight">Your Epic Blog Post Title Goes Right Here</h1>
+        <div class="flex items-center justify-center gap-4 text-slate-500 dark:text-slate-400 font-medium">
+            <span>By Founder Name</span>
+            <span>•</span>
+            <span>Date Here</span>
+        </div>
+    </header>
+
+    <article class="py-16 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto prose prose-lg dark:prose-invert prose-teal">
+        
+        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+            This is your opening paragraph. It should be punchy and immediately address the pain point of the VP of Support reading it.
+        </p>
+
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-12 mb-6">A New Section Heading</h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+            Write your content here. You can easily add more paragraphs just by copying this "p" tag structure.
+        </p>
+
+        <blockquote class="border-l-4 border-teal-500 pl-6 my-8 italic text-xl text-slate-700 dark:text-slate-300">
+            "This is a great place to put a pull-quote or a harsh reality check about how much money they are losing to the AI handoff tax."
+        </blockquote>
+
+        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+            Wrap up the article and push them toward the consultation or the product.
+        </p>
+
+        <div class="mt-16 bg-teal-50 dark:bg-slate-900 border border-teal-100 dark:border-slate-800 p-8 rounded-2xl text-center">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Stop arguing vibes in QBRs.</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6">Find out exactly how much the AI-to-Human handoff is costing your team.</p>
+            <a href="index.html#book-demo" class="inline-block bg-teal-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-teal-700 transition shadow-lg">Book a Demo</a>
+        </div>
+
+    </article>
+
+    <footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-brandDark py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 dark:text-slate-500 font-medium">
+            &copy; 2026 Draftera Inc. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
