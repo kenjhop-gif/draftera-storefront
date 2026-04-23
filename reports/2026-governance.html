@@ -13,19 +13,17 @@
     <style>body { font-family: 'Inter', sans-serif; }</style>
 
 <script>
-    const htmlEl = document.documentElement;
-    const themeToggleBtn = document.getElementById('theme-toggle'); // Make sure this matches your button's ID
-
-    // 1. Check local storage on load. Default to DARK if nothing is saved.
+    // 1. Initial Load: Check local storage on load. Default to DARK if nothing is saved.
     if (localStorage.getItem('theme') === 'light') {
-        htmlEl.classList.remove('dark');
+        document.documentElement.classList.remove('dark');
     } else {
-        htmlEl.classList.add('dark');
+        document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark'); // Lock in the default
     }
 
-    // 2. The Toggle Button Click Action
-    themeToggleBtn.addEventListener('click', function() {
+    // 2. The Toggle Function (Fired by your button's onclick attribute)
+    function toggleTheme() {
+        const htmlEl = document.documentElement;
         if (htmlEl.classList.contains('dark')) {
             htmlEl.classList.remove('dark');
             localStorage.setItem('theme', 'light');
@@ -33,7 +31,7 @@
             htmlEl.classList.add('dark');
             localStorage.setItem('theme', 'dark');
         }
-    });
+    }
 </script>
 </head>
 <body class="antialiased bg-slate-50 dark:bg-brandDark text-slate-900 dark:text-white min-h-screen flex flex-col transition-colors duration-300">
