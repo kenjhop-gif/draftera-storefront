@@ -1,179 +1,238 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draftera | Enterprise AI Consulting & Solutions Studio</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Here is where we define your custom "Dusty Blue" corporate colors
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        brandBlue: {
-                            50: '#f0f4f8',
-                            100: '#d9e2ec',
-                            500: '#62829c', // The main dusty blue
-                            600: '#4d6980', // Darker blue for hover states
-                            900: '#102a43', // Very dark slate for text
-                        }
+                        // True dark theme inspired by end.game
+                        brandBg: '#050505',
+                        brandSurface: '#111111',
+                        brandBorder: '#222222',
+                        brandText: '#ededed',
+                        brandMuted: '#888888',
+                        // The vibrant popping blue
+                        brandAccent: '#007AFFFF', 
+                        brandAccentGlow: '#00D4FFFF'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     }
                 }
             }
         }
     </script>
+    <style>
+        body { background-color: #050505; color: #ededed; }
+        /* Glowing text effect for the vibrant blue */
+        .text-glow {
+            color: #00D4FFFF;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        }
+        /* Custom selection color */
+        ::selection { background: #007AFFFF; color: white; }
+    </style>
 </head>
-<body class="antialiased bg-white text-brandBlue-900 min-h-screen flex flex-col font-sans">
+<body class="antialiased font-sans flex flex-col min-h-screen selection:bg-brandAccent selection:text-white">
 
-    <nav class="w-full border-b border-gray-100 bg-white sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold tracking-tight text-gray-900">Draftera<span class="text-brandBlue-500">.</span></a>
+    <nav class="w-full border-b border-brandBorder bg-brandBg/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                DRAFTERA<span class="w-2 h-2 rounded-full bg-brandAccent shadow-[0_0_10px_#007AFFFF]"></span>
+            </a>
             
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#services" class="text-sm font-medium text-gray-600 hover:text-brandBlue-600 transition">Consulting</a>
-                <a href="#pulse" class="text-sm font-medium text-gray-600 hover:text-brandBlue-600 transition">Draftera Pulse</a>
-                <a href="/insights" class="text-sm font-medium text-gray-600 hover:text-brandBlue-600 transition">Executive Insights</a>
-                <a href="#contact" class="text-sm font-medium bg-brandBlue-900 text-white px-5 py-2.5 rounded hover:bg-brandBlue-600 transition">Let's Talk</a>
+                <a href="#services" class="text-sm font-mono text-brandMuted hover:text-white transition">/services</a>
+                <a href="#pulse" class="text-sm font-mono text-brandMuted hover:text-white transition">/pulse-software</a>
+                <a href="/insights" class="text-sm font-mono text-brandMuted hover:text-white transition">/insights</a>
+                <a href="#contact" class="text-sm font-bold bg-white text-black px-5 py-2 rounded-sm hover:bg-brandAccent hover:text-white transition">Book Audit</a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600">
+            <button class="md:hidden text-brandMuted hover:text-white">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
-        </div>
-        
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-4">
-            <a href="#services" class="block text-sm font-medium text-gray-600">Consulting</a>
-            <a href="#pulse" class="block text-sm font-medium text-gray-600">Draftera Pulse</a>
-            <a href="/insights" class="block text-sm font-medium text-gray-600">Executive Insights</a>
-            <a href="#contact" class="block text-sm font-medium text-brandBlue-600">Let's Talk</a>
         </div>
     </nav>
 
     <main class="flex-grow">
-        <section class="py-20 md:py-32 px-4 max-w-5xl mx-auto text-center">
-            <div class="inline-block border border-brandBlue-100 bg-brandBlue-50 text-brandBlue-600 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-8">
-                Enterprise AI Solutions Studio
-            </div>
-            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-8">
-                Bridge the Gap Between <br class="hidden md:block" />AI Hype and Operational Reality.
-            </h1>
-            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Organizations are rushing to deploy AI without the infrastructure to manage it. Draftera provides the strategic planning, implementation, and custom software solutions required to make enterprise AI actually work.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brandBlue-500 text-white font-semibold rounded hover:bg-brandBlue-600 transition shadow-sm text-lg">Start a Conversation</a>
-                <a href="#pulse" class="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 border border-gray-300 font-semibold rounded hover:bg-gray-50 transition text-lg">Explore Draftera Pulse</a>
-            </div>
-        </section>
-
-        <section class="bg-brandBlue-50 py-20 px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Implementation is only 10% of the journey.</h2>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    The race to adopt AI has created a governance vacuum. Unmonitored bots, "handoff taxes," and operational friction are silently draining OPEX budgets. We handle the crucial 90% of the lifecycle that most vendors ignore: strategy, oversight, and measurable ROI.
+        
+        <section class="border-b border-brandBorder">
+            <div class="px-6 py-24 md:py-32 max-w-7xl mx-auto">
+                <div class="font-mono text-brandAccent text-sm mb-6 flex items-center gap-2">
+                    <span class="w-2 h-px bg-brandAccent"></span>
+                    Enterprise AI Solutions Studio
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] mb-8 text-white max-w-4xl">
+                    Bridge the gap between <br class="hidden md:block" />
+                    <span class="text-glow">AI hype</span> and operational reality.
+                </h1>
+                <p class="text-xl text-brandMuted max-w-2xl leading-relaxed mb-12">
+                    Organizations rush to deploy AI without governance. We provide the strategic planning, integration, and proprietary telemetry required to make enterprise AI actually drive ROI.
                 </p>
-            </div>
-        </section>
-
-        <section id="services" class="py-24 px-4 max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900">Consulting DNA</h2>
-                <div class="w-16 h-1 bg-brandBlue-500 mx-auto mt-6"></div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-brandAccent text-white font-bold rounded-sm hover:bg-white hover:text-black transition flex justify-between items-center group">
+                        Start a Conversation 
+                        <span class="ml-4 font-mono group-hover:translate-x-1 transition-transform">-></span>
+                    </a>
+                    <a href="#pulse" class="px-8 py-4 bg-transparent border border-brandBorder text-white font-bold rounded-sm hover:bg-brandSurface transition">
+                        Explore Draftera Pulse
+                    </a>
+                </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div>
-                    <div class="w-12 h-12 bg-brandBlue-100 text-brandBlue-600 rounded flex items-center justify-center text-xl font-bold mb-6">1</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Strategic Planning</h3>
-                    <p class="text-gray-600 leading-relaxed">Auditing your current operational readiness, mapping the deployment architecture, and establishing clear metrics for success before a single line of code is written.</p>
+            <div class="border-t border-brandBorder bg-brandSurface flex divide-x divide-brandBorder overflow-x-auto text-sm font-mono text-brandMuted whitespace-nowrap">
+                <div class="px-6 py-4 flex-1 text-center">Stop Bot Handoff Bleed</div>
+                <div class="px-6 py-4 flex-1 text-center">Govern AI at Scale</div>
+                <div class="px-6 py-4 flex-1 text-center">Deploy with Confidence</div>
+                <div class="px-6 py-4 flex-1 text-center text-brandAccent">Measure True ROI</div>
+            </div>
+        </section>
+
+        <section id="services" class="border-b border-brandBorder bg-brandBg">
+            <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-brandBorder">
+                
+                <div class="p-8 md:p-16 lg:p-24 flex flex-col justify-center border-b md:border-b-0 border-brandBorder">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">We strategize, implement, and govern.</h2>
+                    <p class="text-brandMuted text-lg leading-relaxed">
+                        Implementation is only 10% of the journey. We handle the crucial 90% that most vendors ignore. We eliminate the friction between your AI automation layers and your human teams.
+                    </p>
                 </div>
-                <div>
-                    <div class="w-12 h-12 bg-brandBlue-100 text-brandBlue-600 rounded flex items-center justify-center text-xl font-bold mb-6">2</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Implementation</h3>
-                    <p class="text-gray-600 leading-relaxed">Safely integrating AI into existing CX and operational workflows. We ensure your bots and automation layers communicate flawlessly with your human teams.</p>
-                </div>
-                <div>
-                    <div class="w-12 h-12 bg-brandBlue-100 text-brandBlue-600 rounded flex items-center justify-center text-xl font-bold mb-6">3</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Ongoing Governance</h3>
-                    <p class="text-gray-600 leading-relaxed">Continuous monitoring, maintenance, and risk mitigation. We prevent operational drift and ensure your AI systems adapt to changing business requirements.</p>
+
+                <div class="flex flex-col divide-y divide-brandBorder bg-brandSurface/30">
+                    
+                    <div class="p-8 md:p-12 hover:bg-brandSurface transition group">
+                        <div class="font-mono text-brandAccent text-xl mb-4 group-hover:text-glow transition">01</div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Strategic Planning</h3>
+                        <p class="text-brandMuted leading-relaxed">
+                            Auditing your current operational readiness, mapping the deployment architecture, and establishing clear metrics for success before a single line of code is written.
+                        </p>
+                    </div>
+
+                    <div class="p-8 md:p-12 hover:bg-brandSurface transition group">
+                        <div class="font-mono text-brandAccent text-xl mb-4 group-hover:text-glow transition">02</div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Implementation</h3>
+                        <p class="text-brandMuted leading-relaxed">
+                            Safely integrating AI into existing CX workflows. We ensure your bots and automation layers communicate flawlessly with your human support teams without friction.
+                        </p>
+                    </div>
+
+                    <div class="p-8 md:p-12 hover:bg-brandSurface transition group">
+                        <div class="font-mono text-brandAccent text-xl mb-4 group-hover:text-glow transition">03</div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Ongoing Governance</h3>
+                        <p class="text-brandMuted leading-relaxed">
+                            Continuous monitoring, maintenance, and risk mitigation. We prevent operational drift and adapt your AI systems to changing business requirements.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <section id="pulse" class="py-24 px-4 bg-gray-900 text-white">
-            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="text-brandBlue-500 font-semibold tracking-wider uppercase text-sm mb-4">The Solutions Studio</div>
-                    <h2 class="text-4xl font-bold mb-6">We build the tools the industry is missing.</h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                        When off-the-shelf software fails our clients, our engineering studio builds the solution. <br><br>
-                        <strong>Draftera Pulse</strong> is our proprietary analytics engine designed to measure the hidden costs of AI deployments. It audits chatbot handoff friction, calculates your true deflection ROI, and provides the telemetry needed to stop operational bleed.
+        <section id="pulse" class="border-b border-brandBorder">
+            <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-brandBorder">
+                
+                <div class="lg:col-span-5 p-8 md:p-16 bg-brandBg flex flex-col justify-center">
+                    <div class="inline-block border border-brandAccent/30 text-brandAccent font-mono text-xs uppercase px-3 py-1 rounded-sm mb-6 w-max">
+                        Proprietary Technology
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">We build the tools the industry is missing.</h2>
+                    <p class="text-brandMuted text-lg mb-8 leading-relaxed">
+                        When off-the-shelf software fails our clients, our engineering studio builds the solution. 
+                        <br><br>
+                        <strong class="text-white">Draftera Pulse</strong> is our analytics engine designed to measure the hidden costs of AI. It audits chatbot handoff friction, calculates your true deflection ROI, and provides the telemetry needed to stop operational bleed.
                     </p>
-                    <ul class="space-y-4 text-gray-300">
-                        <li class="flex items-center gap-3"><span class="text-brandBlue-500">✓</span> Handoff Tax Calculation</li>
-                        <li class="flex items-center gap-3"><span class="text-brandBlue-500">✓</span> CX Friction Mapping</li>
-                        <li class="flex items-center gap-3"><span class="text-brandBlue-500">✓</span> Operational Telemetry</li>
+                    <ul class="space-y-4 font-mono text-sm text-brandMuted">
+                        <li class="flex items-center gap-3"><span class="text-brandAccent">◆</span> Handoff Tax Calculation</li>
+                        <li class="flex items-center gap-3"><span class="text-brandAccent">◆</span> CX Friction Mapping</li>
+                        <li class="flex items-center gap-3"><span class="text-brandAccent">◆</span> Operational Telemetry</li>
                     </ul>
                 </div>
-                <div class="bg-gray-800 border border-gray-700 p-8 rounded-xl shadow-2xl">
-                    <div class="aspect-w-16 aspect-h-9 bg-gray-900 rounded border border-gray-700 flex flex-col items-center justify-center text-gray-500 p-6">
-                        <svg class="w-12 h-12 mb-4 text-brandBlue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                        <span class="font-medium text-sm">Draftera Pulse Dashboard Prototype</span>
+
+                <div class="lg:col-span-7 bg-brandSurface p-8 md:p-16 flex items-center justify-center relative overflow-hidden">
+                    <div class="w-full max-w-2xl border border-brandBorder bg-brandBg rounded-md shadow-2xl overflow-hidden flex flex-col">
+                        <div class="border-b border-brandBorder px-4 py-3 flex gap-2 items-center bg-brandSurface/50">
+                            <div class="w-3 h-3 rounded-full bg-brandBorder"></div>
+                            <div class="w-3 h-3 rounded-full bg-brandBorder"></div>
+                            <div class="w-3 h-3 rounded-full bg-brandBorder"></div>
+                            <div class="font-mono text-xs text-brandMuted ml-4">draftera_pulse_v2.0 // telemetry</div>
+                        </div>
+                        <div class="p-6 font-mono text-sm text-brandMuted space-y-4">
+                            <div class="flex justify-between border-b border-brandBorder/50 pb-2">
+                                <span>> analyzing_handoff_logs...</span>
+                                <span class="text-brandAccent">100%</span>
+                            </div>
+                            <div class="flex justify-between border-b border-brandBorder/50 pb-2">
+                                <span>> measuring_cx_friction...</span>
+                                <span class="text-white">DETECTED</span>
+                            </div>
+                            <div class="flex justify-between pb-2 text-white font-bold">
+                                <span>> CALCULATED_OPEX_BLEED:</span>
+                                <span class="text-glow">$12,450/mo</span>
+                            </div>
+                            <div class="mt-8 pt-4 border-t border-brandBorder/50">
+                                <div class="w-full h-2 bg-brandBorder rounded-full overflow-hidden">
+                                    <div class="w-3/4 h-full bg-brandAccent"></div>
+                                </div>
+                                <div class="text-xs mt-2 text-right">75% Deflection Illusion Rate</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-24 px-4 bg-white">
-            <div class="max-w-3xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Request a Consultation</h2>
-                    <p class="text-gray-600">Tell us about your organization's AI initiatives and current operational challenges.</p>
+        <section id="contact" class="bg-brandBg py-24 md:py-32 px-6">
+            <div class="max-w-3xl mx-auto border border-brandBorder bg-brandSurface p-8 md:p-12 rounded-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brandAccent to-transparent"></div>
+                
+                <div class="mb-10">
+                    <h2 class="text-3xl font-bold text-white mb-3">Ready to deploy with confidence?</h2>
+                    <p class="text-brandMuted">See if we're a good fit. Request an audit of your AI initiatives.</p>
                 </div>
 
                 <form action="#" method="POST" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                            <input type="text" class="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:border-brandBlue-500 focus:ring-1 focus:ring-brandBlue-500" required>
+                            <label class="block text-xs font-mono text-brandMuted mb-2 uppercase tracking-wider">Full Name</label>
+                            <input type="text" class="w-full bg-brandBg border border-brandBorder px-4 py-3 text-white focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent transition rounded-sm" required>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Work Email</label>
-                            <input type="email" class="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:border-brandBlue-500 focus:ring-1 focus:ring-brandBlue-500" required>
+                            <label class="block text-xs font-mono text-brandMuted mb-2 uppercase tracking-wider">Work Email</label>
+                            <input type="email" class="w-full bg-brandBg border border-brandBorder px-4 py-3 text-white focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent transition rounded-sm" required>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
-                        <input type="text" class="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:border-brandBlue-500 focus:ring-1 focus:ring-brandBlue-500">
+                        <label class="block text-xs font-mono text-brandMuted mb-2 uppercase tracking-wider">Current AI Challenge</label>
+                        <textarea rows="4" class="w-full bg-brandBg border border-brandBorder px-4 py-3 text-white focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent transition rounded-sm" placeholder="Briefly describe what you are trying to implement or fix..."></textarea>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">What AI challenges are you currently facing?</label>
-                        <textarea rows="4" class="w-full border border-gray-300 px-4 py-3 rounded focus:outline-none focus:border-brandBlue-500 focus:ring-1 focus:ring-brandBlue-500"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-brandBlue-900 text-white font-bold py-4 rounded hover:bg-brandBlue-600 transition shadow-sm">Submit Request</button>
+                    <button type="submit" class="w-full bg-white text-black font-bold py-4 rounded-sm hover:bg-brandAccent hover:text-white transition flex justify-center items-center gap-3">
+                        Submit Audit Request
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-50 border-t border-gray-200 py-12 px-4 text-center">
-        <p class="text-gray-500 text-sm font-medium">© 2026 Draftera Consulting. All rights reserved.</p>
+    <footer class="border-t border-brandBorder bg-brandBg py-12 px-6 flex flex-col md:flex-row justify-between items-center text-sm font-mono text-brandMuted">
+        <div>© 2026 Draftera Consulting. All rights reserved.</div>
+        <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="/insights" class="hover:text-white transition">Insights</a>
+            <a href="#" class="hover:text-white transition">LinkedIn</a>
+        </div>
     </footer>
 
-    <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
