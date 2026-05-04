@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proof in Practice | Draftera Consulting</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandBg: '#050505',
+                        brandSurface: '#111111',
+                        brandBorder: '#222222',
+                        brandText: '#ededed',
+                        brandMuted: '#888888',
+                        brandAccent: '#007AFFFF', 
+                        brandAccentGlow: '#00D4FFFF'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #ededed; }
+        .text-glow { color: #00D4FFFF; text-shadow: 0 0 20px rgba(0, 212, 255, 0.4); }
+        ::selection { background: #007AFFFF; color: white; }
+    </style>
+</head>
+<body class="antialiased font-sans flex flex-col min-h-screen selection:bg-brandAccent selection:text-white">
+
+    <!-- NAVIGATION -->
+    <nav class="w-full border-b border-brandBorder bg-brandBg/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="px-6 py-5 max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                DRAFTERA<span class="w-2 h-2 rounded-full bg-brandAccent shadow-[0_0_10px_#007AFFFF]"></span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="/#services" class="text-sm font-medium text-brandMuted hover:text-white transition">Consulting</a>
+                <!-- Active State for Proof in Practice -->
+                <a href="/proof" class="text-sm font-medium text-white transition border-b-2 border-brandAccent pb-1">Proof in Practice</a>
+                <a href="/resources" class="text-sm font-medium text-brandMuted hover:text-white transition">Resources</a>
+                <a href="/#contact" class="text-sm font-semibold bg-brandAccent text-white px-5 py-2.5 rounded shadow-[0_0_15px_rgba(0,122,255,0.3)] hover:bg-brandAccentGlow transition">Book Consultation</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-brandMuted hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden border-t border-brandBorder bg-brandBg px-6 py-4 space-y-4">
+            <a href="/#services" class="block text-sm font-medium text-brandMuted hover:text-white transition">Consulting</a>
+            <a href="/proof" class="block text-sm font-medium text-brandAccent">Proof in Practice</a>
+            <a href="/resources" class="block text-sm font-medium text-brandMuted hover:text-white transition">Resources</a>
+            <a href="/#contact" class="block text-sm font-semibold text-brandAccent">Book Consultation</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        
+        <!-- HEADER SECTION -->
+        <section class="border-b border-brandBorder relative overflow-hidden bg-brandSurface/20">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-brandAccent/5 blur-[120px] pointer-events-none"></div>
+            <div class="px-6 py-20 max-w-7xl mx-auto relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">Proof in Practice</h1>
+                <p class="text-xl text-brandMuted max-w-2xl leading-relaxed">
+                    We don't just write strategy documents. We build the proprietary telemetry and software required to make enterprise AI actually perform in production.
+                </p>
+            </div>
+        </section>
+
+        <!-- FLAGSHIP SOFTWARE: DRAFTERA PULSE -->
+        <section class="py-16 md:py-24 px-6 border-b border-brandBorder bg-brandBg">
+            <div class="max-w-7xl mx-auto">
+                <div class="inline-block border border-brandAccent/30 text-brandAccent text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-8 bg-brandAccent/5">
+                    Flagship Technology
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-brandBorder border border-brandBorder bg-brandSurface/20 rounded-2xl overflow-hidden shadow-2xl">
+                    
+                    <!-- Text Side -->
+                    <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Draftera Pulse</h2>
+                        <p class="text-brandMuted text-lg mb-8 leading-relaxed">
+                            An enterprise analytics engine designed to measure the hidden costs of AI. Pulse audits chatbot handoff friction, calculates your true deflection ROI, and provides the exact telemetry needed to stop operational bleed.
+                        </p>
+                        <ul class="space-y-4 text-sm font-medium text-brandMuted">
+                            <li class="flex items-center gap-3"><span class="text-brandAccent">✓</span> Handoff Tax Calculation</li>
+                            <li class="flex items-center gap-3"><span class="text-brandAccent">✓</span> CX Friction Mapping</li>
+                            <li class="flex items-center gap-3"><span class="text-brandAccent">✓</span> Live Operational Telemetry</li>
+                        </ul>
+                    </div>
+
+                    <!-- Visual Dashboard Side -->
+                    <div class="lg:col-span-7 bg-brandSurface/40 p-8 md:p-12 flex items-center justify-center">
+                        <div class="w-full bg-brandBg border border-brandBorder rounded-xl shadow-2xl p-6 relative">
+                            <!-- Top glowing border accent -->
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brandAccent to-transparent rounded-t-xl"></div>
+                            
+                            <!-- Dashboard Header -->
+                            <div class="flex justify-between items-center mb-8 border-b border-brandBorder pb-4">
+                                <h4 class="text-white font-semibold text-lg">Pulse Telemetry Audit</h4>
+                                <span class="text-xs bg-brandAccent/10 text-brandAccent px-3 py-1 rounded-full font-medium flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-brandAccent animate-pulse"></span> Live Sync
+                                </span>
+                            </div>
+
+                            <!-- Data Cards -->
+                            <div class="grid grid-cols-2 gap-4 mb-8">
+                                <div class="bg-brandSurface p-5 rounded-lg border border-brandBorder">
+                                    <div class="text-sm text-brandMuted mb-2">Handoff Friction Score</div>
+                                    <div class="text-3xl font-bold text-white">24.5%</div>
+                                </div>
+                                <div class="bg-brandSurface p-5 rounded-lg border border-brandBorder">
+                                    <div class="text-sm text-brandMuted mb-2">Projected OPEX Bleed</div>
+                                    <div class="text-3xl font-bold text-brandAccent">$12,450</div>
+                                </div>
+                            </div>
+
+                            <!-- Abstract Chart/Bars -->
+                            <div class="space-y-4">
+                                <div class="text-sm text-white font-medium mb-2">Deflection vs Escalation Trend</div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-24 text-xs text-brandMuted">Successful</div>
+                                    <div class="flex-grow h-2 bg-brandSurface rounded-full overflow-hidden">
+                                        <div class="w-[65%] h-full bg-brandBorder"></div>
+                                    </div>
+                                    <div class="w-12 text-right text-xs text-white">65%</div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-24 text-xs text-brandMuted text-glow">Failed Handoff</div>
+                                    <div class="flex-grow h-2 bg-brandSurface rounded-full overflow-hidden">
+                                        <div class="w-[35%] h-full bg-brandAccent"></div>
+                                    </div>
+                                    <div class="w-12 text-right text-xs text-brandAccent font-bold">35%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE STUDIES SECTION -->
+        <section class="py-16 md:py-24 px-6 bg-brandBg">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-2xl font-bold text-white mb-10">Client Success & Deployments</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- PLACEHOLDER CASE STUDY -->
+                    <div class="border border-brandBorder bg-brandSurface/10 rounded-xl p-8 relative overflow-hidden flex flex-col h-full opacity-80">
+                        <!-- Diagonal Stripes Background for "Under Construction" feel -->
+                        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: repeating-linear-gradient(45deg, #ffffff 0, #ffffff 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+                        
+                        <div class="flex justify-between items-start mb-6 relative z-10">
+                            <div class="text-xs font-semibold uppercase tracking-widest text-brandMuted flex items-center gap-2">
+                                Case Study
+                            </div>
+                            <div class="text-xs bg-brandSurface border border-brandBorder px-2 py-1 rounded text-brandMuted flex items-center gap-1">
+                                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                Publishing Soon
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-brandMuted mb-4 relative z-10">Mid-Market SaaS: Eliminating $40k/mo in CX Friction</h3>
+                        <p class="text-brandMuted/70 mb-8 flex-grow leading-relaxed relative z-10">
+                            This upcoming briefing details how we utilized Draftera Pulse to identify operational drift in a heavily automated support pipeline, resulting in a complete architecture rebuild and massive OPEX savings.
+                        </p>
+                        
+                        <div class="text-brandMuted text-sm font-semibold flex items-center gap-2 relative z-10 cursor-not-allowed">
+                            Drafting in progress...
+                        </div>
+                    </div>
+                    
+                    <!-- Space for future case studies to be pasted here -->
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-brandBorder bg-brandBg py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-brandMuted">
+            <div>© 2026 Draftera Consulting. All rights reserved.</div>
+            <div class="flex gap-8 mt-6 md:mt-0">
+                <a href="/resources" class="hover:text-white transition font-medium">Resources</a>
+                <a href="#" class="hover:text-white transition font-medium">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+    </script>
+</body>
+</html>
