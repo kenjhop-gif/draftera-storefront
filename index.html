@@ -33,26 +33,24 @@
     </script>
     <style>
         body { background-color: #050505; color: #ededed; }
-        .text-glow {
-            color: #00D4FFFF;
-            text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
-        }
+        .text-glow { color: #00D4FFFF; text-shadow: 0 0 20px rgba(0, 212, 255, 0.4); }
         ::selection { background: #007AFFFF; color: white; }
     </style>
 </head>
 <body class="antialiased font-sans flex flex-col min-h-screen selection:bg-brandAccent selection:text-white">
 
+    <!-- NAVIGATION -->
     <nav class="w-full border-b border-brandBorder bg-brandBg/90 backdrop-blur-md sticky top-0 z-50">
         <div class="px-6 py-5 max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+            <a href="/" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
                 DRAFTERA<span class="w-2 h-2 rounded-full bg-brandAccent shadow-[0_0_10px_#007AFFFF]"></span>
             </a>
             
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#services" class="text-sm font-medium text-brandMuted hover:text-white transition">Consulting</a>
-                <a href="#products" class="text-sm font-medium text-brandMuted hover:text-white transition">Products</a>
-                <a href="/insights" class="text-sm font-medium text-brandMuted hover:text-white transition">Executive Insights</a>
-                <a href="#contact" class="text-sm font-semibold bg-white text-black px-5 py-2.5 rounded hover:bg-brandAccent hover:text-white transition">Book Consultation</a>
+                <a href="/proof" class="text-sm font-medium text-brandMuted hover:text-white transition">Proof in Practice</a>
+                <a href="/resources" class="text-sm font-medium text-brandMuted hover:text-white transition">Resources</a>
+                <a href="#contact" class="text-sm font-semibold bg-brandAccent text-white px-5 py-2.5 rounded shadow-[0_0_15px_rgba(0,122,255,0.3)] hover:bg-brandAccentGlow transition">Book Consultation</a>
             </div>
 
             <button id="mobile-menu-btn" class="md:hidden text-brandMuted hover:text-white">
@@ -62,14 +60,15 @@
         
         <div id="mobile-menu" class="hidden md:hidden border-t border-brandBorder bg-brandBg px-6 py-4 space-y-4">
             <a href="#services" class="block text-sm font-medium text-brandMuted hover:text-white transition">Consulting</a>
-            <a href="#products" class="block text-sm font-medium text-brandMuted hover:text-white transition">Products</a>
-            <a href="/insights" class="block text-sm font-medium text-brandMuted hover:text-white transition">Executive Insights</a>
+            <a href="/proof" class="block text-sm font-medium text-brandMuted hover:text-white transition">Proof in Practice</a>
+            <a href="/resources" class="block text-sm font-medium text-brandMuted hover:text-white transition">Resources</a>
             <a href="#contact" class="block text-sm font-semibold text-brandAccent">Book Consultation</a>
         </div>
     </nav>
 
     <main class="flex-grow">
         
+        <!-- 1. HERO SECTION -->
         <section class="border-b border-brandBorder relative overflow-hidden">
             <div class="absolute top-0 right-0 w-1/2 h-full bg-brandAccent/5 blur-[150px] pointer-events-none"></div>
             
@@ -90,26 +89,29 @@
                         Start a Conversation 
                         <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
-                    <a href="#products" class="px-8 py-4 bg-transparent border border-brandBorder text-white font-semibold rounded hover:bg-brandSurface transition text-lg text-center">
-                        Explore Our Software
+                    <a href="/proof" class="px-8 py-4 bg-transparent border border-brandBorder text-white font-semibold rounded hover:bg-brandSurface transition text-lg text-center">
+                        See Our Work
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- 2. SERVICES GRID -->
         <section id="services" class="border-b border-brandBorder bg-brandBg">
-            <!-- Section Intro -->
-<div class="p-8 md:p-16 lg:p-24 flex flex-col justify-center border-b md:border-b-0 border-brandBorder relative">
-    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">We strategize, implement, and govern.</h2>
-    <p class="text-brandMuted text-lg leading-relaxed mb-8">
-        Implementation is only 10% of the journey. We handle the crucial 90% that most vendors ignore. We eliminate the friction between your AI automation layers and your human teams.
-    </p>
-    <!-- NEW: Download Audit Brief Button -->
-    <a href="assets/Draftera_AI_Implementation_Readiness_Audit_Public.pdf" target="_blank" class="inline-flex items-center gap-3 text-brandAccent font-semibold hover:text-white transition group w-max border border-brandBorder bg-brandSurface/50 px-5 py-3 rounded-lg">
-        <svg class="w-5 h-5 text-brandMuted group-hover:text-brandAccent transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-        Download the 2026 Implementation Readiness Audit (PDF)
-    </a>
-</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-brandBorder max-w-7xl mx-auto">
+                
+                <div class="p-8 md:p-16 lg:p-24 flex flex-col justify-center border-b md:border-b-0 border-brandBorder relative">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">We strategize, implement, and govern.</h2>
+                    <p class="text-brandMuted text-lg leading-relaxed mb-8">
+                        Implementation is only 10% of the journey. We handle the crucial 90% that most vendors ignore. We eliminate the friction between your AI automation layers and your human teams.
+                    </p>
+                    
+                    <!-- UNGATED AUDIT PDF LINK -->
+                    <a href="https://draftera.ca/assets/Draftera_AI_Implementation_Readiness_Audit_Public.pdf" target="_blank" class="inline-flex items-center gap-3 text-brandAccent font-semibold hover:text-white transition group w-max border border-brandBorder bg-brandSurface/50 px-5 py-3 rounded-lg">
+                        <svg class="w-5 h-5 text-brandMuted group-hover:text-brandAccent transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Download the 2026 Audit Services Brief
+                    </a>
+                </div>
 
                 <div class="flex flex-col divide-y divide-brandBorder bg-brandSurface/20">
                     <div class="p-8 md:p-12 hover:bg-brandSurface transition duration-300">
@@ -139,80 +141,27 @@
             </div>
         </section>
 
-        <section id="products" class="border-b border-brandBorder bg-brandBg py-24 md:py-32 px-6">
-            <div class="max-w-7xl mx-auto">
-                
-                <div class="mb-16 md:mb-24">
-                    <div class="inline-block border border-brandAccent/30 text-brandAccent text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6 bg-brandAccent/5">
-                        Proprietary Technology
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">Software Portfolio</h2>
-                    <p class="text-brandMuted text-lg max-w-3xl leading-relaxed">
-                        When off-the-shelf software fails our clients, our engineering studio builds the solution. We develop custom, enterprise-grade AI tools designed to solve specific operational friction points, ensuring your architecture performs exactly as designed.
-                    </p>
+        <!-- 3. PROOF IN PRACTICE TEASER -->
+        <section class="border-b border-brandBorder bg-brandBg py-24 px-6 relative">
+            <!-- Decorative accent line -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brandAccent to-transparent opacity-20"></div>
+            
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block border border-brandAccent/30 text-brandAccent text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6 bg-brandAccent/5">
+                    Engineering & Results
                 </div>
-
-                <div class="border border-brandBorder bg-brandSurface/30 rounded-2xl overflow-hidden shadow-2xl group">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-brandBorder">
-                        
-                        <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center">
-                            <div class="text-brandAccent text-sm font-bold mb-3 tracking-wider uppercase">Flagship Product</div>
-                            <h3 class="text-3xl font-bold text-white mb-4">Draftera Pulse</h3>
-                            <p class="text-brandMuted mb-8 leading-relaxed">
-                                An enterprise analytics engine designed to measure the hidden costs of AI. It audits chatbot handoff friction, calculates your true deflection ROI, and provides the telemetry needed to stop operational bleed.
-                            </p>
-                            <ul class="space-y-3 text-sm font-medium text-brandMuted">
-                                <li class="flex items-center gap-3"><span class="text-brandAccent">✓</span> Handoff Tax Calculation</li>
-                                <li class="flex items-center gap-3"><span class="text-brandAccent">✓</span> CX Friction Mapping</li>
-                                <li class="flex items-center gap-3"><span class="text-brandAccent">✓</span> Operational Telemetry</li>
-                            </ul>
-                        </div>
-
-                        <div class="lg:col-span-7 bg-brandSurface/40 p-8 md:p-12 flex items-center justify-center">
-                            <div class="w-full bg-brandBg border border-brandBorder rounded-xl shadow-2xl p-6 relative">
-                                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brandAccent to-transparent rounded-t-xl"></div>
-                                
-                                <div class="flex justify-between items-center mb-6 border-b border-brandBorder pb-4">
-                                    <h4 class="text-white font-semibold">Pulse Telemetry Audit</h4>
-                                    <span class="text-xs bg-brandAccent/10 text-brandAccent px-2 py-1 rounded-full font-medium flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-brandAccent animate-pulse"></span>
-                                        Live
-                                    </span>
-                                </div>
-
-                                <div class="grid grid-cols-2 gap-4 mb-6">
-                                    <div class="bg-brandSurface p-4 rounded-lg border border-brandBorder">
-                                        <div class="text-xs text-brandMuted mb-1">Handoff Friction</div>
-                                        <div class="text-2xl font-bold text-white">24.5%</div>
-                                    </div>
-                                    <div class="bg-brandSurface p-4 rounded-lg border border-brandBorder">
-                                        <div class="text-xs text-brandMuted mb-1">OPEX Bleed</div>
-                                        <div class="text-2xl font-bold text-brandAccent">$12,450</div>
-                                    </div>
-                                </div>
-
-                                <div class="space-y-3">
-                                    <div class="text-xs text-white font-medium mb-2">Deflection Trend</div>
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-20 text-xs text-brandMuted">Successful</div>
-                                        <div class="flex-grow h-1.5 bg-brandSurface rounded-full overflow-hidden">
-                                            <div class="w-[65%] h-full bg-brandBorder"></div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-20 text-xs text-brandMuted text-glow">Escalation</div>
-                                        <div class="flex-grow h-1.5 bg-brandSurface rounded-full overflow-hidden">
-                                            <div class="w-[35%] h-full bg-brandAccent"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">We build the tools the industry is missing.</h2>
+                <p class="text-brandMuted text-lg mb-10 leading-relaxed">
+                    When off-the-shelf software fails our clients, our engineering studio builds the solution. Explore <strong>Draftera Pulse</strong> and our portfolio of successful enterprise deployments.
+                </p>
+                <a href="/proof" class="inline-flex items-center justify-center px-8 py-4 bg-brandSurface border border-brandBorder text-white font-bold rounded-lg hover:border-brandAccent transition group">
+                    Explore Proof in Practice
+                    <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform text-brandAccent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
         </section>
 
+        <!-- 4. CONTACT / CTA SECTION (Unchanged Formspree Form) -->
         <section id="contact" class="bg-brandBg py-24 md:py-32 px-6">
             <div class="max-w-3xl mx-auto border border-brandBorder bg-brandSurface p-8 md:p-16 rounded-xl relative overflow-hidden shadow-2xl">
                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brandAccent to-transparent"></div>
@@ -222,47 +171,46 @@
                     <p class="text-brandMuted text-lg">Request an audit of your AI initiatives. See if we're a good fit.</p>
                 </div>
 
-                <form action=https://formspree.io/f/xgorqjvl method="POST" class="space-y-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-            <label class="block text-sm font-medium text-brandMuted mb-2">Full Name</label>
-            <input type="text" name="name" class="w-full bg-brandBg border border-brandBorder px-4 py-3 text-white focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent transition rounded-lg shadow-inner" required>
-        </div>
-        <div>
-            <label class="block text-sm font-medium text-brandMuted mb-2">Work Email</label>
-            <input type="email" name="email" class="w-full bg-brandBg border border-brandBorder px-4 py-3 text-white focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent transition rounded-lg shadow-inner" required>
-        </div>
-    </div>
-    <div>
-        <label class="block text-sm font-medium text-brandMuted mb-2">Current AI Challenge</label>
-        <textarea name="challenge" rows="4" class="w-full bg-brandBg border border-brandBorder px-4 py-3 text-white focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent transition rounded-lg shadow-inner" placeholder="Briefly describe what you are trying to implement or fix..."></textarea>
-    </div>
-    <button type="submit" class="w-full bg-white text-black font-bold py-4 rounded-lg hover:bg-brandAccent hover:text-white transition flex justify-center items-center gap-3 text-lg mt-4">
-        Submit Audit Request
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-    </button>
-</form>
+                <form action="https://formspree.io/f/mvoeljyw" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-brandMuted mb-2">Full Name</label>
+                            <input type="text" name="name" class="w-full bg-brandBg border border-brandBorder px-4 py-3 text-white focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent transition rounded-lg shadow-inner" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brandMuted mb-2">Work Email</label>
+                            <input type="email" name="email" class="w-full bg-brandBg border border-brandBorder px-4 py-3 text-white focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent transition rounded-lg shadow-inner" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-brandMuted mb-2">Current AI Challenge</label>
+                        <textarea name="challenge" rows="4" class="w-full bg-brandBg border border-brandBorder px-4 py-3 text-white focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent transition rounded-lg shadow-inner" placeholder="Briefly describe what you are trying to implement or fix..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-black font-bold py-4 rounded-lg hover:bg-brandAccent hover:text-white transition flex justify-center items-center gap-3 text-lg mt-4">
+                        Submit Audit Request
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </form>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="border-t border-brandBorder bg-brandBg py-12 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-brandMuted">
             <div>© 2026 Draftera Consulting. All rights reserved.</div>
             <div class="flex gap-8 mt-6 md:mt-0">
-                <a href="/insights" class="hover:text-white transition font-medium">Insights</a>
-                <a href="https://www.linkedin.com/in/ken-hopkins1234" class="hover:text-white transition font-medium">LinkedIn</a>
+                <a href="/resources" class="hover:text-white transition font-medium">Resources</a>
+                <a href="#" class="hover:text-white transition font-medium">LinkedIn</a>
             </div>
         </div>
     </footer>
 
+    <!-- MOBILE MENU SCRIPT -->
     <script>
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
-        
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
     </script>
 </body>
 </html>
