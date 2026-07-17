@@ -1,185 +1,42 @@
-<!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Resources | Draftera Consulting</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brandBg: '#050505',
-                        brandSurface: '#111111',
-                        brandBorder: '#222222',
-                        brandText: '#ededed',
-                        brandMuted: '#888888',
-                        brandAccent: '#007AFFFF', 
-                        brandAccentGlow: '#00D4FFFF'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: #050505; color: #ededed; }
-        .text-glow { color: #00D4FFFF; text-shadow: 0 0 20px rgba(0, 212, 255, 0.4); }
-        ::selection { background: #007AFFFF; color: white; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Draftera resources for enterprise AI readiness, workflow capacity, and evidence-led implementation.">
+  <title>Resources | Draftera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wdth,wght@75..100,400..700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#10262c;--chalk:#f6f7f3;--paper:#ecefe9;--white:#fffefa;--slate:#56666a;--copper:#c26443;--green:#277469;--line:rgba(16,38,44,.18);--gutter:clamp(20px,4.5vw,72px);--content:1360px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--chalk);color:var(--ink);font:400 16px/1.5 "Instrument Sans",sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(100%,var(--content));margin-inline:auto;padding-inline:var(--gutter)}.mono{font:500 11px/1.35 "IBM Plex Mono",monospace;letter-spacing:.055em;text-transform:uppercase}.eyebrow{color:var(--copper)}
+    .site-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--chalk) 92%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:26px}.brand{display:flex;align-items:center;gap:10px;font:700 22px/1 "Manrope",sans-serif;letter-spacing:-.025em}.brand-mark{display:grid;place-items:center;width:26px;height:26px;background:var(--copper);color:#fff;font:500 13px "IBM Plex Mono"}.nav-links{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:600}.nav-links>a:not(.button){border-bottom:1px solid transparent;padding:4px 0}.nav-links>a:not(.button):hover,.nav-links>a.active{border-color:currentColor}.button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;background:var(--ink);border:1px solid var(--ink);color:var(--chalk);font-weight:650;transition:.18s ease}.button:hover{background:var(--copper);border-color:var(--copper);color:#fff}.nav .button{min-height:40px;font-size:13px}.menu-toggle{display:none;position:relative;width:44px;height:44px;border:1px solid var(--line);background:transparent;color:var(--ink);align-items:center;justify-content:center}.menu-toggle span,.menu-toggle:before,.menu-toggle:after{content:"";display:block;position:absolute;width:19px;height:1px;background:currentColor}.menu-toggle:before{transform:translateY(-6px)}.menu-toggle:after{transform:translateY(6px)}
+    .hero{padding:clamp(78px,10vw,145px) 0 clamp(64px,8vw,100px);border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(40px,7vw,110px);align-items:end}.hero h1{max-width:920px;margin:18px 0 28px;font:500 clamp(56px,8vw,112px)/.91 "Manrope",sans-serif;letter-spacing:-.04em}.hero h1 span{color:var(--copper)}.hero p{max-width:680px;margin:0;color:var(--slate);font-size:clamp(18px,2vw,22px);line-height:1.45}.hero-note{border-left:1px solid var(--line);padding-left:25px}.hero-note strong{display:block;margin:9px 0 11px;font:600 23px/1.1 "Manrope",sans-serif;letter-spacing:-.025em}.hero-note p{font-size:15px}
+    main section{padding:clamp(72px,9vw,118px) 0}.section-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:48px;margin-bottom:48px}.section-head h2{margin:10px 0 0;font:500 clamp(40px,5.2vw,68px)/.95 "Manrope",sans-serif;letter-spacing:-.03em}.section-head h2 span{color:var(--copper)}.section-head>p{max-width:660px;margin:0;color:var(--slate);font-size:19px}
+    .resource-ledger{border-top:1px solid var(--line)}.resource{display:grid;grid-template-columns:140px minmax(240px,.72fr) 1.28fr auto;gap:clamp(22px,4vw,58px);align-items:start;padding:34px 0;border-bottom:1px solid var(--line)}.resource h3{margin:0;font:600 clamp(24px,2.5vw,34px)/1.05 "Manrope",sans-serif;letter-spacing:-.025em}.resource p{max-width:590px;margin:0;color:var(--slate)}.resource-link{font-weight:650;border-bottom:1px solid currentColor;white-space:nowrap;padding-bottom:3px}.resource-link:hover{color:var(--copper)}
+    .use-section{background:var(--paper)}.use-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:var(--line);gap:1px}.use-card{background:var(--chalk);padding:30px;min-height:245px}.use-card .mono{color:var(--copper)}.use-card h3{margin:45px 0 13px;font:600 26px/1.05 "Manrope",sans-serif;letter-spacing:-.025em}.use-card p{margin:0;color:var(--slate)}
+    .contact{background:var(--ink);color:var(--chalk)}.contact .section-head{margin-bottom:0}.contact .section-head>p{color:#b7c2bf}.contact .button{margin-top:25px;background:var(--chalk);border-color:var(--chalk);color:var(--ink)}.contact .button:hover{background:#df8765;border-color:#df8765;color:#fff}footer{padding:38px 0 52px;border-top:1px solid var(--line);color:var(--slate)}.footer{display:flex;justify-content:space-between;gap:30px}.footer strong{color:var(--ink);font-family:"Manrope",sans-serif}a:focus-visible,button:focus-visible{outline:3px solid var(--copper);outline-offset:3px}[contenteditable="true"]{outline:none}[contenteditable="true"]:focus{box-shadow:0 0 0 2px var(--copper)}
+    @media(max-width:1024px){.menu-toggle{display:flex}.nav-links{position:fixed;inset:78px 0 auto;background:var(--chalk);border-bottom:1px solid var(--line);padding:24px var(--gutter) 30px;display:none;flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.nav-links a{font-size:18px;padding:10px 0}.hero-grid,.section-head{grid-template-columns:1fr}.hero-note{border-left:0;border-top:1px solid var(--line);padding:25px 0 0}.resource{grid-template-columns:90px 1fr}.resource p,.resource-link{grid-column:2}.resource-link{justify-self:start}.use-grid{grid-template-columns:1fr}.use-card{min-height:auto}}
+    @media(max-width:560px){.nav{height:70px}.nav-links{inset:70px 0 auto}.hero h1{font-size:clamp(50px,16vw,68px)}.resource{grid-template-columns:1fr}.resource p,.resource-link{grid-column:1}.footer{flex-direction:column}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
 </head>
-<body class="antialiased font-sans flex flex-col min-h-screen selection:bg-brandAccent selection:text-white">
-
-    <!-- NAVIGATION -->
-    <nav class="w-full border-b border-brandBorder bg-brandBg/90 backdrop-blur-md sticky top-0 z-50">
-        <div class="px-6 py-5 max-w-7xl mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                DRAFTERA<span class="w-2 h-2 rounded-full bg-brandAccent shadow-[0_0_10px_#007AFFFF]"></span>
-            </a>
-            
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="/#services" class="text-sm font-medium text-brandMuted hover:text-white transition">Consulting</a>
-                <a href="/proof" class="text-sm font-medium text-brandMuted hover:text-white transition">Proof in Practice</a>
-                <a href="/resources" class="text-sm font-medium text-white transition border-b-2 border-brandAccent pb-1">Resources</a>
-                <a href="/#contact" class="text-sm font-semibold bg-brandAccent text-white px-5 py-2.5 rounded shadow-[0_0_15px_rgba(0,122,255,0.3)] hover:bg-brandAccentGlow transition">Book Consultation</a>
-            </div>
-
-            <button id="mobile-menu-btn" class="md:hidden text-brandMuted hover:text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </div>
-        
-        <div id="mobile-menu" class="hidden md:hidden border-t border-brandBorder bg-brandBg px-6 py-4 space-y-4">
-            <a href="/#services" class="block text-sm font-medium text-brandMuted hover:text-white transition">Consulting</a>
-            <a href="/proof" class="block text-sm font-medium text-brandMuted hover:text-white transition">Proof in Practice</a>
-            <a href="/resources" class="block text-sm font-medium text-brandAccent">Resources</a>
-            <a href="/#contact" class="block text-sm font-semibold text-brandAccent">Book Consultation</a>
-        </div>
-    </nav>
-
-    <main class="flex-grow">
-        
-        <!-- HEADER SECTION -->
-        <section class="border-b border-brandBorder relative overflow-hidden bg-brandSurface/20">
-            <div class="absolute top-0 right-0 w-1/3 h-full bg-brandAccent/5 blur-[120px] pointer-events-none"></div>
-            <div class="px-6 py-20 max-w-7xl mx-auto relative z-10">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">Executive Resources</h1>
-                <p class="text-xl text-brandMuted max-w-2xl leading-relaxed">
-                    Clear thinking on AI-native delivery, enterprise governance, and identifying hidden friction in modern software systems.
-                </p>
-            </div>
-        </section>
-
-        <!-- RESOURCES GRID -->
-        <section class="py-16 md:py-24 px-6 bg-brandBg">
-            <div class="max-w-7xl mx-auto">
-                
-                <!-- 1. FEATURED BRIEFING (2026 Report) -->
-                <div class="mb-20">
-                    <div class="text-brandAccent text-sm font-semibold uppercase tracking-widest mb-6 flex items-center gap-3">
-                        <span class="w-4 h-px bg-brandAccent"></span>
-                        Featured Executive Summary
-                    </div>
-                    
-                    <a href="/2026-report.pdf" target="_blank" class="block group">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 border border-brandBorder bg-brandSurface/40 rounded-xl overflow-hidden hover:border-brandAccent/50 transition duration-300 shadow-xl">
-                            <div class="p-8 md:p-12 flex flex-col justify-center relative z-10 bg-brandSurface/40 backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none">
-                                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-glow transition duration-300">The 2026 Reckoning in Artificial Intelligence</h2>
-                                <p class="text-brandMuted text-lg mb-8 leading-relaxed">
-                                    A deep dive into implementation planning and essential guardrails. Learn the true cost of rapid AI deployment and how to establish infrastructure that drives measurable ROI instead of operational bleed.
-                                </p>
-                                <div class="text-brandAccent font-semibold flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300">
-                                    Read the Report (PDF) <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                                </div>
-                            </div>
-                            
-                            <!-- REAL IMAGE BLOCK FOR FEATURED REPORT -->
-                            <div class="hidden lg:block border-l border-brandBorder relative overflow-hidden bg-brandSurface">
-                                <!-- CHANGE "report-cover.jpg" TO YOUR ACTUAL IMAGE NAME -->
-                                <img src="/assets/report-cover.png" alt="2026 AI Reckoning" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition duration-700 ease-in-out">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                    <!-- 2. DIAGNOSTIC TOOL (Scorecard) -->
-                    <a href="/insights/Draftera-Scorecard.pdf" target="_blank" class="group border border-brandBorder bg-brandSurface/20 rounded-xl overflow-hidden hover:bg-brandSurface hover:border-brandBorder transition duration-300 flex flex-col h-full shadow-lg">
-                        
-                        <!-- REAL IMAGE BLOCK FOR SCORECARD -->
-                        <div class="h-56 w-full border-b border-brandBorder relative overflow-hidden bg-brandSurface">
-                            <!-- CHANGE "scorecard-cover.jpg" TO YOUR ACTUAL IMAGE NAME -->
-                            <img src="/assets/scorecard-cover.png" alt="Scorecard Preview" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition duration-700 ease-in-out">
-                        </div>
-
-                        <div class="p-8 flex flex-col flex-grow relative z-10">
-                            <div class="text-xs font-semibold uppercase tracking-widest text-brandMuted mb-4 flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-brandAccent"></span> Diagnostic Tool
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-brandAccent transition">AI Implementation Readiness Scorecard</h3>
-                            <p class="text-brandMuted mb-8 flex-grow leading-relaxed">
-                                Don't deploy in the dark. Grade your current operational infrastructure against our 8-page evaluation matrix to identify hidden friction and governance gaps before they become critical issues.
-                            </p>
-                            <div class="text-brandAccent text-sm font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                                Download Scorecard (PDF) <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- 3. SERVICE OVERVIEW (Audit Doc) -->
-                    <a href="/assets/Draftera_AI_Implementation_Readiness_Audit_Public.pdf" target="_blank" class="group border border-brandBorder bg-brandSurface/20 rounded-xl overflow-hidden hover:bg-brandSurface hover:border-brandBorder transition duration-300 flex flex-col h-full shadow-lg">
-                        
-                        <!-- REAL IMAGE BLOCK FOR AUDIT -->
-                        <div class="h-56 w-full border-b border-brandBorder relative overflow-hidden bg-brandSurface">
-                            <!-- CHANGE "audit-cover.jpg" TO YOUR ACTUAL IMAGE NAME -->
-                            <img src="/assets/audit-cover.png" alt="Audit Preview" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition duration-700 ease-in-out">
-                        </div>
-
-                        <div class="p-8 flex flex-col flex-grow relative z-10">
-                            <div class="text-xs font-semibold uppercase tracking-widest text-brandMuted mb-4 flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-brandAccent"></span> Service Overview
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-brandAccent transition">2026 AI Implementation Audit</h3>
-                            <p class="text-brandMuted mb-8 flex-grow leading-relaxed">
-                                A detailed 4-page outline of our consulting services and engagement model. Learn exactly how Draftera partners with enterprise teams to strategize, implement, and govern AI systems.
-                            </p>
-                            <div class="text-brandAccent text-sm font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                                Download Audit (PDF) <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-brandBorder bg-brandBg py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-brandMuted">
-            <div>© 2026 Draftera Consulting. All rights reserved.</div>
-            <div class="flex gap-8 mt-6 md:mt-0">
-                <a href="/resources" class="hover:text-white transition font-medium">Resources</a>
-                <a href="#" class="hover:text-white transition font-medium">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
-    </script>
+<body>
+  <header class="site-header"><div class="wrap nav"><a class="brand" href="/" aria-label="Draftera home"><span class="brand-mark">D</span>Draftera</a><button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span></button><nav id="primary-nav" class="nav-links" aria-label="Primary navigation"><a href="/#enterprise">Enterprise AI</a><a href="/for-consultants/">For Consultants</a><a href="/#proof">Proof in Practice</a><a class="active" href="#top">Resources</a><a class="button" href="/#contact">Start a Conversation</a></nav></div></header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-grid"><div><div class="mono eyebrow">Draftera Resources</div><h1 data-pretext>Clarity before <span>implementation.</span></h1><p data-pretext>Practical reports, audits, and decision tools for leaders who want AI and workflow change grounded in operating reality.</p></div><aside class="hero-note"><div class="mono">How to use this library</div><strong>Start with the decision in front of you.</strong><p>Assess readiness, expose workflow constraints, or build a stronger business case before committing to technology.</p></aside></div></section>
+    <section><div class="wrap"><div class="section-head"><div><div class="mono eyebrow">Featured Library</div><h2 data-pretext>Evidence you can put to <span>work.</span></h2></div><p>Each resource is designed to support a real conversation: where the work is constrained, what evidence is missing, and what should happen next.</p></div><div class="resource-ledger">
+      <article class="resource"><div class="mono">Executive Report</div><h3>The 2026 Reckoning</h3><p>A practical perspective on where enterprise AI programs create value—and where workflow, ownership, and operating conditions get in the way.</p><a class="resource-link" href="https://draftera.ca/2026-report.pdf">Read the Report</a></article>
+      <article class="resource"><div class="mono">Readiness Audit</div><h3>AI Implementation Readiness Audit</h3><p>Use a structured set of questions to test whether the workflow, data, leadership, and governance conditions are ready for implementation.</p><a class="resource-link" href="https://draftera.ca/assets/Draftera_AI_Implementation_Readiness_Audit_Public.pdf">Open the Audit</a></article>
+      <article class="resource"><div class="mono">Decision Tool</div><h3>Applied AI Scorecard</h3><p>Compare potential use cases on value, feasibility, operating fit, and risk so the team can prioritize the right opportunity.</p><a class="resource-link" href="https://draftera.ca/insights/Draftera-Scorecard.pdf">Open the Scorecard</a></article>
+      <article class="resource"><div class="mono">Client Example</div><h3>From Friction to a Clear Next Step</h3><p>A concise client story showing how operational evidence can become a supported finding and a practical path forward.</p><a class="resource-link" href="https://draftera.ca/assets/Client%20Story%202-page.pdf">Read the Client Story</a></article>
+    </div></div></section>
+    <section class="use-section"><div class="wrap"><div class="section-head"><div><div class="mono eyebrow">Three Starting Points</div><h2 data-pretext>Choose the question you need to <span>answer.</span></h2></div><p>The resources are most useful when they help a team move from a broad ambition to a specific, evidence-backed decision.</p></div><div class="use-grid"><article class="use-card"><div class="mono">Assess</div><h3>Are we ready?</h3><p>Use the readiness audit before selecting a platform, approving a pilot, or committing implementation resources.</p></article><article class="use-card"><div class="mono">Prioritize</div><h3>Where should we begin?</h3><p>Use the scorecard to compare opportunities and identify the workflow where AI can create credible value.</p></article><article class="use-card"><div class="mono">Align</div><h3>What happens next?</h3><p>Use the report and client example to frame leadership conversations around operating conditions and ownership.</p></article></div></div></section>
+    <section class="contact"><div class="wrap"><div class="section-head"><div><div class="mono eyebrow">Need a Supported View?</div><h2 data-pretext>Turn the questions into a <span>decision.</span></h2></div><div><p>If a resource exposes a larger workflow or implementation challenge, Draftera can help diagnose it, structure the evidence, and define the next practical move.</p><a class="button" href="/#contact">Start a Conversation</a></div></div></div></section>
+  </main>
+  <footer><div class="wrap footer"><div><a href="/"><strong>Draftera.ca</strong></a><br><span class="mono">Applied AI + Consulting Productization</span></div><div><a href="mailto:hello@draftera.ca">hello@draftera.ca</a><br>St. John’s, Newfoundland and Labrador</div></div></footer>
+  <!-- FALLBACK: vendor/pretext.js missing, using CDN -->
+  <script type="module">import{prepare,layout}from'https://esm.sh/@chenglou/pretext';await document.fonts.ready;const els=[...document.querySelectorAll('[data-pretext]')],prepared=new Map();for(const el of els)prepared.set(el,prepare(el.textContent,getComputedStyle(el).font));function relayout(){for(const[el,handle]of prepared){const lh=parseFloat(getComputedStyle(el).lineHeight);if(Number.isFinite(lh))el.style.minHeight=`${layout(handle,el.clientWidth,lh).height}px`}}new ResizeObserver(relayout).observe(document.body);for(const el of els)new MutationObserver(()=>{prepared.set(el,prepare(el.textContent,getComputedStyle(el).font));relayout()}).observe(el,{characterData:true,subtree:true,childList:true});relayout();</script>
+  <script>const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));toggle.setAttribute('aria-label',open?'Open navigation':'Close navigation');nav.classList.toggle('open',!open)});nav.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')})</script>
 </body>
 </html>
