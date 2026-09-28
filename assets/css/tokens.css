@@ -23,7 +23,7 @@
   --color-white: #FFFFFF;      /* raised cards */
 
   /* ---- Colour: the one accent ---- */
-  --color-green: #1D4F4A;      /* buttons, highlight words, Sprint step, CTA band.
+  --color-green: #1D4F4A;      /* buttons, highlight words, Foundations step, CTA band.
                                   Green on Paper 8.85, White on Green 9.25, Green on Stone 7.91 */
   --color-green-deep: #163F3B; /* hover/pressed. White on Green-deep 11.61 */
   --color-mist: #E3EEEA;       /* light green tint: example panels, text on Green (7.79) */
@@ -55,7 +55,7 @@
   --text-display-l: clamp(44px, 6.2vw, 96px);   /* inner-page hero, 600 */
   --text-cta: clamp(44px, 7.4vw, 116px);        /* CTA band headline, 600 */
   --text-h2: clamp(34px, 4.3vw, 62px);          /* section heads, 500, tracking -0.04em, leading 1.0 */
-  --text-numeral: clamp(88px, 9vw, 140px);      /* Sprint week numerals, 500, green */
+  --text-numeral: clamp(88px, 9vw, 140px);      /* Foundations week numerals, 500, green */
   --text-stat: clamp(44px, 5.4vw, 80px);        /* proof numbers, 600, tracking -0.055em */
   --text-statement: clamp(24px, 2.3vw, 32px);   /* callouts, pull quotes, 500, tracking -0.025em */
   --text-h3: 22px;                              /* 600, tracking -0.02em */

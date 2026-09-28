@@ -1,5 +1,5 @@
 /* Draftera site styles: Atelier Green
-   Layout reference: brand/directions/final/ (index-portrait.html, sprint.html, about.html).
+   Layout reference: brand/directions/final/ (index-portrait.html, about.html and the offer-page direction).
    Every colour, font, radius and rule comes from a custom property in tokens.css.
    Do not hard-code colours here: add or change a token instead.
    Sections: base, header, buttons, hero, section pattern, components, CTA band, footer, pages, responsive. */
@@ -194,7 +194,7 @@ h3 { font-size: var(--text-h3); font-weight: var(--weight-semibold); letter-spac
 .rung.feature .rung-n, .rung.feature p, .rung.feature .price small { color: var(--on-accent-muted); }
 .rung.feature .price { color: var(--on-accent); border-color: var(--rule-on-accent-color); }
 
-/* Sprint weeks: giant green numerals */
+/* Foundations weeks: giant green numerals */
 .weeks { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 56px); counter-reset: w; }
 .weeks li { counter-increment: w; }
 .weeks li::before {
@@ -251,7 +251,7 @@ blockquote::before { content: ""; display: block; width: 40px; height: 4px; bord
 .example p:last-child { margin-bottom: 0; }
 .todo { font-size: var(--text-small); color: var(--text-muted); border-top: 1px dashed var(--rule-todo-color); padding-top: 12px; margin: 0; }
 
-/* Panels (price, offer, partner levels) */
+/* Panels (price, offer, Partnership levels) */
 .price-grid { display: grid; grid-template-columns: 7fr 5fr; gap: var(--space-4); }
 .price-grid--even { grid-template-columns: 1fr 1fr; }
 .panel { padding: clamp(28px, 4vw, 56px); border-radius: var(--radius-block); }

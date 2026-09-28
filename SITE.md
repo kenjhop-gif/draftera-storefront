@@ -30,7 +30,7 @@ Then open http://localhost:8000/. Links and assets use root paths (`/assets/...`
 - Font: General Sans, loaded from the Fontshare CDN (see to-dos).
 - Logo: `assets/img/wordmark.svg` (light backgrounds) and `assets/img/wordmark-reversed.svg` (Green or Ink backgrounds), copied from `brand/logo/`. In the header and footer the wordmark is inlined as `<svg class="wordmark">` so it renders in General Sans; its colours come from CSS (`.wm-draft`, `.wm-era`).
 - Favicon: `assets/img/favicon.svg` (a Paper "D" on Green, drawn as a path).
-- Design reference: `brand/design-system.md` and `brand/directions/final/` (`index-portrait.html`, `sprint.html`, `about.html`).
+- Design reference: `brand/design-system.md` and `brand/directions/final/` (`index-portrait.html`, `about.html` and the offer-page direction).
 - Copy source: `brand/website-copy.md`. Change the words there first (brand-writer), then here.
 
 ## Section markers
@@ -53,7 +53,7 @@ Numbered sections show a small green number (`<p class="label">01</p>`). If you 
 | --- | --- | --- |
 | Fonts link | `<!-- shared:fonts -->` in `<head>` | Fontshare stylesheet for General Sans |
 | Analytics | `<!-- shared:analytics -->` in `<head>` | Google Analytics GA4 `G-L787TEY7BD`, Google signals and ad personalization off. Must stay on every page. |
-| Header | `section:site-header` | Wordmark, nav (Quick Win Sprint, Embedded AI Partner, About Ken), "Book an AI Coffee" button. Only `aria-current="page"` differs per page. Under 900px the nav drops to a second row. |
+| Header | `section:site-header` | Wordmark, nav (AI Foundations, Embedded AI Partnership, About Ken), "Book an AI Coffee" button. Only `aria-current="page"` differs per page. Under 900px the nav drops to a second row. |
 | CTA band | `section:cta-band` | Green block, heading "Book a 30-minute AI Coffee with Ken", one paragraph that differs per page, button to `/coffee.html`. On `coffee.html` the band has id `book` and holds the booking embed instead of a button. On `index.html` it also contains `<span id="contact">` so old `#contact` links still land. |
 | Footer | `section:site-footer` | Wordmark, tagline, links to all pages including Privacy, location, hello@draftera.ca, copyright. Only `aria-current` differs. |
 
@@ -67,37 +67,37 @@ Copy locations refer to headings in `brand/website-copy.md`.
 
 | Section id | Purpose | Copy in website-copy.md |
 | --- | --- | --- |
-| `home-hero` | Eyebrow, headline (h1, "your team" in Green), subhead, CTA button, Sprint link, small portrait with founder line | Home > Headline, Subhead, Founder line |
+| `home-hero` | Eyebrow, headline (h1, "your team" in Green), subhead, CTA button, Foundations Engagement link, small portrait with founder line | Home > Headline, Subhead, Founder line |
 | `home-situation` | 01: staff already use AI; Imagine Canada statistic as a callout | Home > "Your staff are already using AI..." |
 | `home-changes` | 02: what changes, plus four flow steps | Home > "What changes when AI is part of how you work" (the four step labels condense that text) |
-| `home-ladder` | 03: offer staircase, five steps; Sprint step in solid Green | Home > "How we can work together" |
-| `home-sprint` | 04: the three Sprint weeks with giant numerals, link to Sprint page | Sprint > How it works (headline from Sprint > Headline) |
+| `home-ladder` | 03: offer staircase, five steps; Foundations Engagement step in solid Green | Home > "How we can work together" |
+| `home-foundations` | 04: the three Foundations Engagement weeks with giant numerals, link to the AI Foundations page | AI Foundations > How it works (headline from AI Foundations > Headline) |
 | `home-story` | 05: Stone block, "Why I do this", pull quote, proof numbers | Home > "Why I do this" (numbers are from Ken's proof points in `CLAUDE.md`) |
 | `cta-band` | Shared CTA | Home > "Book a 30-minute AI Coffee with Ken" |
 
-### Draftera Quick Win Sprint: `sprint.html`
+### Draftera AI Foundations Engagement: `foundations.html`
 
 | Section id | Purpose | Copy |
 | --- | --- | --- |
-| `sprint-hero` | Headline, subhead, CTA, price card aside ($2,500 / $4,000) | Sprint > Headline, Subhead, Price |
-| `sprint-who` | 01: who it is for, numbered rows | Sprint > Who it is for |
-| `sprint-gets` | 02: what you get, heading + text rows | Sprint > What you get |
-| `sprint-how` | 03: weeks 1–3 | Sprint > How it works |
-| `sprint-example` | 04: illustrative example in a Mist panel | Sprint > An example... |
-| `sprint-data` | 05: data protection statement | Sprint > Your data stays protected |
-| `sprint-price` | 06: price panel (Stone) and founding client offer panel (Ink, id `sprint-founding-offer`) | Sprint > Price, Founding client offer |
-| `cta-band` | Shared CTA | Sprint > Book a 30-minute AI Coffee with Ken |
+| `foundations-hero` | Eyebrow, headline, subhead (lede) plus the fixed-fee paragraph, CTA, price card aside ($2,500 / $4,000) | AI Foundations > Headline, Subhead, Price |
+| `foundations-who` | 01: who it is for, numbered rows | AI Foundations > Who it is for |
+| `foundations-gets` | 02: what you get, heading + text rows | AI Foundations > What you get |
+| `foundations-how` | 03: weeks 1–3 | AI Foundations > How it works |
+| `foundations-example` | 04: illustrative example in a Mist panel | AI Foundations > An example... |
+| `foundations-data` | 05: data protection statement | AI Foundations > Your data stays protected |
+| `foundations-price` | 06: price panel (Stone) and founding client offer panel (Ink, id `foundations-founding-offer`) | AI Foundations > Price, Founding client offer |
+| `cta-band` | Shared CTA | AI Foundations > Book a 30-minute AI Coffee with Ken |
 
-### Draftera Embedded AI Partner: `partner.html`
+### Draftera Embedded AI Partnership: `partnership.html`
 
 | Section id | Purpose | Copy |
 | --- | --- | --- |
-| `partner-hero` | Headline, subhead, CTA, price card aside (Core, Plus) | Partner > Headline, Subhead, Two levels |
-| `partner-why` | 01: why ongoing support | Partner > Why ongoing support |
-| `partner-does` | 02: what I do, numbered rows | Partner > What I do as your embedded partner |
-| `partner-levels` | 03: Core (id `partner-core`) and Plus (id `partner-plus`) panels, Sprint credit note | Partner > Two levels |
-| `partner-accountable` | 04: accountable for results | Partner > Accountable for results |
-| `cta-band` | Shared CTA | Partner > Book a 30-minute AI Coffee with Ken |
+| `partnership-hero` | Headline, subhead, CTA, price card aside (Core, Plus) | Embedded AI Partnership > Headline, Subhead, Two levels |
+| `partnership-why` | 01: why ongoing support | Embedded AI Partnership > Why ongoing support |
+| `partnership-does` | 02: what I do, numbered rows | Embedded AI Partnership > What I do as your embedded AI partner |
+| `partnership-levels` | 03: Core (id `partnership-core`) and Plus (id `partnership-plus`) panels, engagement fee credit note | Embedded AI Partnership > Two levels |
+| `partnership-accountable` | 04: accountable for results | Embedded AI Partnership > Accountable for results |
+| `cta-band` | Shared CTA | Embedded AI Partnership > Book a 30-minute AI Coffee with Ken |
 
 ### About Ken: `about.html`
 
@@ -154,14 +154,14 @@ GitHub Pages serves this for missing URLs. It uses root paths (`/assets/...`) so
 3. **Self-host General Sans.** Follow "Self-hosting General Sans" in `brand/design-system.md`: put the WOFF2 files in `website/fonts/`, move the commented `@font-face` block in `assets/css/tokens.css` into use, remove the `shared:fonts` Fontshare links from all 7 pages, and preload the 600 weight. This also removes a third-party request (see privacy item 4).
 4. **Privacy details.** Ken to set the "Last updated" date, name the booking tool and email provider, confirm retention periods, and while fonts come from Fontshare, either self-host them or list Fontshare in the notice.
 5. **Wordmark outlines.** Once fonts are self-hosted, outline the wordmark SVGs (designer) and add a PNG favicon / Apple touch icon for older browsers.
-6. **Sprint example.** `sprint-example` is illustrative; replace with a real case study once a founding client approves one (a `[TODO` comment marks the spot).
+6. **Foundations example.** `foundations-example` is illustrative; replace with a real case study once a founding client approves one (a `[TODO` comment marks the spot).
 7. **Open copy questions** are listed under "Needs Ken" in `brand/website-copy.md`.
 
 ## Example edit requests
 
-- "Change the Sprint price to $3,000 for one workflow." Update `brand/website-copy.md` and `CLAUDE.md`, then `sprint-hero` price card, `sprint-price`, the Sprint meta description, and the Sprint step in `home-ladder`.
+- "Change the Foundations Engagement price to $3,000 for one workflow." Update `brand/website-copy.md` and `CLAUDE.md`, then `foundations-hero` price card, `foundations-price`, the `foundations.html` meta description, and step 04 in `home-ladder`.
 - "Make the Home headline shorter." `index.html`, `home-hero` h1 (keep the `<em>` highlight), plus `brand/website-copy.md`.
-- "Add an FAQ to the Sprint page." New section `sprint-faq` before `cta-band`, numbered 07, using `checks` or `gets` rows.
+- "Add an FAQ to the AI Foundations page." New section `foundations-faq` before `cta-band`, numbered 07, using `checks` or `gets` rows.
 - "Use a lighter green." Designer changes `--color-green` (and checks contrast) in `brand/tokens.css`; copy the change into `assets/css/tokens.css`.
 - "Change the CTA band text on About." `about.html`, `section:cta-band`, the paragraph only.
 - "Add a LinkedIn link to the footer." `section:site-footer` on all 7 pages.
