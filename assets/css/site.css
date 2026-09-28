@@ -214,7 +214,7 @@ blockquote {
 blockquote::before { content: ""; display: block; width: 40px; height: 4px; border-radius: 2px; background: var(--accent); margin-bottom: 22px; }
 .proof { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-6); margin: clamp(40px, 6vw, 72px) 0 12px; }
 .proof div { display: flex; flex-direction: column-reverse; border-top: var(--rule-heavy); padding-top: 18px; }
-.proof dd { margin: 0 0 10px; font-size: var(--text-stat); font-weight: var(--weight-semibold); letter-spacing: -0.055em; line-height: 0.95; }
+.proof dd { margin: 0 0 10px; font-size: clamp(36px, 4.2vw, 60px); white-space: nowrap; font-weight: var(--weight-semibold); letter-spacing: -0.055em; line-height: 0.95; }
 .proof dt { font-size: var(--text-small); color: var(--text-muted); }
 .proof-note { font-size: 14px; color: var(--text-muted); }
 
@@ -336,7 +336,10 @@ blockquote::before { content: ""; display: block; width: 40px; height: 4px; bord
   .btn-lg { width: 100%; }
   .nav .btn-sm { padding: 9px 12px; font-size: 14px; }
   .proof { gap: var(--space-5); }
-  .proof dd { font-size: 36px; }
+  .proof dd { font-size: 32px; }
+}
+@media (max-width: 359px) {
+  .proof { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
