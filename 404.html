@@ -6,8 +6,14 @@
   <title>Page not found | Draftera</title>
   <meta name="description" content="This page isn't here any more. Draftera helps Canadian nonprofits build working AI workflows.">
   <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <!-- shared:fonts - General Sans from the Fontshare CDN. TODO: self-host (see SITE.md). -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap">
+  <!-- /shared:fonts -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google Analytics (GA4). Ads features and Google signals disabled. -->
+  <!-- shared:analytics - Google Analytics (GA4). Ads features and Google signals disabled. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L787TEY7BD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,52 +21,59 @@
     gtag('js', new Date());
     gtag('config', 'G-L787TEY7BD', { allow_google_signals: false, allow_ad_personalization_signals: false });
   </script>
+  <!-- /shared:analytics -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="wordmark" href="/">Draftera</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/sprint.html">AI Quick Win Sprint</a></li>
-          <li><a href="/partner.html">Embedded AI Partner</a></li>
-          <li><a href="/about.html">About Ken</a></li>
-          <li><a href="/coffee.html">Book an AI Coffee</a></li>
-        </ul>
-      </nav>
+  <!-- section:site-header (shared: identical on every page except aria-current) -->
+  <header class="site-header" id="site-header">
+    <div class="wrap nav">
+      <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+      <nav aria-label="Main"><a href="/sprint.html">Quick Win Sprint</a><a href="/partner.html">Embedded AI Partner</a><a href="/about.html">About Ken</a></nav>
+      <a class="btn btn-primary btn-sm" href="/coffee.html">Book an AI Coffee</a>
     </div>
   </header>
+  <!-- /section:site-header -->
 
   <main id="main">
-    <section class="hero hero--text-only" aria-labelledby="page-title">
-      <div class="container">
-        <div class="prose">
-          <h1 id="page-title">Sorry, that page isn't here.</h1>
-          <p class="hero-lede">Draftera's website has changed, and the page you were looking for has moved or been retired.</p>
-          <p class="mt-3"><a href="/">Go to the home page</a></p>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section--alt cta" aria-labelledby="cta-heading">
-      <div class="container prose">
-        <h2 id="cta-heading">Book a 30-minute AI Coffee</h2>
-        <a class="button" href="/coffee.html">Book a 30-minute AI Coffee</a>
+    <!-- section:notfound-hero -->
+    <section class="hero" id="notfound-hero">
+      <div class="wrap">
+        <p class="eyebrow">Page not found</p>
+        <h1 class="h1-inner">Sorry, that page isn't here.</h1>
+        <p class="lede">Draftera's website has changed, and the page you were looking for has moved or been retired.</p>
+        <p><a class="btn btn-link" href="/">Go to the home page <span aria-hidden="true">&rarr;</span></a></p>
       </div>
     </section>
+    <!-- /section:notfound-hero -->
+
+    <!-- section:cta-band (shared: same design on every page; the paragraph changes per page) -->
+    <section class="cta" id="cta-band" aria-labelledby="cta-band-title">
+      <div class="wrap"><div class="cta-inner">
+        <h2 id="cta-band-title">Book a 30&#8209;minute AI Coffee with Ken</h2>
+        <a class="btn btn-primary btn-lg" href="/coffee.html">Book a 30-minute AI Coffee with Ken</a>
+      </div></div>
+    </section>
+    <!-- /section:cta-band -->
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Draftera · Ken Hopkins · St. John's, Newfoundland and Labrador</p>
-      <ul>
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></li>
-      </ul>
+  <!-- section:site-footer (shared: identical on every page except aria-current) -->
+  <footer class="site-footer" id="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+        <p class="foot-tag">AI operations partner for Canadian nonprofits.</p>
+      </div>
+      <nav aria-label="Footer"><a href="/">Home</a><a href="/sprint.html">Draftera Quick Win Sprint</a><a href="/partner.html">Draftera Embedded AI Partner</a><a href="/about.html">About Ken</a><a href="/coffee.html">Book an AI Coffee</a><a href="/privacy.html">Privacy</a></nav>
+      <div>
+        <p>Based in St. John's, Newfoundland and Labrador. Working remotely with organizations across Canada.</p>
+        <p><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></p>
+      </div>
     </div>
+    <div class="wrap foot-base"><p>&copy; 2026 Draftera &middot; All prices in Canadian dollars.</p></div>
   </footer>
+  <!-- /section:site-footer -->
 </body>
 </html>

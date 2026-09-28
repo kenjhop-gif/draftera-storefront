@@ -6,8 +6,14 @@
   <title>About Ken Hopkins | Draftera</title>
   <meta name="description" content="Ken Hopkins led the School Lunch Association for six years. Now he helps Canadian nonprofits build AI workflows that save staff time.">
   <link rel="canonical" href="https://draftera.ca/about.html">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <!-- shared:fonts - General Sans from the Fontshare CDN. TODO: self-host (see SITE.md). -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap">
+  <!-- /shared:fonts -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google Analytics (GA4). Ads features and Google signals disabled. -->
+  <!-- shared:analytics - Google Analytics (GA4). Ads features and Google signals disabled. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L787TEY7BD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,100 +21,132 @@
     gtag('js', new Date());
     gtag('config', 'G-L787TEY7BD', { allow_google_signals: false, allow_ad_personalization_signals: false });
   </script>
+  <!-- /shared:analytics -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="wordmark" href="/">Draftera</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/sprint.html">AI Quick Win Sprint</a></li>
-          <li><a href="/partner.html">Embedded AI Partner</a></li>
-          <li><a href="/about.html" aria-current="page">About Ken</a></li>
-          <li><a href="/coffee.html">Book an AI Coffee</a></li>
-        </ul>
-      </nav>
+  <!-- section:site-header (shared: identical on every page except aria-current) -->
+  <header class="site-header" id="site-header">
+    <div class="wrap nav">
+      <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+      <nav aria-label="Main"><a href="/sprint.html">Quick Win Sprint</a><a href="/partner.html">Embedded AI Partner</a><a href="/about.html" aria-current="page">About Ken</a></nav>
+      <a class="btn btn-primary btn-sm" href="/coffee.html">Book an AI Coffee</a>
     </div>
   </header>
+  <!-- /section:site-header -->
 
   <main id="main">
-    <section class="hero" aria-labelledby="page-title">
-      <div class="container">
+
+    <!-- section:about-hero -->
+    <section class="hero" id="about-hero">
+      <div class="wrap hero-grid">
         <div>
-          <h1 id="page-title">I ran a nonprofit. Now I help nonprofits make AI work.</h1>
-          <p class="hero-lede">I'm Ken Hopkins. I have spent my career in operations, first leading a growing nonprofit, then in senior university administration.</p>
+          <p class="eyebrow">About Ken</p>
+          <h1 class="h1-inner">I ran a nonprofit. Now I help nonprofits make <em>AI work.</em></h1>
+          <p class="lede">I'm Ken Hopkins. I have spent my career in operations, first leading a growing nonprofit, then in senior university administration.</p>
         </div>
-        <img class="photo" src="/assets/img/ken-placeholder.svg" alt="Ken Hopkins (placeholder until a real photo is supplied)" width="400" height="500">
+        <!-- PHOTO TODO: when assets/img/ken.jpg exists, replace this figure with:
+             <img class="portrait portrait-about" src="/assets/img/ken.jpg" alt="Ken Hopkins" width="800" height="1000"> -->
+        <figure class="portrait portrait-about" role="img" aria-label="Placeholder for a photo of Ken Hopkins"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="17" r="8"/><path d="M8 42c2-9 8.5-14 16-14s14 5 16 14"/></svg><b>Photo of Ken</b><small>plain, friendly headshot &middot; to come</small></figure>
       </div>
     </section>
+    <!-- /section:about-hero -->
 
-    <section class="section section--alt" aria-labelledby="sla">
-      <div class="container prose">
-        <h2 id="sla" class="section-heading">Running the School Lunch Association</h2>
-        <p>From 2013 to 2019 I was Executive Director of the School Lunch Association in Newfoundland and Labrador.</p>
-        <p>We tripled revenue, from about $1M to $3.1M. We expanded to 34 school locations and served about 950,000 meals a year. I led a workforce of 85 people.</p>
-        <p>That meant long days, tight budgets and a team doing more than anyone asked. I learned that good systems protect good people.</p>
+    <!-- section:about-sla -->
+    <section class="sec" id="about-sla" aria-labelledby="about-sla-title">
+      <div class="wrap split">
+        <div><p class="label">01</p><h2 id="about-sla-title">Running the School Lunch Association</h2></div>
+        <div class="prose">
+          <p>From 2013 to 2019 I was Executive Director of the School Lunch Association in Newfoundland and Labrador.</p>
+          <p>We tripled revenue, from about $1M to $3.1M. We expanded to 34 school locations and served about 950,000 meals a year. I led a workforce of 85 people.</p>
+          <p class="kicker">That meant long days, tight budgets and a team doing more than anyone asked. I learned that good systems protect good people.</p>
+        </div>
       </div>
+      <div class="wrap"><dl class="proof">
+        <div><dt>revenue, up from about $1M</dt><dd>$3.1M</dd></div>
+        <div><dt>school locations</dt><dd>34</dd></div>
+        <div><dt>meals a year, about</dt><dd>950,000</dd></div>
+        <div><dt>person team</dt><dd>85</dd></div>
+      </dl></div>
     </section>
+    <!-- /section:about-sla -->
 
-    <section class="section" aria-labelledby="mun">
-      <div class="container prose">
-        <h2 id="mun" class="section-heading">Senior administration at Memorial University</h2>
-        <p>Since 2019 I have been Senior Administration Officer for the Faculty of Humanities and Social Sciences at Memorial University. The faculty has 55 staff and a $31M+ operating budget.</p>
-        <p>My work covers workforce planning, budget reductions and employee relations. It is the practical side of making a large organization run. It also taught me how change lands with real people.</p>
-        <p>Draftera is my own independent practice. It is separate from my role at Memorial.</p>
-      </div>
-    </section>
-
-    <section class="section section--alt" aria-labelledby="why">
-      <div class="container prose">
-        <h2 id="why" class="section-heading">Why AI, and why nonprofits</h2>
-        <p>I build working AI workflows myself. I have seen how much routine work they can take off a team.</p>
-        <p>I have also seen the gap. Staff are trying AI on their own, with no plan and no guardrails. Leaders are too busy to sort it out.</p>
-        <p>I started Draftera to close that gap for Canadian nonprofits, charities and associations. I bring an operator's view, not a vendor's. I measure results in hours and dollars.</p>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="credentials">
-      <div class="container">
-        <div class="split">
-          <div>
-            <h2 id="credentials" class="section-heading">Credentials</h2>
-            <ul>
-              <li>MBA (Employee Relations), University of Leicester</li>
-              <li>Master's Certificate in Project Management</li>
-              <li>Certificate in Not-for-Profit Governance, Rotman</li>
-              <li>Qualified Mediator</li>
-            </ul>
-          </div>
-          <div>
-            <h2 id="where" class="section-heading">Where I work</h2>
-            <p>I'm based in St. John's, Newfoundland and Labrador. I work remotely with organizations across Canada, starting in Atlantic Canada.</p>
-          </div>
+    <!-- section:about-university -->
+    <section class="sec" id="about-university" aria-labelledby="about-university-title">
+      <div class="wrap split">
+        <div><p class="label">02</p><h2 id="about-university-title">Senior university administration</h2></div>
+        <div class="prose">
+          <p>Since 2019 I have been Senior Administration Officer for a Canadian university faculty. The faculty has 55 staff and a $31M+ operating budget.</p>
+          <p>My work covers workforce planning, budget reductions and employee relations. It is the practical side of making a large organization run. It also taught me how change lands with real people.</p>
+          <p>Draftera is my own independent practice. It is separate from my university role.</p>
         </div>
       </div>
     </section>
+    <!-- /section:about-university -->
 
-    <section class="section section--alt cta" aria-labelledby="cta-heading">
-      <div class="container prose">
-        <h2 id="cta-heading">Book a 30-minute AI Coffee</h2>
+    <!-- section:about-why -->
+    <section class="sec" id="about-why" aria-labelledby="about-why-title">
+      <div class="wrap split">
+        <div><p class="label">03</p><h2 id="about-why-title">Why AI, and why nonprofits</h2></div>
+        <div class="prose">
+          <p>I build working AI workflows myself. I have seen how much routine work they can take off a team.</p>
+          <p>I have also seen the gap. Staff are trying AI on their own, with no plan and no guardrails. Leaders are too busy to sort it out.</p>
+          <p class="callout">I started Draftera to close that gap for Canadian nonprofits, charities and associations. I bring an operator's view, not a vendor's. I measure results in hours and dollars.</p>
+        </div>
+      </div>
+    </section>
+    <!-- /section:about-why -->
+
+    <!-- section:about-credentials -->
+    <section class="sec" id="about-credentials" aria-labelledby="about-credentials-title">
+      <div class="wrap split">
+        <div><p class="label">04</p><h2 id="about-credentials-title">Credentials</h2></div>
+        <ul class="checks">
+          <li>MBA (Employee Relations), University of Leicester</li>
+          <li>Master's Certificate in Project Management</li>
+          <li>Certificate in Not-for-Profit Governance, Rotman</li>
+          <li>Qualified Mediator</li>
+        </ul>
+      </div>
+    </section>
+    <!-- /section:about-credentials -->
+
+    <!-- section:about-where -->
+    <section class="sec" id="about-where" aria-labelledby="about-where-title">
+      <div class="wrap split">
+        <div><p class="label">05</p><h2 id="about-where-title">Where I work</h2></div>
+        <div class="prose"><p class="big">I'm based in St. John's, Newfoundland and Labrador. I work remotely with organizations across Canada, starting in Atlantic Canada.</p></div>
+      </div>
+    </section>
+    <!-- /section:about-where -->
+
+    <!-- section:cta-band (shared: same design on every page; the paragraph changes per page) -->
+    <section class="cta" id="cta-band" aria-labelledby="cta-band-title">
+      <div class="wrap"><div class="cta-inner">
+        <h2 id="cta-band-title">Book a 30&#8209;minute AI Coffee with Ken</h2>
         <p>Let's talk about your organization. You leave with at least one idea you can use.</p>
-        <a class="button" href="/coffee.html">Book a 30-minute AI Coffee</a>
-      </div>
+        <a class="btn btn-primary btn-lg" href="/coffee.html">Book a 30-minute AI Coffee with Ken</a>
+      </div></div>
     </section>
+    <!-- /section:cta-band -->
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Draftera · Ken Hopkins · St. John's, Newfoundland and Labrador</p>
-      <ul>
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></li>
-      </ul>
+  <!-- section:site-footer (shared: identical on every page except aria-current) -->
+  <footer class="site-footer" id="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+        <p class="foot-tag">AI operations partner for Canadian nonprofits.</p>
+      </div>
+      <nav aria-label="Footer"><a href="/">Home</a><a href="/sprint.html">Draftera Quick Win Sprint</a><a href="/partner.html">Draftera Embedded AI Partner</a><a href="/about.html" aria-current="page">About Ken</a><a href="/coffee.html">Book an AI Coffee</a><a href="/privacy.html">Privacy</a></nav>
+      <div>
+        <p>Based in St. John's, Newfoundland and Labrador. Working remotely with organizations across Canada.</p>
+        <p><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></p>
+      </div>
     </div>
+    <div class="wrap foot-base"><p>&copy; 2026 Draftera &middot; All prices in Canadian dollars.</p></div>
   </footer>
+  <!-- /section:site-footer -->
 </body>
 </html>

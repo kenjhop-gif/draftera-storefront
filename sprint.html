@@ -3,11 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Quick Win Sprint for nonprofits | Draftera</title>
-  <meta name="description" content="In 2–3 weeks, get 1–2 working AI workflows, staff training, guardrails and a time-saved report. Fixed fee: $2,500–4,000 CAD.">
+  <title>Draftera Quick Win Sprint for nonprofits | Draftera</title>
+  <meta name="description" content="In 2–3 weeks, get 1–2 working AI workflows, staff training, guardrails and a time-saved report. Fixed fee: $2,500 CAD for one workflow, $4,000 for two.">
   <link rel="canonical" href="https://draftera.ca/sprint.html">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <!-- shared:fonts - General Sans from the Fontshare CDN. TODO: self-host (see SITE.md). -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap">
+  <!-- /shared:fonts -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google Analytics (GA4). Ads features and Google signals disabled. -->
+  <!-- shared:analytics - Google Analytics (GA4). Ads features and Google signals disabled. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L787TEY7BD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,130 +21,149 @@
     gtag('js', new Date());
     gtag('config', 'G-L787TEY7BD', { allow_google_signals: false, allow_ad_personalization_signals: false });
   </script>
+  <!-- /shared:analytics -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="wordmark" href="/">Draftera</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/sprint.html" aria-current="page">AI Quick Win Sprint</a></li>
-          <li><a href="/partner.html">Embedded AI Partner</a></li>
-          <li><a href="/about.html">About Ken</a></li>
-          <li><a href="/coffee.html">Book an AI Coffee</a></li>
-        </ul>
-      </nav>
+  <!-- section:site-header (shared: identical on every page except aria-current) -->
+  <header class="site-header" id="site-header">
+    <div class="wrap nav">
+      <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+      <nav aria-label="Main"><a href="/sprint.html" aria-current="page">Quick Win Sprint</a><a href="/partner.html">Embedded AI Partner</a><a href="/about.html">About Ken</a></nav>
+      <a class="btn btn-primary btn-sm" href="/coffee.html">Book an AI Coffee</a>
     </div>
   </header>
+  <!-- /section:site-header -->
 
   <main id="main">
-    <section class="hero hero--text-only" aria-labelledby="page-title">
-      <div class="container">
+
+    <!-- section:sprint-hero -->
+    <section class="hero" id="sprint-hero">
+      <div class="wrap hero-grid">
         <div>
-          <h1 id="page-title">One or two working AI workflows in two to three weeks.</h1>
-          <p class="hero-lede">A fixed-fee project for nonprofits that want to see real results before committing to anything bigger.</p>
+          <p class="eyebrow">Draftera Quick Win Sprint</p>
+          <h1 class="h1-inner">One or two working AI workflows in <em>two to three weeks.</em></h1>
+          <p class="lede">The Draftera Quick Win Sprint is a fixed-fee project for nonprofits that want to see real results before committing to anything bigger.</p>
+          <div class="actions"><a class="btn btn-primary btn-lg" href="/coffee.html">Book a 30-minute AI Coffee with Ken</a></div>
         </div>
+        <aside class="price-card" aria-label="Quick Win Sprint at a glance">
+          <p class="pc-label">One workflow</p>
+          <p class="pc-price">$2,500 <small>CAD</small></p>
+          <p class="pc-label">Two workflows</p>
+          <p class="pc-price">$4,000 <small>CAD</small></p>
+          <ul><li>2&ndash;3 weeks</li><li>1&ndash;2 working workflows</li><li>Staff training and guardrails</li><li>A time-saved report</li></ul>
+        </aside>
       </div>
     </section>
+    <!-- /section:sprint-hero -->
 
-    <section class="section section--alt" aria-labelledby="who">
-      <div class="container prose">
-        <h2 id="who" class="section-heading">Who it is for</h2>
-        <ul>
+    <!-- section:sprint-who -->
+    <section class="sec" id="sprint-who" aria-labelledby="sprint-who-title">
+      <div class="wrap split">
+        <div><p class="label">01</p><h2 id="sprint-who-title">Who it is for</h2></div>
+        <ul class="checks">
           <li>Your staff already use AI tools, but informally and unevenly.</li>
           <li>You have one or two tasks that eat hours every week or month.</li>
           <li>You want results you can show your board, not another strategy document.</li>
         </ul>
       </div>
     </section>
+    <!-- /section:sprint-who -->
 
-    <section class="section" aria-labelledby="what-you-get">
-      <div class="container">
-        <h2 id="what-you-get" class="section-heading">What you get</h2>
-        <div class="grid grid--2">
-          <div class="card">
-            <h3>1–2 working workflows</h3>
-            <p>Built around tasks your team already does.</p>
-          </div>
-          <div class="card">
-            <h3>Staff training</h3>
-            <p>So the people using the workflow understand it and trust it.</p>
-          </div>
-          <div class="card">
-            <h3>Guardrails</h3>
-            <p>In plain language: what staff can use AI for, what stays out of AI tools, and who checks the output.</p>
-          </div>
-          <div class="card">
-            <h3>A time-saved report</h3>
-            <p>Measuring hours before and after, and what that means in dollars.</p>
-          </div>
+    <!-- section:sprint-gets -->
+    <section class="sec" id="sprint-gets" aria-labelledby="sprint-gets-title">
+      <div class="wrap">
+        <div class="sec-head"><p class="label">02</p><h2 id="sprint-gets-title">What you get</h2></div>
+        <ul class="gets">
+          <li><h3>1&ndash;2 working workflows,</h3><p>built around tasks your team already does.</p></li>
+          <li><h3>Staff training,</h3><p>so the people using the workflow understand it and trust it.</p></li>
+          <li><h3>Guardrails,</h3><p>in plain language: what staff can use AI for, what stays out of AI tools, and who checks the output.</p></li>
+          <li><h3>A time-saved report,</h3><p>measuring hours before and after, and what that means in dollars.</p></li>
+        </ul>
+      </div>
+    </section>
+    <!-- /section:sprint-gets -->
+
+    <!-- section:sprint-how -->
+    <section class="sec" id="sprint-how" aria-labelledby="sprint-how-title">
+      <div class="wrap">
+        <div class="sec-head"><p class="label">03</p><h2 id="sprint-how-title">How it works</h2></div>
+        <ol class="weeks">
+        <li><p class="wk">Week 1</p><h3>Find the task.</h3><p>We pick the work that costs the most time and is safest to start with. I meet the people who do it.</p></li>
+        <li><p class="wk">Week 2</p><h3>Build and test.</h3><p>I build the workflow with your staff, using tools you already have where possible. We test it on real work.</p></li>
+        <li><p class="wk">Week 3</p><h3>Train and measure.</h3><p>Staff learn to use it. We set the guardrails. I deliver the time-saved report.</p></li>
+      </ol>
+      </div>
+    </section>
+    <!-- /section:sprint-how -->
+
+    <!-- section:sprint-example -->
+    <section class="sec" id="sprint-example" aria-labelledby="sprint-example-title">
+      <div class="wrap split">
+        <div><p class="label">04</p><h2 id="sprint-example-title">An example of the kind of task we might tackle</h2></div>
+        <div class="example">
+          <p class="tag">Illustrative example</p>
+          <p>A program manager spends two days each quarter pulling notes into a funder report. A Quick Win Sprint could build a workflow that produces a first draft from those notes. The manager then reviews and edits it instead of starting from a blank page.</p>
+          <!-- [TODO: replace with a real example and measured result once a founding client's case study is approved.] -->
         </div>
       </div>
     </section>
+    <!-- /section:sprint-example -->
 
-    <section class="section section--alt" aria-labelledby="how">
-      <div class="container prose">
-        <h2 id="how" class="section-heading">How it works</h2>
-        <ol class="steps">
-          <li><strong>Week 1: find the task.</strong> We pick the work that costs the most time and is safest to start with. I meet the people who do it.</li>
-          <li><strong>Week 2: build and test.</strong> I build the workflow with your staff, using tools you already have where possible. We test it on real work.</li>
-          <li><strong>Week 3: train and measure.</strong> Staff learn to use it. We set the guardrails. I deliver the time-saved report.</li>
-        </ol>
+    <!-- section:sprint-data -->
+    <section class="sec" id="sprint-data" aria-labelledby="sprint-data-title">
+      <div class="wrap split">
+        <div><p class="label">05</p><h2 id="sprint-data-title">Your data stays protected</h2></div>
+        <div class="prose"><p class="big">Client, donor and staff personal information never goes into outside AI tools without your written agreement. We decide together what data each workflow can use.</p></div>
       </div>
     </section>
+    <!-- /section:sprint-data -->
 
-    <section class="section" aria-labelledby="example">
-      <div class="container prose">
-        <h2 id="example" class="section-heading">An example of the kind of task we might tackle</h2>
-        <p>A program manager spends two days each quarter pulling notes into a funder report. A Sprint could build a workflow that produces a first draft from those notes. The manager then reviews and edits it instead of starting from a blank page.</p>
-        <!-- TODO: replace with a real example and measured result once a founding client's case study is approved. -->
-      </div>
-    </section>
-
-    <section class="section section--alt" aria-labelledby="data">
-      <div class="container prose">
-        <h2 id="data" class="section-heading">Your data stays protected</h2>
-        <p>Client, donor and staff personal information never goes into outside AI tools without your written agreement. We decide together what data each workflow can use.</p>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="price">
-      <div class="container">
-        <div class="split">
-          <div>
-            <h2 id="price" class="section-heading">Price</h2>
-            <p class="price">$2,500–4,000 CAD, fixed.</p>
-            <p>The price depends on the number and complexity of workflows. You will know the fixed price before we start.</p>
-            <p>If you continue with an <a href="/partner.html">Embedded AI Partner</a> retainer within 30 days, your Sprint fee is credited toward your first month.</p>
-          </div>
-          <div class="card">
-            <h3>Founding client offer</h3>
-            <p>I am taking on my first two Sprint clients at 50% off. In exchange, you agree to a short case study about the results. You approve the case study before anything is published.</p>
-          </div>
+    <!-- section:sprint-price -->
+    <section class="sec" id="sprint-price" aria-labelledby="sprint-price-title">
+      <div class="wrap price-grid">
+        <div class="panel panel-price">
+          <p class="label">06</p><h2 id="sprint-price-title">Price</h2>
+          <p><strong>Fixed fee, in Canadian dollars.</strong></p>
+          <ul class="price-lines"><li>One workflow: $2,500.</li><li>Two workflows: $4,000.</li></ul>
+          <p>You will know the fixed price before we start.</p>
+          <p>If you continue with a Draftera Embedded AI Partner retainer, Core or Plus, within 30 days, your Sprint fee is credited toward your first month.</p>
+        </div>
+        <div class="panel panel-offer" id="sprint-founding-offer">
+          <h2>Founding client offer</h2>
+          <p>I am offering 50% off the Quick Win Sprint to my first two clients, or until December 31, 2026, whichever comes first. In exchange, you agree to a short case study about the results. You approve the case study before anything is published.</p>
         </div>
       </div>
     </section>
+    <!-- /section:sprint-price -->
 
-    <section class="section section--alt cta" aria-labelledby="cta-heading">
-      <div class="container prose">
-        <h2 id="cta-heading">Book a 30-minute AI Coffee</h2>
-        <p>Not sure if a Sprint fits? Start with a free conversation. You leave with at least one idea you can use.</p>
-        <a class="button" href="/coffee.html">Book a 30-minute AI Coffee</a>
-      </div>
+    <!-- section:cta-band (shared: same design on every page; the paragraph changes per page) -->
+    <section class="cta" id="cta-band" aria-labelledby="cta-band-title">
+      <div class="wrap"><div class="cta-inner">
+        <h2 id="cta-band-title">Book a 30&#8209;minute AI Coffee with Ken</h2>
+        <p>Not sure if a Quick Win Sprint fits? Start with a free conversation. You leave with at least one idea you can use.</p>
+        <a class="btn btn-primary btn-lg" href="/coffee.html">Book a 30-minute AI Coffee with Ken</a>
+      </div></div>
     </section>
+    <!-- /section:cta-band -->
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Draftera · Ken Hopkins · St. John's, Newfoundland and Labrador</p>
-      <ul>
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></li>
-      </ul>
+  <!-- section:site-footer (shared: identical on every page except aria-current) -->
+  <footer class="site-footer" id="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+        <p class="foot-tag">AI operations partner for Canadian nonprofits.</p>
+      </div>
+      <nav aria-label="Footer"><a href="/">Home</a><a href="/sprint.html" aria-current="page">Draftera Quick Win Sprint</a><a href="/partner.html">Draftera Embedded AI Partner</a><a href="/about.html">About Ken</a><a href="/coffee.html">Book an AI Coffee</a><a href="/privacy.html">Privacy</a></nav>
+      <div>
+        <p>Based in St. John's, Newfoundland and Labrador. Working remotely with organizations across Canada.</p>
+        <p><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></p>
+      </div>
     </div>
+    <div class="wrap foot-base"><p>&copy; 2026 Draftera &middot; All prices in Canadian dollars.</p></div>
   </footer>
+  <!-- /section:site-footer -->
 </body>
 </html>

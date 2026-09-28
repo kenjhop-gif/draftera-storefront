@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Draftera favicon: a Paper "D" on Green (Atelier Green tokens: Green #1D4F4A, Paper #FAFAF7).
+       The D is drawn as a path so it does not depend on a font. -->
+  <rect width="64" height="64" rx="14" fill="#1D4F4A"/>
+  <path fill="#FAFAF7" fill-rule="evenodd" d="M18 14h13c11 0 18 7.4 18 18s-7 18-18 18H18z M25.5 21v22H31c6.6 0 10.5-4.3 10.5-11S37.6 21 31 21z"/>
+</svg>

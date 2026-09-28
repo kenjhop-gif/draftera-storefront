@@ -1,0 +1,125 @@
+/* Draftera design tokens: Atelier Green (copied from brand/tokens.css; keep in sync)
+   Status: chosen, pending Ken's final sign-off. Source of truth: brand/design-system.md
+   Contrast ratios (WCAG 2.x) are noted beside colour pairs that carry text. */
+
+/* Fonts: General Sans (Indian Type Foundry, ITF Free Font Licence).
+   Drafts load it from the Fontshare CDN:
+   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+   For production, self-host (see design-system.md) and use the @font-face block below. */
+/*
+@font-face{font-family:'General Sans';src:url('/fonts/GeneralSans-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'General Sans';src:url('/fonts/GeneralSans-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'General Sans';src:url('/fonts/GeneralSans-Semibold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'General Sans';src:url('/fonts/GeneralSans-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+*/
+
+:root {
+  /* ---- Colour: base ---- */
+  --color-paper: #FAFAF7;      /* page background */
+  --color-ink: #141414;        /* text, rules. Ink on Paper 17.62 */
+  --color-graphite: #5E5E5A;   /* secondary text. On Paper 6.23, on Stone 5.57, on Mist 5.48 */
+  --color-stone: #EFEDE8;      /* panels, free tiers, story block */
+  --color-line: #E2E0DA;       /* hairlines, card borders (decorative, not text) */
+  --color-white: #FFFFFF;      /* raised cards */
+
+  /* ---- Colour: the one accent ---- */
+  --color-green: #1D4F4A;      /* buttons, highlight words, Sprint step, CTA band.
+                                  Green on Paper 8.85, White on Green 9.25, Green on Stone 7.91 */
+  --color-green-deep: #163F3B; /* hover/pressed. White on Green-deep 11.61 */
+  --color-mist: #E3EEEA;       /* light green tint: example panels, text on Green (7.79) */
+  --color-mint: #A9CFC4;       /* small accents on Green (5.47) or Ink (10.89) */
+
+  /* ---- Colour: roles ---- */
+  --bg: var(--color-paper);
+  --text: var(--color-ink);
+  --text-muted: var(--color-graphite);
+  --accent: var(--color-green);
+  --accent-hover: var(--color-green-deep);
+  --on-accent: var(--color-white);
+  --on-accent-muted: var(--color-mist);
+  --surface: var(--color-stone);
+  --surface-raised: var(--color-white);
+  --surface-accent-soft: var(--color-mist);
+  --rule-strong: var(--color-ink);
+  --rule: var(--color-line);
+  --focus-ring: var(--color-green);
+
+  /* ---- Type ---- */
+  --font-sans: 'General Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --text-display-xl: clamp(52px, 8.6vw, 136px); /* homepage hero, 600, tracking -0.05em, leading 0.93 */
+  --text-display-l: clamp(44px, 6.2vw, 96px);   /* inner-page hero, 600 */
+  --text-cta: clamp(44px, 7.4vw, 116px);        /* CTA band headline, 600 */
+  --text-h2: clamp(34px, 4.3vw, 62px);          /* section heads, 500, tracking -0.04em, leading 1.0 */
+  --text-numeral: clamp(88px, 9vw, 140px);      /* Sprint week numerals, 500, green */
+  --text-stat: clamp(44px, 5.4vw, 80px);        /* proof numbers, 600, tracking -0.055em */
+  --text-statement: clamp(24px, 2.3vw, 32px);   /* callouts, pull quotes, 500, tracking -0.025em */
+  --text-h3: 22px;                              /* 600, tracking -0.02em */
+  --text-lede: clamp(19px, 1.55vw, 22px);       /* 400, graphite, leading 1.5 */
+  --text-body: 18px;                            /* 400, leading 1.6 */
+  --text-small: 15px;
+  --text-label: 13px;                           /* 600, uppercase, tracking 0.12em */
+
+  --tracking-display: -0.05em;
+  --tracking-heading: -0.04em;
+  --tracking-tight: -0.02em;
+  --tracking-label: 0.12em;
+  --leading-display: 0.93;
+  --leading-heading: 1.0;
+  --leading-body: 1.6;
+  --measure: 36em;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 136px;
+  --section-y: clamp(72px, 9vw, 136px);
+  --gutter: clamp(16px, 4vw, 48px);
+  --container: 1240px;
+
+  /* ---- Radii: soft, studio, never bubbly ---- */
+  --radius-sm: 6px;       /* chips, small inputs */
+  --radius-button: 10px;  /* buttons */
+  --radius-card: 14px;    /* cards, ladder steps (top corners only when sitting on a rule) */
+  --radius-frame: 16px;   /* image frames, portraits */
+  --radius-block: 22px;   /* colour blocks: story block, CTA band, panels */
+
+  /* ---- Rules ---- */
+  --rule-heavy: 2px solid var(--color-ink);   /* above flow steps, weeks, proof numbers, ladder floor */
+  --rule-section: 1px solid var(--color-ink); /* between sections */
+  --rule-hair: 1px solid var(--color-line);   /* list rows, card borders */
+
+  /* ---- Shadows: used sparingly; the system relies on rules and colour blocks ---- */
+  --shadow-sm: 0 1px 2px rgba(20, 20, 20, 0.06);
+  --shadow-md: 0 8px 24px rgba(20, 20, 20, 0.08);
+  --shadow-focus: 0 0 0 3px var(--color-paper), 0 0 0 6px var(--color-green);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration: 150ms;
+}
+
+/* ---- Site additions (website only) ----
+   Values the reference pages used that brand/tokens.css does not name yet.
+   Designer: adopt these into brand/tokens.css or replace them. */
+:root {
+  --color-on-ink-muted: #C9C8C2;             /* secondary text on Ink panels. 10.99 on Ink */
+  --rule-soft-color: rgba(20, 20, 20, 0.12); /* price divider inside ladder steps */
+  --rule-on-accent-color: rgba(255, 255, 255, 0.3); /* dividers on Green */
+  --rule-todo-color: #B9CCC5;                /* dashed line above editor notes on Mist */
+  --header-height: 78px;
+  --portrait-mini-w: 88px;                   /* Home hero founder portrait */
+  --portrait-mini-h: 108px;
+  --wordmark-height: 36px;                   /* header wordmark (SVG viewBox 232 x 64) */
+}

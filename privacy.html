@@ -7,8 +7,14 @@
   <title>Privacy | Draftera</title>
   <meta name="description" content="How Draftera handles personal information collected through draftera.ca and AI Coffee bookings.">
   <link rel="canonical" href="https://draftera.ca/privacy.html">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <!-- shared:fonts - General Sans from the Fontshare CDN. TODO: self-host (see SITE.md). -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap">
+  <!-- /shared:fonts -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google Analytics (GA4). Ads features and Google signals disabled. -->
+  <!-- shared:analytics - Google Analytics (GA4). Ads features and Google signals disabled. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L787TEY7BD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,106 +22,117 @@
     gtag('js', new Date());
     gtag('config', 'G-L787TEY7BD', { allow_google_signals: false, allow_ad_personalization_signals: false });
   </script>
+  <!-- /shared:analytics -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="wordmark" href="/">Draftera</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/sprint.html">AI Quick Win Sprint</a></li>
-          <li><a href="/partner.html">Embedded AI Partner</a></li>
-          <li><a href="/about.html">About Ken</a></li>
-          <li><a href="/coffee.html">Book an AI Coffee</a></li>
-        </ul>
-      </nav>
+  <!-- section:site-header (shared: identical on every page except aria-current) -->
+  <header class="site-header" id="site-header">
+    <div class="wrap nav">
+      <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+      <nav aria-label="Main"><a href="/sprint.html">Quick Win Sprint</a><a href="/partner.html">Embedded AI Partner</a><a href="/about.html">About Ken</a></nav>
+      <a class="btn btn-primary btn-sm" href="/coffee.html">Book an AI Coffee</a>
     </div>
   </header>
+  <!-- /section:site-header -->
 
   <main id="main">
-    <section class="hero hero--text-only" aria-labelledby="page-title">
-      <div class="container">
-        <div class="prose">
-          <h1 id="page-title">Privacy</h1>
-          <p class="hero-lede">Draftera collects as little personal information as it can, uses it only to talk with you and improve this site, and never sells it.</p>
-          <!-- Ken: set the date when you approve this notice. -->
-          <p class="note mt-3">Last updated: <span class="placeholder">[date]</span></p>
+
+    <!-- section:privacy-hero -->
+    <section class="hero" id="privacy-hero">
+      <div class="wrap">
+        <h1 class="h1-inner">Privacy</h1>
+        <p class="lede">Draftera collects as little personal information as it can, uses it only to talk with you and improve this site, and never sells it.</p>
+        <!-- Ken: set the date when you approve this notice. -->
+        <p class="note">Last updated: <span class="placeholder">[date]</span></p>
+      </div>
+    </section>
+    <!-- /section:privacy-hero -->
+
+    <!-- section:privacy-notice -->
+    <section class="sec" id="privacy-notice" aria-label="Privacy notice">
+      <div class="wrap">
+        <div class="prose legal">
+          <p>Draftera is Ken Hopkins's independent practice, based in St. John's, Newfoundland and Labrador. This notice explains how Draftera handles personal information under Canada's federal privacy law, the Personal Information Protection and Electronic Documents Act (PIPEDA). Ken is responsible for Draftera's privacy practices.</p>
+
+          <h2 id="privacy-collects">What Draftera collects</h2>
+          <ul>
+            <li><strong>Emails you send.</strong> If you write to hello@draftera.ca, Draftera keeps your name, email address and whatever you include in your message.</li>
+            <li><strong>Booking details.</strong> When you book an AI Coffee, the booking tool collects your name, email address, the time you chose and any answers you give to its questions.</li>
+            <li><strong>Website usage data.</strong> This site uses Google Analytics, which sets cookies and collects information such as the pages you visit, how you arrived, your general location (city or region), and your device and browser type. It does not tell Draftera who you are. Google advertising features and Google signals are turned off.</li>
+          </ul>
+          <p>This site has no contact forms and no newsletter sign-up.</p>
+
+          <h2 id="privacy-why">Why</h2>
+          <ul>
+            <li>To reply to you, and to arrange and hold the call you booked.</li>
+            <li>To follow up about that conversation, if you want that.</li>
+            <li>To understand which pages are useful so the site can be improved.</li>
+          </ul>
+          <p>Draftera does not sell, rent or trade personal information, and does not use it for advertising.</p>
+
+          <h2 id="privacy-where">Where it is stored</h2>
+          <p>Draftera uses a small number of outside services. Some are based in the United States, so your information may be stored or processed there and may be accessible to authorities under the laws of that country.</p>
+          <ul>
+            <li><strong>Google Analytics</strong> (Google LLC, United States) for website usage data.</li>
+            <!-- Ken: name the booking tool and link to its privacy policy once chosen. -->
+            <li><strong>Booking tool:</strong> <span class="placeholder">[booking tool name]</span>, for AI Coffee bookings.</li>
+            <!-- Ken: confirm who hosts hello@draftera.ca (for example Google Workspace or Microsoft 365). -->
+            <li><strong>Email provider:</strong> <span class="placeholder">[email provider]</span>, for hello@draftera.ca.</li>
+            <li><strong>GitHub Pages</strong> (GitHub, Inc., United States) hosts this website and may log visitors' IP addresses for security.</li>
+            <!-- Ken: while fonts load from Fontshare (Indian Type Foundry), visitors' browsers contact that service. Self-host the fonts (SITE.md to-do) or add it to this list. -->
+          </ul>
+
+          <h2 id="privacy-retention">How long it is kept</h2>
+          <!-- Ken: confirm these periods, and set Google Analytics data retention to match (Admin > Data collection and modification > Data retention). -->
+          <ul>
+            <li>Emails and booking details: kept for up to two years after our last contact, then deleted, unless we are working together.</li>
+            <li>Google Analytics data: kept for 14 months, then deleted automatically.</li>
+          </ul>
+
+          <h2 id="privacy-clients">Client information</h2>
+          <p>When Draftera works with an organization, client, donor and staff personal information is never put into outside AI tools without that organization's written agreement.</p>
+
+          <h2 id="privacy-choices">Your choices</h2>
+          <ul>
+            <li>You can block or delete cookies in your browser settings, or use Google's <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out browser add-on</a>. The site works the same either way.</li>
+            <li>If Draftera emails you, you can ask to stop at any time by replying or writing to hello@draftera.ca.</li>
+          </ul>
+
+          <h2 id="privacy-access">Access, correction and deletion</h2>
+          <p>You can ask what personal information Draftera holds about you, ask for it to be corrected, or ask for it to be deleted. Email <a href="mailto:hello@draftera.ca">hello@draftera.ca</a>. You will get a reply within 30 days.</p>
+          <p>If you are not satisfied with the answer, you can contact the <a href="https://www.priv.gc.ca/">Office of the Privacy Commissioner of Canada</a>.</p>
         </div>
       </div>
     </section>
+    <!-- /section:privacy-notice -->
 
-    <section class="section" aria-label="Privacy notice">
-      <div class="container prose">
-        <p>Draftera is Ken Hopkins's independent practice, based in St. John's, Newfoundland and Labrador. This notice explains how Draftera handles personal information under Canada's federal privacy law, the Personal Information Protection and Electronic Documents Act (PIPEDA). Ken is responsible for Draftera's privacy practices.</p>
-
-        <h2 class="section-heading mt-4">What Draftera collects</h2>
-        <ul>
-          <li><strong>Emails you send.</strong> If you write to hello@draftera.ca, Draftera keeps your name, email address and whatever you include in your message.</li>
-          <li><strong>Booking details.</strong> When you book an AI Coffee, the booking tool collects your name, email address, the time you chose and any answers you give to its questions.</li>
-          <li><strong>Website usage data.</strong> This site uses Google Analytics, which sets cookies and collects information such as the pages you visit, how you arrived, your general location (city or region), and your device and browser type. It does not tell Draftera who you are. Google advertising features and Google signals are turned off.</li>
-        </ul>
-        <p>This site has no contact forms and no newsletter sign-up.</p>
-
-        <h2 class="section-heading mt-4">Why</h2>
-        <ul>
-          <li>To reply to you, and to arrange and hold the call you booked.</li>
-          <li>To follow up about that conversation, if you want that.</li>
-          <li>To understand which pages are useful so the site can be improved.</li>
-        </ul>
-        <p>Draftera does not sell, rent or trade personal information, and does not use it for advertising.</p>
-
-        <h2 class="section-heading mt-4">Where it is stored</h2>
-        <p>Draftera uses a small number of outside services. Some are based in the United States, so your information may be stored or processed there and may be accessible to authorities under the laws of that country.</p>
-        <ul>
-          <li><strong>Google Analytics</strong> (Google LLC, United States) for website usage data.</li>
-          <!-- Ken: name the booking tool and link to its privacy policy once chosen. -->
-          <li><strong>Booking tool:</strong> <span class="placeholder">[booking tool name]</span>, for AI Coffee bookings.</li>
-          <!-- Ken: confirm who hosts hello@draftera.ca (for example Google Workspace or Microsoft 365). -->
-          <li><strong>Email provider:</strong> <span class="placeholder">[email provider]</span>, for hello@draftera.ca.</li>
-          <li><strong>GitHub Pages</strong> (GitHub, Inc., United States) hosts this website and may log visitors' IP addresses for security.</li>
-        </ul>
-
-        <h2 class="section-heading mt-4">How long it is kept</h2>
-        <!-- Ken: confirm these periods, and set Google Analytics data retention to match (Admin > Data collection and modification > Data retention). -->
-        <ul>
-          <li>Emails and booking details: kept for up to two years after our last contact, then deleted, unless we are working together.</li>
-          <li>Google Analytics data: kept for 14 months, then deleted automatically.</li>
-        </ul>
-
-        <h2 class="section-heading mt-4">Client information</h2>
-        <p>When Draftera works with an organization, client, donor and staff personal information is never put into outside AI tools without that organization's written agreement.</p>
-
-        <h2 class="section-heading mt-4">Your choices</h2>
-        <ul>
-          <li>You can block or delete cookies in your browser settings, or use Google's <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out browser add-on</a>. The site works the same either way.</li>
-          <li>If Draftera emails you, you can ask to stop at any time by replying or writing to hello@draftera.ca.</li>
-        </ul>
-
-        <h2 class="section-heading mt-4">Access, correction and deletion</h2>
-        <p>You can ask what personal information Draftera holds about you, ask for it to be corrected, or ask for it to be deleted. Email <a href="mailto:hello@draftera.ca">hello@draftera.ca</a>. You will get a reply within 30 days.</p>
-        <p>If you are not satisfied with the answer, you can contact the <a href="https://www.priv.gc.ca/">Office of the Privacy Commissioner of Canada</a>.</p>
-      </div>
+    <!-- section:cta-band (shared: same design on every page; the paragraph changes per page) -->
+    <section class="cta" id="cta-band" aria-labelledby="cta-band-title">
+      <div class="wrap"><div class="cta-inner">
+        <h2 id="cta-band-title">Book a 30&#8209;minute AI Coffee with Ken</h2>
+        <a class="btn btn-primary btn-lg" href="/coffee.html">Book a 30-minute AI Coffee with Ken</a>
+      </div></div>
     </section>
-
-    <section class="section section--alt cta" aria-labelledby="cta-heading">
-      <div class="container prose">
-        <h2 id="cta-heading">Book a 30-minute AI Coffee</h2>
-        <a class="button" href="/coffee.html">Book a 30-minute AI Coffee</a>
-      </div>
-    </section>
+    <!-- /section:cta-band -->
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Draftera · Ken Hopkins · St. John's, Newfoundland and Labrador</p>
-      <ul>
-        <li><a href="/privacy.html" aria-current="page">Privacy</a></li>
-        <li><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></li>
-      </ul>
+  <!-- section:site-footer (shared: identical on every page except aria-current) -->
+  <footer class="site-footer" id="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+        <p class="foot-tag">AI operations partner for Canadian nonprofits.</p>
+      </div>
+      <nav aria-label="Footer"><a href="/">Home</a><a href="/sprint.html">Draftera Quick Win Sprint</a><a href="/partner.html">Draftera Embedded AI Partner</a><a href="/about.html">About Ken</a><a href="/coffee.html">Book an AI Coffee</a><a href="/privacy.html" aria-current="page">Privacy</a></nav>
+      <div>
+        <p>Based in St. John's, Newfoundland and Labrador. Working remotely with organizations across Canada.</p>
+        <p><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></p>
+      </div>
     </div>
+    <div class="wrap foot-base"><p>&copy; 2026 Draftera &middot; All prices in Canadian dollars.</p></div>
   </footer>
+  <!-- /section:site-footer -->
 </body>
 </html>

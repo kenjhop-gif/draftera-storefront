@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232 64" width="232" height="64" role="img" aria-labelledby="t">
+  <title id="t">Draftera</title>
+  <!-- Reversed wordmark for Green (#1D4F4A) or Ink (#141414) backgrounds. "Draft" Paper #FAFAF7 (8.85 on Green), "era" Mint #A9CFC4 (5.47 on Green, 10.89 on Ink).
+       Uses live text until General Sans is self-hosted; then outline the text to paths. -->
+  <text x="2" y="47" font-family="'General Sans', 'Helvetica Neue', Arial, sans-serif" font-size="48" letter-spacing="-1.9"><tspan font-weight="600" fill="#FAFAF7">Draft</tspan><tspan font-weight="400" fill="#A9CFC4">era</tspan></text>
+</svg>

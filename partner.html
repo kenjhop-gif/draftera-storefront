@@ -3,11 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Embedded AI Partner for nonprofits | Draftera</title>
+  <title>Draftera Embedded AI Partner for nonprofits | Draftera</title>
   <meta name="description" content="A senior operator embedded about 2 days a month or 1 day a week, building AI workflows and measuring results. From $2,500/month CAD.">
   <link rel="canonical" href="https://draftera.ca/partner.html">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <!-- shared:fonts - General Sans from the Fontshare CDN. TODO: self-host (see SITE.md). -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap">
+  <!-- /shared:fonts -->
+  <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <!-- Google Analytics (GA4). Ads features and Google signals disabled. -->
+  <!-- shared:analytics - Google Analytics (GA4). Ads features and Google signals disabled. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L787TEY7BD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,47 +21,60 @@
     gtag('js', new Date());
     gtag('config', 'G-L787TEY7BD', { allow_google_signals: false, allow_ad_personalization_signals: false });
   </script>
+  <!-- /shared:analytics -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="wordmark" href="/">Draftera</a>
-      <nav class="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/sprint.html">AI Quick Win Sprint</a></li>
-          <li><a href="/partner.html" aria-current="page">Embedded AI Partner</a></li>
-          <li><a href="/about.html">About Ken</a></li>
-          <li><a href="/coffee.html">Book an AI Coffee</a></li>
-        </ul>
-      </nav>
+  <!-- section:site-header (shared: identical on every page except aria-current) -->
+  <header class="site-header" id="site-header">
+    <div class="wrap nav">
+      <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+      <nav aria-label="Main"><a href="/sprint.html">Quick Win Sprint</a><a href="/partner.html" aria-current="page">Embedded AI Partner</a><a href="/about.html">About Ken</a></nav>
+      <a class="btn btn-primary btn-sm" href="/coffee.html">Book an AI Coffee</a>
     </div>
   </header>
+  <!-- /section:site-header -->
 
   <main id="main">
-    <section class="hero hero--text-only" aria-labelledby="page-title">
-      <div class="container">
+
+    <!-- section:partner-hero -->
+    <section class="hero" id="partner-hero">
+      <div class="wrap hero-grid">
         <div>
-          <h1 id="page-title">A senior operator on your team, focused on AI.</h1>
-          <p class="hero-lede">Ongoing, hands-on support to build workflows, train staff and keep measuring what is working.</p>
+          <p class="eyebrow">Draftera Embedded AI Partner</p>
+          <h1 class="h1-inner">A senior operator on your team, <em>focused on AI.</em></h1>
+          <p class="lede">Ongoing, hands-on support to build workflows, train staff and keep measuring what is working.</p>
+          <div class="actions"><a class="btn btn-primary btn-lg" href="/coffee.html">Book a 30-minute AI Coffee with Ken</a></div>
+        </div>
+        <aside class="price-card" aria-label="Embedded AI Partner at a glance">
+          <p class="pc-label">Core</p>
+          <p class="pc-price">$2,500 <small>CAD/month</small></p>
+          <p class="pc-label">Plus</p>
+          <p class="pc-price">$4,500 <small>CAD/month</small></p>
+          <ul><li>Core: about 2 days a month</li><li>Plus: about 1 day a week</li></ul>
+        </aside>
+      </div>
+    </section>
+    <!-- /section:partner-hero -->
+
+    <!-- section:partner-why -->
+    <section class="sec" id="partner-why" aria-labelledby="partner-why-title">
+      <div class="wrap split">
+        <div><p class="label">01</p><h2 id="partner-why-title">Why ongoing support</h2></div>
+        <div class="prose">
+          <p>One workflow is a good start. Real change comes from steady work over months. New tasks come up. Staff change. Tools change.</p>
+          <p class="callout">Most nonprofits can't hire a full-time AI lead. The Draftera Embedded AI Partner gives you that experience for a few days a month.</p>
         </div>
       </div>
     </section>
+    <!-- /section:partner-why -->
 
-    <section class="section section--alt" aria-labelledby="why-ongoing">
-      <div class="container prose">
-        <h2 id="why-ongoing" class="section-heading">Why ongoing support</h2>
-        <p>One workflow is a good start. Real change comes from steady work over months. New tasks come up. Staff change. Tools change.</p>
-        <p>Most nonprofits can't hire a full-time AI lead. An embedded partner gives you that experience for a few days a month.</p>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="what-i-do">
-      <div class="container prose">
-        <h2 id="what-i-do" class="section-heading">What I do as your embedded partner</h2>
-        <ul>
+    <!-- section:partner-does -->
+    <section class="sec" id="partner-does" aria-labelledby="partner-does-title">
+      <div class="wrap split">
+        <div><p class="label">02</p><h2 id="partner-does-title">What I do as your embedded partner</h2></div>
+        <ul class="checks">
           <li>Build new AI workflows as priorities come up.</li>
           <li>Improve the ones already running.</li>
           <li>Train new staff and refresh training for current staff.</li>
@@ -65,50 +84,64 @@
         </ul>
       </div>
     </section>
+    <!-- /section:partner-does -->
 
-    <section class="section section--alt" aria-labelledby="levels">
-      <div class="container">
-        <h2 id="levels" class="section-heading">Two levels</h2>
-        <div class="grid grid--2">
-          <div class="card">
+    <!-- section:partner-levels -->
+    <section class="sec" id="partner-levels" aria-labelledby="partner-levels-title">
+      <div class="wrap">
+        <div class="sec-head"><p class="label">03</p><h2 id="partner-levels-title">Two levels</h2></div>
+        <div class="price-grid price-grid--even">
+          <div class="panel panel-price" id="partner-core">
             <h3>Core</h3>
-            <p class="price">$2,500 CAD/month</p>
-            <p>About 2 days a month. Suits organizations that have finished a Sprint and want to keep building.</p>
+            <p class="price-big">$2,500 CAD/month.</p>
+            <p>About 2 days a month. Suits organizations that have finished the Draftera Quick Win Sprint and want to keep building.</p>
           </div>
-          <div class="card">
+          <div class="panel panel-raised" id="partner-plus">
             <h3>Plus</h3>
-            <p class="price">$4,500 CAD/month</p>
+            <p class="price-big">$4,500 CAD/month.</p>
             <p>About 1 day a week. Suits organizations with several teams or a larger change underway.</p>
           </div>
         </div>
-        <p class="prose mt-3">If you sign on within 30 days of a <a href="/sprint.html">Quick Win Sprint</a>, your Sprint fee is credited toward your first month.</p>
+        <p class="note">If you sign on for Core or Plus within 30 days of a Quick Win Sprint, your Sprint fee is credited toward your first month.</p>
       </div>
     </section>
+    <!-- /section:partner-levels -->
 
-    <section class="section" aria-labelledby="accountable">
-      <div class="container prose">
-        <h2 id="accountable" class="section-heading">Accountable for results</h2>
-        <p>I don't disappear after setup. Each month we review what was built, what was used and what it saved. If something is not earning its keep, we change it.</p>
+    <!-- section:partner-accountable -->
+    <section class="sec" id="partner-accountable" aria-labelledby="partner-accountable-title">
+      <div class="wrap split">
+        <div><p class="label">04</p><h2 id="partner-accountable-title">Accountable for results</h2></div>
+        <div class="prose"><p class="big">I don't disappear after setup. Each month we review what was built, what was used and what it saved. If something is not earning its keep, we change it.</p></div>
       </div>
     </section>
+    <!-- /section:partner-accountable -->
 
-    <section class="section section--alt cta" aria-labelledby="cta-heading">
-      <div class="container prose">
-        <h2 id="cta-heading">Book a 30-minute AI Coffee</h2>
+    <!-- section:cta-band (shared: same design on every page; the paragraph changes per page) -->
+    <section class="cta" id="cta-band" aria-labelledby="cta-band-title">
+      <div class="wrap"><div class="cta-inner">
+        <h2 id="cta-band-title">Book a 30&#8209;minute AI Coffee with Ken</h2>
         <p>The first step is a conversation. We talk about your organization and where the time goes. You leave with at least one idea you can use.</p>
-        <a class="button" href="/coffee.html">Book a 30-minute AI Coffee</a>
-      </div>
+        <a class="btn btn-primary btn-lg" href="/coffee.html">Book a 30-minute AI Coffee with Ken</a>
+      </div></div>
     </section>
+    <!-- /section:cta-band -->
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Draftera · Ken Hopkins · St. John's, Newfoundland and Labrador</p>
-      <ul>
-        <li><a href="/privacy.html">Privacy</a></li>
-        <li><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></li>
-      </ul>
+  <!-- section:site-footer (shared: identical on every page except aria-current) -->
+  <footer class="site-footer" id="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <a class="logo" href="/" aria-label="Draftera home"><svg class="wordmark" viewBox="0 0 232 64" width="130" height="36" aria-hidden="true" focusable="false"><text x="2" y="47" font-size="48" letter-spacing="-1.9"><tspan class="wm-draft" font-weight="600">Draft</tspan><tspan class="wm-era" font-weight="400">era</tspan></text></svg></a>
+        <p class="foot-tag">AI operations partner for Canadian nonprofits.</p>
+      </div>
+      <nav aria-label="Footer"><a href="/">Home</a><a href="/sprint.html">Draftera Quick Win Sprint</a><a href="/partner.html" aria-current="page">Draftera Embedded AI Partner</a><a href="/about.html">About Ken</a><a href="/coffee.html">Book an AI Coffee</a><a href="/privacy.html">Privacy</a></nav>
+      <div>
+        <p>Based in St. John's, Newfoundland and Labrador. Working remotely with organizations across Canada.</p>
+        <p><a href="mailto:hello@draftera.ca">hello@draftera.ca</a></p>
+      </div>
     </div>
+    <div class="wrap foot-base"><p>&copy; 2026 Draftera &middot; All prices in Canadian dollars.</p></div>
   </footer>
+  <!-- /section:site-footer -->
 </body>
 </html>

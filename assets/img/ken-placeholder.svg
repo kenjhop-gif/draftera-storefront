@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-labelledby="t">
-  <title id="t">Photo placeholder</title>
-  <rect width="400" height="500" fill="#f1ebe1"/>
-  <circle cx="200" cy="190" r="70" fill="#ddd4c6"/>
-  <path d="M80 430c10-80 60-120 120-120s110 40 120 120z" fill="#ddd4c6"/>
-  <text x="200" y="475" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#4b5a5e">Photo of Ken to come</text>
-</svg>
