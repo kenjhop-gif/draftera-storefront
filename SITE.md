@@ -53,9 +53,10 @@ Numbered sections show a small green number (`<p class="label">01</p>`). If you 
 | --- | --- | --- |
 | Fonts link | `<!-- shared:fonts -->` in `<head>` | Fontshare stylesheet for General Sans |
 | Analytics | `<!-- shared:analytics -->` in `<head>` | Google Analytics GA4 `G-L787TEY7BD`, Google signals and ad personalization off. Must stay on every page. |
-| Header | `section:site-header` | Wordmark, nav (AI Foundations, Embedded AI Partnership, About Ken), "Book an AI Coffee" button. Only `aria-current="page"` differs per page. Under 900px the nav drops to a second row. |
-| CTA band | `section:cta-band` | Green block, heading "Book a 30-minute AI Coffee with Ken", one paragraph that differs per page, button to `/coffee.html`. On `coffee.html` the band has id `book` and holds the booking embed instead of a button. On `index.html` it also contains `<span id="contact">` so old `#contact` links still land. |
-| Footer | `section:site-footer` | Wordmark, tagline, links to all pages including Privacy, location, hello@draftera.ca, copyright. Only `aria-current` differs. |
+| Header | `section:site-header` | Wordmark, nav (AI Foundations, Embedded AI Partnership, About Ken), "Book a conversation" button (to `/conversation.html`). Only `aria-current="page"` differs per page. Under 900px the nav drops to a second row. |
+| CTA band | `section:cta-band` | Green block, heading "Book a 30-minute conversation with Ken", one paragraph that differs per page, button to `/conversation.html`, then the email backup line. On `conversation.html` the band has id `book` and its button is the booking action (see to-do 1). On `index.html` it also contains `<span id="contact">` so old `#contact` links still land. |
+| Email backup line | `<p class="email-alt">` | "Prefer email? Write to hello@draftera.ca." (mailto link) directly under every "Book a 30-minute conversation with Ken" button: hero CTAs and every CTA band. Small secondary text; never a second button. Not in the header. |
+| Footer | `section:site-footer` | Wordmark, tagline, links to all pages including Privacy ("Book a conversation"), location, hello@draftera.ca, copyright. Only `aria-current` differs. |
 
 Each page also has its own `<title>`, meta description and canonical link in `<head>`, from `brand/website-copy.md`.
 
@@ -73,7 +74,7 @@ Copy locations refer to headings in `brand/website-copy.md`.
 | `home-ladder` | 03: offer staircase, five steps; Foundations Engagement step in solid Green | Home > "How we can work together" |
 | `home-foundations` | 04: the three Foundations Engagement weeks with giant numerals, link to the AI Foundations page | AI Foundations > How it works (headline from AI Foundations > Headline) |
 | `home-story` | 05: Stone block, "Why I do this", pull quote, proof numbers | Home > "Why I do this" (numbers are from Ken's proof points in `CLAUDE.md`) |
-| `cta-band` | Shared CTA | Home > "Book a 30-minute AI Coffee with Ken" |
+| `cta-band` | Shared CTA | Home > "Book a 30-minute conversation with Ken" |
 
 ### Draftera AI Foundations Engagement: `foundations.html`
 
@@ -86,7 +87,7 @@ Copy locations refer to headings in `brand/website-copy.md`.
 | `foundations-example` | 04: illustrative example in a Mist panel | AI Foundations > An example... |
 | `foundations-data` | 05: data protection statement | AI Foundations > Your data stays protected |
 | `foundations-price` | 06: price panel (Stone) and founding client offer panel (Ink, id `foundations-founding-offer`) | AI Foundations > Price, Founding client offer |
-| `cta-band` | Shared CTA | AI Foundations > Book a 30-minute AI Coffee with Ken |
+| `cta-band` | Shared CTA | AI Foundations > Book a 30-minute conversation with Ken |
 
 ### Draftera Embedded AI Partnership: `partnership.html`
 
@@ -97,7 +98,7 @@ Copy locations refer to headings in `brand/website-copy.md`.
 | `partnership-does` | 02: what I do, numbered rows | Embedded AI Partnership > What I do as your embedded AI partner |
 | `partnership-levels` | 03: Core (id `partnership-core`) and Plus (id `partnership-plus`) panels, engagement fee credit note | Embedded AI Partnership > Two levels |
 | `partnership-accountable` | 04: accountable for results | Embedded AI Partnership > Accountable for results |
-| `cta-band` | Shared CTA | Embedded AI Partnership > Book a 30-minute AI Coffee with Ken |
+| `cta-band` | Shared CTA | Embedded AI Partnership > Book a 30-minute conversation with Ken |
 
 ### About Ken: `about.html`
 
@@ -109,16 +110,19 @@ Copy locations refer to headings in `brand/website-copy.md`.
 | `about-why` | 03: why AI, why nonprofits | About > Why AI, and why nonprofits |
 | `about-credentials` | 04: credentials, numbered rows | About > Credentials |
 | `about-where` | 05: where I work | About > Where I work |
-| `cta-band` | Shared CTA | About > Book a 30-minute AI Coffee with Ken |
+| `cta-band` | Shared CTA | About > Book a 30-minute conversation with Ken |
 
-### Book an AI Coffee: `coffee.html`
+### Book a conversation: `conversation.html`
+
+The free first step is the **Introductory Conversation** (30 minutes, Google Meet, booked through Google Calendar appointment schedules, email as backup).
 
 | Section id | Purpose | Copy |
 | --- | --- | --- |
-| `coffee-hero` | Headline, subhead, button that jumps to `#book` | Coffee > Headline, Subhead |
-| `coffee-talk` | 01: what we'll talk about, numbered rows | Coffee > What we'll talk about |
-| `coffee-details` | Rows: leave with (`coffee-leave-with`), what it isn't (`coffee-what-it-isnt`), who it's for (`coffee-who`), before we meet (`coffee-before`) | Coffee > the matching headings |
-| `book` (marker `cta-band`) | Green band with the booking embed placeholder (`booking-embed`) and email line | Coffee > Book a 30-minute AI Coffee with Ken |
+| `conversation-hero` | Eyebrow, headline, subhead, button that jumps to `#book`, email line | Book a conversation > Headline, Subhead |
+| `conversation-how` | 01: how it works | Book a conversation > How it works |
+| `conversation-talk` | 02: what we'll talk about, numbered rows | Book a conversation > What we'll talk about |
+| `conversation-details` | Rows: leave with (`conversation-leave-with`), what it isn't (`conversation-what-it-isnt`), who it's for (`conversation-who`), before we meet (`conversation-before`) | Book a conversation > the matching headings |
+| `book` (marker `cta-band`) | Green band. For now the button is `mailto:hello@draftera.ca?subject=Introductory%20conversation`, labelled "Email to book a time", then the email line. A `BOOKING LINK GOES HERE` comment holds the swap-in markup | Book a conversation > Book a 30-minute conversation with Ken |
 
 ### Privacy: `privacy.html`
 
@@ -149,10 +153,10 @@ GitHub Pages serves this for missing URLs. It uses root paths (`/assets/...`) so
 
 ## Open to-dos
 
-1. **Booking embed.** `coffee.html`, `#booking-embed` still shows `[COPY: booking tool embed or link goes here]`. When Ken picks a tool, replace that block with its inline embed (give the iframe a `title`) and name the tool in `privacy.html` (`privacy-where`).
+1. **Booking link.** Waiting for Ken's Google Calendar appointment schedule URL. In `conversation.html`, `#book`, follow the `BOOKING LINK GOES HERE` comment: add the "Pick a time..." paragraph, point the button at the booking page with the label "Book a 30-minute conversation with Ken", and optionally add the inline embed (`.booking-embed` iframe: full width, min-height 600px, has a `title`). Nothing else changes; the other pages already link to `/conversation.html`. Privacy already names Google Calendar and Google Meet.
 2. **Ken's photo.** Save it as `assets/img/ken.jpg` (portrait, 4:5, at least 800 x 1000). Then in `index.html` (`home-hero`) and `about.html` (`about-hero`), replace the placeholder `<figure>` with the `<img>` line given in the comment right above it.
 3. **Self-host General Sans.** Follow "Self-hosting General Sans" in `brand/design-system.md`: put the WOFF2 files in `website/fonts/`, move the commented `@font-face` block in `assets/css/tokens.css` into use, remove the `shared:fonts` Fontshare links from all 7 pages, and preload the 600 weight. This also removes a third-party request (see privacy item 4).
-4. **Privacy details.** Ken to set the "Last updated" date, name the booking tool and email provider, confirm retention periods, and while fonts come from Fontshare, either self-host them or list Fontshare in the notice.
+4. **Privacy details.** Ken to set the "Last updated" date, name the email provider, confirm retention periods, and while fonts come from Fontshare, either self-host them or list Fontshare in the notice.
 5. **Wordmark outlines.** Once fonts are self-hosted, outline the wordmark SVGs (designer) and add a PNG favicon / Apple touch icon for older browsers.
 6. **Foundations example.** `foundations-example` is illustrative; replace with a real case study once a founding client approves one (a `[TODO` comment marks the spot).
 7. **Open copy questions** are listed under "Needs Ken" in `brand/website-copy.md`.

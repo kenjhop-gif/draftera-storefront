@@ -276,12 +276,19 @@ blockquote::before { content: ""; display: block; width: 40px; height: 4px; bord
 .cta a:not(.btn) { color: var(--on-accent); }
 .cta .btn-primary { background: var(--bg); color: var(--accent); margin-top: 12px; }
 .cta .btn-primary:hover { background: var(--surface-raised); }
+/* Google Calendar appointment schedule embed (conversation.html, when added): full width, responsive */
 .booking-embed {
-  margin-top: var(--space-6); background: var(--bg); color: var(--text-muted);
-  border-radius: var(--radius-card); padding: var(--space-7) var(--space-5);
-  min-height: 240px; display: flex; align-items: center; justify-content: center; text-align: center;
+  margin-top: var(--space-6); background: var(--bg);
+  border-radius: var(--radius-card); overflow: hidden; width: 100%;
 }
-.booking-embed p { color: var(--text-muted); margin: 0; font-size: var(--text-small); }
+.booking-embed iframe { display: block; width: 100%; min-height: 600px; border: 0; }
+
+/* Email backup line under every call to action (small, secondary) */
+.email-alt { font-size: var(--text-small); color: var(--text-muted); margin: 14px 0 0; }
+.email-alt a { color: var(--text); }
+.hero-row .actions .email-alt { margin: 0; }
+.cta .email-alt { font-size: var(--text-small); color: var(--on-accent-muted); margin-top: 20px; }
+.cta .email-alt a { color: var(--on-accent); }
 
 /* ============ Footer (shared) ============ */
 .site-footer { border-top: var(--rule-section); }
