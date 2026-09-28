@@ -351,3 +351,7 @@ blockquote::before { content: ""; display: block; width: 40px; height: 4px; bord
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Photo placeholders stay hidden until assets/img/ken.jpg exists; collapse the About hero to one column meanwhile */
+.portrait[hidden] { display: none; }
+.hero-grid:has(> .portrait[hidden]) { grid-template-columns: 1fr; }
