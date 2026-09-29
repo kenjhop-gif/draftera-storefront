@@ -114,7 +114,7 @@ Copy locations refer to headings in `brand/website-copy.md`.
 
 ### Book a conversation: `conversation.html`
 
-The free first step is the **Introductory Conversation** (30 minutes, Google Meet, booked through Google Calendar appointment schedules, email as backup).
+The free first step is the **Introductory Conversation** (30 minutes, Google Meet, booked through Calendly at https://calendly.com/hello-draftera/30min, email as backup).
 
 | Section id | Purpose | Copy |
 | --- | --- | --- |
@@ -122,7 +122,7 @@ The free first step is the **Introductory Conversation** (30 minutes, Google Mee
 | `conversation-how` | 01: how it works | Book a conversation > How it works |
 | `conversation-talk` | 02: what we'll talk about, numbered rows | Book a conversation > What we'll talk about |
 | `conversation-details` | Rows: leave with (`conversation-leave-with`), what it isn't (`conversation-what-it-isnt`), who it's for (`conversation-who`), before we meet (`conversation-before`) | Book a conversation > the matching headings |
-| `book` (marker `cta-band`) | Green band. For now the button is `mailto:hello@draftera.ca?subject=Introductory%20conversation`, labelled "Email to book a time", then the email line. A `BOOKING LINK GOES HERE` comment holds the swap-in markup | Book a conversation > Book a 30-minute conversation with Ken |
+| `book` (marker `cta-band`) | Green band. Paragraph, button to the Calendly booking page, inline Calendly iframe (`.booking-embed`, 700px tall, 1000px under 640px wide), then the email line | Book a conversation > Book a 30-minute conversation with Ken |
 
 ### Privacy: `privacy.html`
 
@@ -153,7 +153,7 @@ GitHub Pages serves this for missing URLs. It uses root paths (`/assets/...`) so
 
 ## Open to-dos
 
-1. **Booking link.** Waiting for Ken's Google Calendar appointment schedule URL. In `conversation.html`, `#book`, follow the `BOOKING LINK GOES HERE` comment: add the "Pick a time..." paragraph, point the button at the booking page with the label "Book a 30-minute conversation with Ken", and optionally add the inline embed (`.booking-embed` iframe: full width, min-height 600px, has a `title`). Nothing else changes; the other pages already link to `/conversation.html`. Privacy already names Google Calendar and Google Meet.
+1. (Done 2026-09-29) **Booking link.** Calendly button and inline embed in `conversation.html` `#book`; privacy notice names Calendly.
 2. **Ken's photo.** Save it as `assets/img/ken.jpg` (portrait, 4:5, at least 800 x 1000). Then in `index.html` (`home-hero`) and `about.html` (`about-hero`), replace the placeholder `<figure>` with the `<img>` line given in the comment right above it.
 3. **Self-host General Sans.** Follow "Self-hosting General Sans" in `brand/design-system.md`: put the WOFF2 files in `website/fonts/`, move the commented `@font-face` block in `assets/css/tokens.css` into use, remove the `shared:fonts` Fontshare links from all 7 pages, and preload the 600 weight. This also removes a third-party request (see privacy item 4).
 4. **Privacy details.** Ken to set the "Last updated" date, name the email provider, confirm retention periods, and while fonts come from Fontshare, either self-host them or list Fontshare in the notice.

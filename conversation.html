@@ -87,28 +87,16 @@
     </section>
     <!-- /section:conversation-details -->
 
-    <!-- section:cta-band (shared: same design on every page; on this page it holds the booking button and, later, the booking embed) -->
+    <!-- section:cta-band (shared: same design on every page; on this page it holds the booking button and the Calendly booking embed) -->
     <section class="cta" id="book" aria-labelledby="cta-band-title">
       <div class="wrap"><div class="cta-inner">
         <h2 id="cta-band-title">Book a 30&#8209;minute conversation with Ken</h2>
-        <!-- BOOKING LINK GOES HERE (Ken): Google Calendar appointment schedule.
-             Until the booking page exists, the button below opens an email to hello@draftera.ca.
-             When Ken sends the booking page URL (https://calendar.app.google/... or
-             https://calendar.google.com/calendar/appointments/schedules/...):
-             1. Replace the interim paragraph above the button with (brand/copy/conversation.md, "Later"):
-                <p>Choose a time that suits you on my booking page, and you'll receive a calendar invitation with the Google Meet link.</p>
-             2. Change the button to:
-                <a class="btn btn-primary btn-lg" href="BOOKING_PAGE_URL">Book a 30-minute conversation with Ken</a>
-             3. Optional inline embed, placed after the button (Google Calendar > appointment schedule >
-                Share > Website embed > Inline schedule; use the ?gv=true URL it gives). Full width,
-                min-height 600px and responsive via .booking-embed in site.css:
-                <div class="booking-embed" id="booking-embed">
-                  <iframe src="https://calendar.google.com/calendar/appointments/schedules/SCHEDULE_ID?gv=true"
-                          title="Book a 30-minute conversation with Ken Hopkins" loading="lazy"></iframe>
-                </div>
-             Keep the "Prefer email?" line below. -->
-        <p>Send me a short note with two or three times that suit you, and I'll reply with a Google Meet invitation.</p>
-        <a class="btn btn-primary btn-lg" href="mailto:hello@draftera.ca?subject=Introductory%20conversation">Email to book a time</a>
+        <!-- Booking: Calendly (hello@draftera.ca account), event "30min". To change the booking page, update both URLs below. -->
+        <p>Choose a time that suits you below, and you&rsquo;ll receive a calendar invitation with the Google Meet link.</p>
+        <a class="btn btn-primary btn-lg" href="https://calendly.com/hello-draftera/30min">Book a 30-minute conversation with Ken</a>
+        <div class="booking-embed" id="booking-embed">
+          <iframe src="https://calendly.com/hello-draftera/30min?embed_domain=draftera.ca&amp;embed_type=Inline&amp;hide_gdpr_banner=1" title="Book a 30-minute conversation with Ken Hopkins" loading="lazy"></iframe>
+        </div>
         <p class="email-alt">Prefer email? Write to <a href="mailto:hello@draftera.ca">hello@draftera.ca</a>.</p>
       </div></div>
     </section>
