@@ -123,7 +123,7 @@ h3 { font-size: var(--text-h3); font-weight: var(--weight-semibold); letter-spac
 .hero-grid { display: grid; grid-template-columns: 8fr 4fr; gap: clamp(32px, 5vw, 80px); align-items: end; }
 .hero-grid--top { align-items: start; }
 
-/* Portraits. Placeholder figure now; swap for <img class="portrait ..." src="/assets/img/ken.jpg"> later. */
+/* Portraits: ken.jpg (About, 800x1000) and ken-mini.jpg (Home, 2x of 88x108). */
 .portrait {
   margin: 0; background: var(--surface); color: var(--text-muted);
   border: var(--rule-hair); object-fit: cover;
@@ -133,7 +133,7 @@ h3 { font-size: var(--text-h3); font-weight: var(--weight-semibold); letter-spac
 .portrait-mini { flex: none; width: var(--portrait-mini-w); height: var(--portrait-mini-h); border-radius: var(--radius-card); }
 .portrait-mini svg { width: 34px; height: 34px; opacity: 0.7; }
 .portrait-mini figcaption { font-size: 11px; line-height: 1.2; }
-.portrait-about { width: 100%; aspect-ratio: 4 / 5; border-radius: var(--radius-frame); border: 0; }
+.portrait-about { width: 100%; height: auto; aspect-ratio: 4 / 5; border-radius: var(--radius-frame); border: 0; }
 .portrait-about svg { width: 56px; height: 56px; opacity: 0.7; margin-bottom: 6px; }
 .portrait-about b { font-size: var(--text-small); font-weight: var(--weight-semibold); }
 .portrait-about small { font-size: var(--text-label); }
