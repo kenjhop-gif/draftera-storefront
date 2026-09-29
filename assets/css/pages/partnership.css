@@ -1,0 +1,67 @@
+/* partnership.html only: comparison table, bullet lists, FAQ, delivery strip.
+   Loaded after site.css. Colours come from tokens only. */
+
+.pt-intro { max-width: var(--measure); color: var(--text-muted); font-size: var(--text-lede); line-height: 1.5; margin: 0 0 var(--space-5); }
+.split .pt-intro { margin-bottom: var(--space-4); }
+
+/* Bulleted lists inside prose */
+.pt-list { padding-left: 1.2em; max-width: var(--measure); margin: var(--space-3) 0 var(--space-4); }
+.pt-list li { margin-bottom: var(--space-2); padding-left: 0.2em; }
+.pt-list li::marker { color: var(--accent); }
+.pt-sub { font-size: var(--text-h3); margin-top: var(--space-6); }
+
+/* Terms rows reuse .gets; slightly smaller headings */
+.pt-terms h3 { font-size: clamp(22px, 2vw, 28px); }
+
+/* Core vs Plus comparison */
+.compare-wrap { margin-top: var(--space-2); }
+.compare { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.compare caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.compare th, .compare td { text-align: left; vertical-align: top; padding: 20px 24px; border-top: var(--rule-hair); }
+.compare thead th { border-top: 0; padding-top: 28px; padding-bottom: 24px; }
+.compare thead th:first-child { width: 28%; }
+.compare .col-core { background: var(--surface); }
+.compare .col-plus { background: var(--surface-raised); border-left: var(--rule-hair); border-right: var(--rule-hair); }
+.compare thead .col-core { border-radius: var(--radius-block) var(--radius-block) 0 0; }
+.compare thead .col-plus { border-top: var(--rule-hair); border-radius: var(--radius-block) var(--radius-block) 0 0; }
+.compare tbody tr:last-child .col-core { border-radius: 0 0 var(--radius-block) var(--radius-block); }
+.compare tbody tr:last-child .col-plus { border-bottom: var(--rule-hair); border-radius: 0 0 var(--radius-block) var(--radius-block); }
+.compare .plan { display: block; font-size: clamp(28px, 3vw, 42px); font-weight: var(--weight-medium); letter-spacing: var(--tracking-heading); line-height: 1.05; }
+.compare tbody th { font-size: var(--text-small); font-weight: var(--weight-semibold); color: var(--text-muted); padding-left: 0; }
+.compare td { font-size: 17px; }
+.compare .fee { font-size: clamp(22px, 2vw, 28px); font-weight: var(--weight-medium); letter-spacing: -0.03em; line-height: 1.2; }
+
+/* Mobile: each level becomes readable rows; roles on the markup keep table semantics */
+@media (max-width: 720px) {
+  .compare, .compare thead, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: auto; }
+  .compare thead { display: none; }
+  .compare tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 var(--space-2); padding: 18px 0; border-top: var(--rule-hair); }
+  .compare tbody tr:first-child { border-top: 0; }
+  .compare tbody th { grid-column: 1 / -1; padding: 0 0 10px; border: 0; }
+  .compare td { padding: 14px; border: 0; border-radius: var(--radius-card); min-width: 0; overflow-wrap: anywhere; font-size: 16px; }
+  .compare td::before { content: attr(data-label); display: block; font-size: 14px; font-weight: var(--weight-semibold); color: var(--accent); margin-bottom: 4px; }
+  .compare .col-plus, .compare tbody tr:last-child .col-plus { border: var(--rule-hair); border-radius: var(--radius-card); }
+  .compare tbody tr:last-child .col-core { border-radius: var(--radius-card); }
+  .compare .fee { font-size: 20px; }
+}
+
+/* Monthly rhythm: flow steps with text, no top margin from the section head */
+.pt-flow { margin-top: 0; }
+
+/* FAQ */
+.faq { border-top: var(--rule-hair); }
+.faq details { border-bottom: var(--rule-hair); }
+.faq summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: var(--space-4);
+  padding: 24px 0; font-size: clamp(20px, 1.8vw, 24px); font-weight: var(--weight-medium); letter-spacing: -0.02em; line-height: 1.3;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex: none; color: var(--accent); font-weight: var(--weight-semibold); font-size: 1.2em; line-height: 1; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq summary:hover { color: var(--accent); }
+.faq details p { margin: 0 0 24px; max-width: var(--measure); color: var(--text-muted); }
+
+/* Delivery strip above the CTA band */
+.pt-who { padding: 0 0 var(--section-y); }
+.pt-who p { margin: 0; font-size: var(--text-lede); max-width: 48em; }
+.pt-who a { color: var(--accent); font-weight: var(--weight-medium); }

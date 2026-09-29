@@ -1,0 +1,31 @@
+/* AI Foundations page only. Loaded after site.css. Colours come from tokens only. */
+
+/* Delivered-by line under the hero price card */
+.delivered-by { margin-top: var(--space-4); margin-bottom: 0; }
+.delivered-by a { color: var(--text); text-decoration-color: var(--accent); text-underline-offset: 4px; white-space: nowrap; }
+
+/* Lede placed in the right-hand column of a split section */
+.split .lede { margin-bottom: var(--space-6); }
+
+/* Numbered rows that carry a full sentence: smaller than the default checks size */
+.checks--text li { font-size: clamp(19px, 1.7vw, 23px); line-height: 1.35; letter-spacing: -0.015em; }
+.checks--text strong { font-weight: var(--weight-semibold); }
+
+/* FAQ: native details/summary rows on hairlines */
+.faq { border-bottom: var(--rule-hair); }
+.faq details { border-top: var(--rule-hair); }
+.faq summary {
+  display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-5);
+  padding: var(--space-5) 0; cursor: pointer; list-style: none;
+  font-size: clamp(20px, 1.9vw, 26px); font-weight: var(--weight-medium);
+  letter-spacing: -0.02em; line-height: 1.25;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; flex: none; font-size: 1.2em; line-height: 1; font-weight: var(--weight-regular);
+  color: var(--accent);
+}
+.faq details[open] > summary::after { content: "\2212"; }
+.faq summary:hover { color: var(--accent); }
+.faq .faq-answer { padding: 0 0 var(--space-5); max-width: var(--measure); }
+.faq .faq-answer p { color: var(--text-muted); margin: 0; }

@@ -1,0 +1,14 @@
+/* About page only. Loaded after site.css. Colours use tokens only. */
+
+/* Section eyebrows sit between the number label and the heading */
+.split .eyebrow { margin-bottom: var(--space-4); }
+
+/* Lede above a list inside a split column */
+.prose > p + .gets,
+.prose > p + .checks { margin-top: var(--space-6); }
+
+/* Run-in rows: bold lead-in phrase flows into the sentence */
+.gets--runin li { display: block; padding: 22px 0; }
+.gets--runin li:first-child { border-top: 0; padding-top: 0; }
+.gets--runin p { max-width: var(--measure); }
+.gets--runin strong { color: var(--text); font-weight: var(--weight-semibold); }
