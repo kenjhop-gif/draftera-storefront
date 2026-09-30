@@ -100,14 +100,14 @@ Exact wording lives in the HTML. `brand/copy/<page>.md` is generated from it by 
 | Section id | Label | Purpose |
 | --- | --- | --- |
 | `partnership-hero` | | "An ongoing partner for AI and operations", lede, booking button, price card (Core, Plus, three-month minimum, scope lines) |
-| `partnership-why` | 01 | Why ongoing support matters; callout names implementation, adoption, maintenance, operational judgment |
-| `partnership-does` | 02 | Five monthly responsibilities: implementation, adoption, maintenance, operational judgment, reporting |
+| `partnership-why` | 01 | Why ongoing support matters; callout names implementation, adoption, maintenance, operational advice |
+| `partnership-does` | 02 | Five areas of support: implementation, adoption, maintenance, operational advice, reporting |
 | `partnership-levels` | 03 | Core vs Plus table (`compare`, column ids `partnership-core`, `partnership-plus`): fee, scope, typical time as a guide, minimum term, suited to, review, quarterly report; credit note |
 | `partnership-rhythm` | 04 | Monthly rhythm: review, build, train, report |
 | `partnership-first-quarter` | 05 | Illustrative first three months (`pt-flow--three`) |
 | `partnership-operations` | 06 | Stone block: operational challenges beyond AI, same four examples as Home; can be a monthly priority or a fixed-fee project |
 | `partnership-accountable` | 07 | Accountable for results; what the quarterly board report covers |
-| `partnership-terms` | 08 | Minimum term, after that, Foundations credit, prices and taxes |
+| `partnership-terms` | 08 | Minimum term, after that, Foundations credit (sign within 30 days, full fee paid credited, any excess carries to later months, no refunds), prices and taxes |
 | `partnership-fit` | 09 | Who the Partnership is for |
 | `partnership-faq` | 10 | Common questions |
 | `partnership-who` | | One line: who delivers the work, link to About |
@@ -134,7 +134,7 @@ The free first step is the **Introductory Conversation** (30 minutes, Google Mee
 | --- | --- | --- |
 | `conversation-hero` | | Headline, lede, button to `#booking-embed`, email line |
 | `conversation-how` | 01 | How the call works |
-| `conversation-talk` | 02 | What we'll talk about |
+| `conversation-talk` | 02 | What we'll talk about (no eyebrow) |
 | `conversation-details` | | Rows: leave with (`conversation-leave-with`), what to expect (`conversation-what-to-expect`), who it's for (`conversation-who`), before we meet (`conversation-before`) |
 | `book` (marker `cta-band`) | | Green band: paragraph, inline Calendly iframe (`.booking-embed`, 700px tall, 1000px under 640px wide), then "Calendar not loading?" fallback link to Calendly and the email line |
 
