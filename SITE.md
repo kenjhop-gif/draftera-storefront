@@ -31,7 +31,7 @@ Then open http://localhost:8000/. Links and assets use root paths (`/assets/...`
 - Logo: `assets/img/wordmark.svg` (light backgrounds) and `assets/img/wordmark-reversed.svg` (Green or Ink backgrounds), copied from `brand/logo/`. In the header and footer the wordmark is inlined as `<svg class="wordmark">` so it renders in General Sans; its colours come from CSS (`.wm-draft`, `.wm-era`).
 - Favicon: `assets/img/favicon.svg` (a Paper "D" on Green, drawn as a path).
 - Design reference: `brand/design-system.md` and `brand/directions/final/` (`index-portrait.html`, `about.html` and the offer-page direction).
-- Copy source: `brand/website-copy.md`. Change the words there first (brand-writer), then here.
+- Copy source: the HTML itself is the source of truth for wording. `brand/copy/<page>.md` is generated from it (`python .claude/skills/edit-site/export_copy.py`, run from the project root after every change). `brand/website-copy.md` is retired.
 
 ## Section markers
 
@@ -58,7 +58,7 @@ Numbered sections show a small green number (`<p class="label">01</p>`). If you 
 | Email backup line | `<p class="email-alt">` | "Prefer email? Write to hello@draftera.ca." (mailto link) directly under every "Book a 30-minute conversation with Ken" button: hero CTAs and every CTA band. Small secondary text; never a second button. Not in the header. |
 | Footer | `section:site-footer` | Wordmark, tagline, links to all pages including Privacy ("Book a conversation"), location, hello@draftera.ca, copyright. Only `aria-current` differs. |
 
-Each page also has its own `<title>`, meta description and canonical link in `<head>`, from `brand/website-copy.md`.
+Each page also has its own `<title>`, meta description and canonical link in `<head>`.
 
 ## Pages and sections
 
@@ -140,7 +140,7 @@ The free first step is the **Introductory Conversation** (30 minutes, Google Mee
 
 ### Privacy: `privacy.html`
 
-Draft notice written for this site; Ken to review (not legal advice). Its words live in the page itself, not in `brand/website-copy.md`.
+Draft notice written for this site; Ken to review (not legal advice). Its words live in the page itself.
 
 | Section id | Purpose |
 | --- | --- |
@@ -177,8 +177,8 @@ GitHub Pages serves this for missing URLs. It uses root paths (`/assets/...`) so
 
 ## Example edit requests
 
-- "Change the Foundations Engagement price to $3,000 for one workflow." Update `brand/website-copy.md` and `CLAUDE.md`, then `foundations-hero` price card, `foundations-price`, the `foundations.html` meta description, and step 04 in `home-ladder`.
-- "Make the Home headline shorter." `index.html`, `home-hero` h1 (keep the `<em>` highlight), plus `brand/website-copy.md`.
+- "Change the Foundations Engagement price to $3,000 for one workflow." Update `CLAUDE.md`, then `foundations-hero` price card, `foundations-price`, the `foundations.html` meta description, and step 04 in `home-ladder`.
+- "Make the Home headline shorter." `index.html`, `home-hero` h1 (keep the `<em>` highlight), then regenerate `brand/copy/`.
 - "Add an FAQ to the AI Foundations page." New section `foundations-faq` before `cta-band`, numbered 07, using `checks` or `gets` rows.
 - "Use a lighter green." Designer changes `--color-green` (and checks contrast) in `brand/tokens.css`; copy the change into `assets/css/tokens.css`.
 - "Change the CTA band text on About." `about.html`, `section:cta-band`, the paragraph only.
