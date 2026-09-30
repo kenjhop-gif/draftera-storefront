@@ -65,10 +65,9 @@ h3 { font-size: var(--text-h3); font-weight: var(--weight-semibold); letter-spac
 .nav nav a { text-decoration: none; font-size: 16px; font-weight: var(--weight-medium); }
 .nav nav a:hover, .nav nav a[aria-current] { text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--accent); }
 
-/* Wordmark: inline SVG so it uses the page's General Sans (see assets/img/wordmark.svg) */
+/* Wordmark: inline SVG with outlined paths (no font needed); colours come from these classes. Standalone files in assets/img/ */
 .logo { display: inline-flex; align-items: center; text-decoration: none; }
 .wordmark { height: var(--wordmark-height); width: auto; }
-.wordmark text { font-family: var(--font-sans); }
 .wordmark .wm-draft { fill: var(--text); }
 .wordmark .wm-era { fill: var(--accent); }
 

@@ -23,13 +23,13 @@ Then open http://localhost:8000/. Links and assets use root paths (`/assets/...`
 
 ## How the site is built
 
-- Plain HTML and CSS. No build step and no JavaScript apart from the Google Analytics snippet.
+- Plain HTML and CSS. No build step and no JavaScript apart from the Google Analytics snippet (the `application/ld+json` blocks are data, not scripts).
 - `_config.yml` only tells GitHub Pages not to publish this file (`SITE.md`). Add any other internal notes to its `exclude` list.
 - `assets/css/tokens.css`: design tokens (colours, type, spacing, radii, rules), copied from `brand/tokens.css`. The bottom block, "Site additions", holds a few values the brand file doesn't name yet.
 - `assets/css/site.css`: all layout and components. It uses only `var(--...)` tokens for colours. Never hard-code a colour in it; add or change a token instead.
-- Font: General Sans, loaded from the Fontshare CDN (see to-dos).
-- Logo: `assets/img/wordmark.svg` (light backgrounds) and `assets/img/wordmark-reversed.svg` (Green or Ink backgrounds), copied from `brand/logo/`. In the header and footer the wordmark is inlined as `<svg class="wordmark">` so it renders in General Sans; its colours come from CSS (`.wm-draft`, `.wm-era`).
-- Favicon: `assets/img/favicon.svg` (a Paper "D" on Green, drawn as a path).
+- Font: General Sans, loaded from the Fontshare CDN. Decided 2026-09-30 to keep it there: the ITF Free Font Licence allows self-hosting for your own site but forbids making the files available through a publicly accessible repository, and this GitHub Pages repo is public. Fontshare stays listed in the privacy notice.
+- Logo: `assets/img/wordmark.svg` (light backgrounds) and `assets/img/wordmark-reversed.svg` (Green or Ink backgrounds), copied from `brand/logo/`. All are outlined paths (no font needed), generated 2026-09-30 from General Sans with kerning. In the header and footer the wordmark is inlined as `<svg class="wordmark">` with two paths; their colours come from CSS (`.wm-draft`, `.wm-era`).
+- Favicon: `assets/img/favicon.svg` (a Paper "D" on Green, drawn as a path), plus `favicon-32.png` (older browsers) and `apple-touch-icon.png` (180px, full-bleed Green; also used as the link-preview and schema.org image).
 - Design reference: `brand/design-system.md` and `brand/directions/final/` (`index-portrait.html`, `about.html` and the offer-page direction).
 - Copy source: the HTML itself is the source of truth for wording. `brand/copy/<page>.md` is generated from it (`python .claude/skills/edit-site/export_copy.py`, run from the project root after every change). `brand/website-copy.md` is retired.
 
@@ -53,6 +53,7 @@ Numbered sections show a small green number (`<p class="label">01</p>`). If you 
 | --- | --- | --- |
 | Fonts link | `<!-- shared:fonts -->` in `<head>` | Fontshare stylesheet for General Sans |
 | Analytics | `<!-- shared:analytics -->` in `<head>` | Google Analytics GA4 `G-L787TEY7BD`, Google signals and ad personalization off. Must stay on every page. |
+| Machine-readable data | `<!-- shared:machine -->` in `<head>` | PNG icon links, Open Graph tags and schema.org JSON-LD (Draftera as ProfessionalService on Home, Ken as Person on About, each offer as a Service with CAD prices, FAQPage from each page's `<details>`). Generated; never edit by hand. Run `python .claude/skills/edit-site/machine_data.py` from the project root after any change (prices are hard-coded in that script). No JSON-LD on Privacy or 404. |
 | Header | `section:site-header` | Wordmark, nav (AI Foundations, Embedded AI Partnership, About Ken), "Book a conversation" button (to `/conversation.html`). Only `aria-current="page"` differs per page. Under 900px the nav drops to a second row. |
 | CTA band | `section:cta-band` | Green block, heading "Book a 30-minute conversation with Ken", one paragraph that differs per page, button to `/conversation.html#booking-embed` (lands straight on the Calendly calendar; every booking button on the site, including the header button, uses this link), then the email backup line. On `conversation.html` the band has id `book` and its button is the booking action (see to-do 1). On `index.html` it also contains `<span id="contact">` so old `#contact` links still land. |
 | Email backup line | `<p class="email-alt">` | "Prefer email? Write to hello@draftera.ca." (mailto link) directly under every "Book a 30-minute conversation with Ken" button: hero CTAs and every CTA band. Small secondary text; never a second button. Not in the header. |
@@ -157,6 +158,19 @@ Draft notice written for this site; Ken to review (not legal advice). Its words 
 
 GitHub Pages serves this for missing URLs. It uses root paths (`/assets/...`) so it works at any depth. It is `noindex`.
 
+## For search engines and AI agents
+
+The site is built to be read by AI agents as well as people: static HTML with no content hidden behind scripts, one `<h1>` per page, labelled sections, and these machine-readable files.
+
+| File | Purpose | Keep in step |
+| --- | --- | --- |
+| `robots.txt` | Allows all crawlers and AI agents; points to the sitemap and `llms.txt` | Only if Ken wants to block a crawler |
+| `sitemap.xml` | Every public page (not 404) | Add or remove a `<url>` when a page is added or removed; update `lastmod` |
+| `llms.txt` | Plain-language summary for AI tools: audience, offers, prices, terms, principles, Ken's public facts, contact. Third person, no colons in prose, copy-editor has final say | Whenever an offer, price, term or public fact changes (it is public copy; facts must match `CLAUDE.md`) |
+| `shared:machine` block in each page | Open Graph and schema.org data | Regenerated by `machine_data.py` (see Shared parts) |
+
+The Calendly booking widget is an iframe that agents may not be able to use; the direct Calendly link and hello@draftera.ca are always shown beside it.
+
 ## Components (classes in site.css)
 
 - `sec` + `split`: a section with a 1px Ink rule, green number label, heading on the left (4/12) and text on the right (8/12). `sec--no-rule` hides the rule.
@@ -169,15 +183,15 @@ GitHub Pages serves this for missing URLs. It uses root paths (`/assets/...`) so
 
 1. (Done 2026-09-29) **Booking link.** Calendly button and inline embed in `conversation.html` `#book`; privacy notice names Calendly.
 2. (Done 2026-09-29) **Ken's photo** is on Home and About.
-3. **Self-host General Sans.** Follow "Self-hosting General Sans" in `brand/design-system.md`: put the WOFF2 files in `website/fonts/`, move the commented `@font-face` block in `assets/css/tokens.css` into use, remove the `shared:fonts` Fontshare links from all 7 pages, and preload the 600 weight. This also removes a third-party request (see privacy item 4).
-4. **Privacy details.** Ken to set the "Last updated" date, name the email provider, confirm retention periods, and while fonts come from Fontshare, either self-host them or list Fontshare in the notice.
-5. **Wordmark outlines.** Once fonts are self-hosted, outline the wordmark SVGs (designer) and add a PNG favicon / Apple touch icon for older browsers.
+3. (Decided 2026-09-30: not now) **Self-host General Sans.** Kept on Fontshare because the repo is public (see "Font" above). Revisit only if the site moves to a private repo or other hosting.
+4. **Privacy details.** Ken to set the "Last updated" date, name the email provider and confirm retention periods. Fontshare is listed in the notice and stays.
+5. (Done 2026-09-30) **Wordmark outlines and PNG icons.**
 6. **Foundations example.** `foundations-example` is illustrative; replace with a real case study once a founding client approves one (a `[TODO` comment marks the spot).
 7. **Open copy questions** from earlier drafts are in `brand/archive/copy-2026-09-30/` under "Needs Ken".
 
 ## Example edit requests
 
-- "Change the Foundations Engagement price to $3,000 for one workflow." Update `CLAUDE.md`, then `foundations-hero` price card, `foundations-price`, the `foundations.html` meta description, and step 04 in `home-ladder`.
+- "Change the Foundations Engagement price to $3,000 for one workflow." Update `CLAUDE.md`, then `foundations-hero` price card, `foundations-price`, the `foundations.html` meta description, and step 04 in `home-ladder`; then the offers in `machine_data.py` and `llms.txt`, and rerun `machine_data.py`.
 - "Make the Home headline shorter." `index.html`, `home-hero` h1 (keep the `<em>` highlight), then regenerate `brand/copy/`.
 - "Add an FAQ to the AI Foundations page." New section `foundations-faq` before `cta-band`, numbered 07, using `checks` or `gets` rows.
 - "Use a lighter green." Designer changes `--color-green` (and checks contrast) in `brand/tokens.css`; copy the change into `assets/css/tokens.css`.

@@ -1,0 +1,33 @@
+# Draftera
+
+> Draftera is the AI operations practice of Ken Hopkins, a former nonprofit executive director. It helps nonprofits and social enterprises across Canada put AI to work on the recurring tasks that fill their staff's week. Ken builds practical AI workflows alongside each organization's team, trains the staff who will use them, agrees clear guardrails with the organization and measures the time saved and its estimated value. Based in Newfoundland and Labrador, working with nonprofits across Canada.
+
+Draftera works with nonprofits, charities, social enterprises and associations, typically with annual revenue between about $1 million and $20 million. All prices are in Canadian dollars, plus applicable taxes. Any new AI tool licences are paid directly by the client organization.
+
+## Services
+
+- [Introductory Conversation](https://draftera.ca/conversation.html) A free 30-minute Google Meet call to discuss a recurring task or operational challenge, explore whether AI, a process improvement or other support could help, and identify a practical next step. Every call leaves the organization with at least one practical idea, whether or not it goes on to work with Draftera.
+- [Draftera AI Foundations Engagement](https://draftera.ca/foundations.html) A fixed-fee engagement of two to three weeks that delivers one or two working AI workflows, staff training, plain-language written guardrails and a time-saved report. The fee is $2,500 for one workflow or $4,000 for two. Founding-client prices of $1,250 and $2,000 are available to the first two clients until December 31, 2026, or sooner if both places are filled, in exchange for a short case study the client approves before publication.
+- [Draftera Embedded AI Partnership](https://draftera.ca/partnership.html) An ongoing partner for AI and operations, covering implementation, adoption, maintenance, operational advice and reporting, with a quarterly impact report for leadership and the board. Core is $2,500 a month for one active priority at a time, and Plus is $4,500 a month for up to two active priorities at once. Both have a three-month minimum and then run month to month, and an organization can switch between them with 30 days' notice. If an organization signs up within 30 days of finishing the Foundations Engagement, the full fee it paid is credited toward its Partnership fees, starting with the first month.
+
+Operational work beyond AI, such as improving a process, implementing a change, reviewing roles and structure or supporting a stretched leadership team, can be one of the monthly Partnership priorities or a separate fixed-fee project.
+
+## How the work is done
+
+- Client, donor and staff personal information never goes into outside AI tools without the organization's written agreement.
+- Every workflow has a named person who checks what it produces, and staff remain responsible for the work.
+- Draftera is tool-neutral and builds on tools the organization already has wherever possible, such as Microsoft 365, Google Workspace or an existing AI subscription.
+- Results are measured against a baseline taken before the work begins and reported plainly, including when a workflow does not save time.
+
+## About Ken Hopkins
+
+- [About Ken](https://draftera.ca/about.html) Ken Hopkins has more than two decades of experience leading organizations through growth and change. He spent six years (2013 to 2019) as Executive Director of the School Lunch Association in Newfoundland and Labrador, where revenue tripled and the program expanded to 34 school locations, serving over 1 million meals a year with a team of over 80 people. He also brings operational leadership experience from a large Canadian university, and for more than two years he has been building practical AI workflows with privacy safeguards, clear responsibilities and human review. He holds an MBA (Employee Relations) from the University of Leicester, a Master's Certificate in Project Management and a Certificate in Not-for-Profit Governance from Rotman, and is a Qualified Mediator.
+
+## Contact
+
+- Email hello@draftera.ca
+- [Book an Introductory Conversation](https://calendly.com/hello-draftera/30min)
+
+## Optional
+
+- [Privacy](https://draftera.ca/privacy.html) How Draftera handles personal information under PIPEDA.

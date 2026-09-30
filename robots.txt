@@ -1,0 +1,7 @@
+# draftera.ca welcomes search engines and AI agents.
+# A plain-text summary for AI tools is at https://draftera.ca/llms.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://draftera.ca/sitemap.xml
