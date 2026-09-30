@@ -278,6 +278,7 @@ blockquote::before { content: ""; display: block; width: 40px; height: 4px; bord
 .cta .btn-primary:hover { background: var(--surface-raised); }
 /* Google Calendar appointment schedule embed (conversation.html, when added): full width, responsive */
 .booking-embed {
+  scroll-margin-top: 24px;
   margin-top: var(--space-6); background: var(--bg);
   border-radius: var(--radius-card); overflow: hidden; width: 100%;
 }
