@@ -62,67 +62,81 @@ Each page also has its own `<title>`, meta description and canonical link in `<h
 
 ## Pages and sections
 
-Copy locations refer to headings in `brand/website-copy.md`.
+Exact wording lives in the HTML. `brand/copy/<page>.md` is generated from it by `.claude/skills/edit-site/export_copy.py`; run it after every change. Facts and offers must match `CLAUDE.md`. Updated 2026-09-30.
 
 ### Home: `index.html`
 
-| Section id | Purpose | Copy in website-copy.md |
+| Section id | Label | Purpose |
 | --- | --- | --- |
-| `home-hero` | Eyebrow, headline (h1, "your team" in Green), subhead, CTA button, Foundations Engagement link, small portrait with founder line | Home > Headline, Subhead, Founder line |
-| `home-situation` | 01: staff already use AI; Imagine Canada statistic as a callout | Home > "Your staff are already using AI..." |
-| `home-changes` | 02: what changes, plus four flow steps | Home > "What changes when AI is part of how you work" (the four step labels condense that text) |
-| `home-ladder` | 03: offer staircase, five steps; Foundations Engagement step in solid Green | Home > "How we can work together" |
-| `home-foundations` | 04: the three Foundations Engagement weeks with giant numerals, link to the AI Foundations page | AI Foundations > How it works (headline from AI Foundations > Headline) |
-| `home-story` | 05: Stone block, "Why I do this", pull quote, proof numbers | Home > "Why I do this" (numbers are from Ken's proof points in `CLAUDE.md`) |
-| `cta-band` | Shared CTA | Home > "Book a 30-minute conversation with Ken" |
+| `home-hero` | | Eyebrow, headline (h1, "your team" in Green), lede, booking button, email line, Foundations link, small portrait with founder line and location |
+| `home-situation` | 01 | Staff already use AI without a plan; Imagine Canada statistic as a callout |
+| `home-help` | 02 | The work we help with: five task examples, closing line |
+| `home-changes` | 03 | What you can expect, plus four flow steps |
+| `home-ladder` | 04 | Offer staircase, three rungs (`ladder--three`): Introductory Conversation, Foundations Engagement (with founding-client price line), Embedded AI Partnership. Note on CAD plus taxes. AI Office Hours removed until it has a date |
+| `home-operations` | 05 | Stone block: "Have an operational challenge that goes beyond AI?", four specific examples (`ops-gets`); not a separate package, fits the Partnership or a fixed-fee project |
+| `home-principles` | 06 | Responsible, practical, measured |
+| `home-lead` | | One line on a Stone strip: who leads the work, link to About |
+| `cta-band` | | Shared CTA |
 
 ### Draftera AI Foundations Engagement: `foundations.html`
 
-| Section id | Purpose | Copy |
+| Section id | Label | Purpose |
 | --- | --- | --- |
-| `foundations-hero` | Eyebrow, headline, subhead (lede) plus the fixed-fee paragraph, CTA, price card aside ($2,500 / $4,000) | AI Foundations > Headline, Subhead, Price |
-| `foundations-who` | 01: who it is for, numbered rows | AI Foundations > Who it is for |
-| `foundations-gets` | 02: what you get, heading + text rows | AI Foundations > What you get |
-| `foundations-how` | 03: weeks 1–3 | AI Foundations > How it works |
-| `foundations-example` | 04: illustrative example in a Mist panel | AI Foundations > An example... |
-| `foundations-data` | 05: data protection statement | AI Foundations > Your data stays protected |
-| `foundations-price` | 06: price panel (Stone) and founding client offer panel (Ink, id `foundations-founding-offer`) | AI Foundations > Price, Founding client offer |
-| `cta-band` | Shared CTA | AI Foundations > Book a 30-minute conversation with Ken |
+| `foundations-hero` | | Headline, lede, booking button, price card (regular price with founding-client price under each, `pc-founding`), delivered-by line |
+| `foundations-problem` | 01 | The work that crowds out the mission |
+| `foundations-who` | 02 | Who it is for, numbered rows |
+| `foundations-gets` | 03 | What the fee includes |
+| `foundations-how` | 04 | Weeks 1 to 3 |
+| `foundations-workflows` | 05 | Typical workflows we build |
+| `foundations-example` | 06 | Illustrative example (replace with a real case study later; `[TODO` comment marks it) |
+| `foundations-outcomes` | 07 | What you will have at the end |
+| `foundations-data` | 08 | Data protection statement |
+| `foundations-price` | 09 | One Stone panel: fee table (`fee-table`, regular vs founding-client price), then conditions (`fee-conditions`, id `foundations-founding-offer`): first two clients, ends December 31, 2026 or when filled, approved case study, CAD plus taxes, licences paid by client, 30-day credit |
+| `foundations-faq` | 10 | Common questions, ending with "Can we do another project later without the Partnership?" (yes, fixed fee; Partnership preferred) |
+| `cta-band` | | Shared CTA |
 
 ### Draftera Embedded AI Partnership: `partnership.html`
 
-| Section id | Purpose | Copy |
+| Section id | Label | Purpose |
 | --- | --- | --- |
-| `partnership-hero` | Headline, subhead, CTA, price card aside (Core, Plus) | Embedded AI Partnership > Headline, Subhead, Two levels |
-| `partnership-why` | 01: why ongoing support | Embedded AI Partnership > Why ongoing support |
-| `partnership-does` | 02: what I do, numbered rows | Embedded AI Partnership > What I do as your embedded AI partner |
-| `partnership-levels` | 03: Core (id `partnership-core`) and Plus (id `partnership-plus`) panels, engagement fee credit note | Embedded AI Partnership > Two levels |
-| `partnership-accountable` | 04: accountable for results | Embedded AI Partnership > Accountable for results |
-| `cta-band` | Shared CTA | Embedded AI Partnership > Book a 30-minute conversation with Ken |
+| `partnership-hero` | | "An ongoing partner for AI and operations", lede, booking button, price card (Core, Plus, three-month minimum, scope lines) |
+| `partnership-why` | 01 | Why ongoing support matters; callout names implementation, adoption, maintenance, operational judgment |
+| `partnership-does` | 02 | Five monthly responsibilities: implementation, adoption, maintenance, operational judgment, reporting |
+| `partnership-levels` | 03 | Core vs Plus table (`compare`, column ids `partnership-core`, `partnership-plus`): fee, scope, typical time as a guide, minimum term, suited to, review, quarterly report; credit note |
+| `partnership-rhythm` | 04 | Monthly rhythm: review, build, train, report |
+| `partnership-first-quarter` | 05 | Illustrative first three months (`pt-flow--three`) |
+| `partnership-operations` | 06 | Stone block: operational challenges beyond AI, same four examples as Home; can be a monthly priority or a fixed-fee project |
+| `partnership-accountable` | 07 | Accountable for results; what the quarterly board report covers |
+| `partnership-terms` | 08 | Minimum term, after that, Foundations credit, prices and taxes |
+| `partnership-fit` | 09 | Who the Partnership is for |
+| `partnership-faq` | 10 | Common questions |
+| `partnership-who` | | One line: who delivers the work, link to About |
+| `cta-band` | | Shared CTA |
 
 ### About Ken: `about.html`
 
-| Section id | Purpose | Copy |
+| Section id | Label | Purpose |
 | --- | --- | --- |
-| `about-hero` | Headline, subhead, 4:5 portrait (placeholder) | About > Headline, Subhead |
-| `about-sla` | 01: School Lunch Association, plus proof numbers | About > Running the School Lunch Association |
-| `about-university` | 02: senior university administration (Memorial not named) | About > Senior university administration |
-| `about-why` | 03: why AI, why nonprofits | About > Why AI, and why nonprofits |
-| `about-credentials` | 04: credentials, numbered rows | About > Credentials |
-| `about-where` | 05: where I work | About > Where I work |
-| `cta-band` | Shared CTA | About > Book a 30-minute conversation with Ken |
+| `about-hero` | | Headline "Over two decades of leading organizations...", lede, 4:5 portrait |
+| `about-sla` | 01 | School Lunch Association, six years; proof numbers (3x revenue, 34 locations, 1 million+ meals, 80+ people) |
+| `about-university` | 02 | "Leading operations in a large institution": operational leadership in a large Canadian university. Never say Ken works there now, never name the title or Memorial |
+| `about-why` | 03 | Why AI, and why nonprofits and social enterprises; hands-on AI work with privacy and risk built in |
+| `about-principles` | 04 | The principles behind every engagement |
+| `about-credentials` | 05 | Education and credentials |
+| `about-where` | 06 | Location line plus remote working |
+| `cta-band` | | Shared CTA |
 
 ### Book a conversation: `conversation.html`
 
-The free first step is the **Introductory Conversation** (30 minutes, Google Meet, booked through Calendly at https://calendly.com/hello-draftera/30min, email as backup).
+The free first step is the **Introductory Conversation** (30 minutes, Google Meet, booked through Calendly at https://calendly.com/hello-draftera/30min, email as backup). Every booking button on the site links to `/conversation.html#booking-embed`.
 
-| Section id | Purpose | Copy |
+| Section id | Label | Purpose |
 | --- | --- | --- |
-| `conversation-hero` | Eyebrow, headline, subhead, button that jumps to `#book`, email line | Book a conversation > Headline, Subhead |
-| `conversation-how` | 01: how it works | Book a conversation > How it works |
-| `conversation-talk` | 02: what we'll talk about, numbered rows | Book a conversation > What we'll talk about |
-| `conversation-details` | Rows: leave with (`conversation-leave-with`), what it isn't (`conversation-what-it-isnt`), who it's for (`conversation-who`), before we meet (`conversation-before`) | Book a conversation > the matching headings |
-| `book` (marker `cta-band`) | Green band. Paragraph, button to the Calendly booking page, inline Calendly iframe (`.booking-embed`, 700px tall, 1000px under 640px wide), then the email line | Book a conversation > Book a 30-minute conversation with Ken |
+| `conversation-hero` | | Headline, lede, button to `#booking-embed`, email line |
+| `conversation-how` | 01 | How the call works |
+| `conversation-talk` | 02 | What we'll talk about |
+| `conversation-details` | | Rows: leave with (`conversation-leave-with`), what to expect (`conversation-what-to-expect`), who it's for (`conversation-who`), before we meet (`conversation-before`) |
+| `book` (marker `cta-band`) | | Green band: paragraph, inline Calendly iframe (`.booking-embed`, 700px tall, 1000px under 640px wide), then "Calendar not loading?" fallback link to Calendly and the email line |
 
 ### Privacy: `privacy.html`
 
@@ -146,7 +160,7 @@ GitHub Pages serves this for missing URLs. It uses root paths (`/assets/...`) so
 ## Components (classes in site.css)
 
 - `sec` + `split`: a section with a 1px Ink rule, green number label, heading on the left (4/12) and text on the right (8/12). `sec--no-rule` hides the rule.
-- `flow`: four steps on 2px rules. `ladder` / `rung` (`free`, `feature`, `paid`): the offer staircase. `weeks`: giant numerals. `checks`: numbered rows. `gets`: heading + text rows.
+- `flow`: steps on 2px rules (four by default; `pt-flow--three` for three). `ladder` / `rung` (`free`, `feature`, `paid`): the offer staircase. `weeks`: giant numerals. `checks`: numbered rows. `gets`: heading + text rows.
 - `block`: Stone colour block. `proof`: big numbers on 2px rules. `example`: Mist panel. `panel` (`panel-price`, `panel-raised`, `panel-offer`): price and offer panels. `price-card`: hero aside.
 - `btn btn-primary` (one primary action per view), `btn-secondary`, `btn-link`.
 - `portrait portrait-mini` (Home) and `portrait portrait-about` (About).
@@ -154,12 +168,12 @@ GitHub Pages serves this for missing URLs. It uses root paths (`/assets/...`) so
 ## Open to-dos
 
 1. (Done 2026-09-29) **Booking link.** Calendly button and inline embed in `conversation.html` `#book`; privacy notice names Calendly.
-2. **Ken's photo.** Save it as `assets/img/ken.jpg` (portrait, 4:5, at least 800 x 1000). Then in `index.html` (`home-hero`) and `about.html` (`about-hero`), replace the placeholder `<figure>` with the `<img>` line given in the comment right above it.
+2. (Done 2026-09-29) **Ken's photo** is on Home and About.
 3. **Self-host General Sans.** Follow "Self-hosting General Sans" in `brand/design-system.md`: put the WOFF2 files in `website/fonts/`, move the commented `@font-face` block in `assets/css/tokens.css` into use, remove the `shared:fonts` Fontshare links from all 7 pages, and preload the 600 weight. This also removes a third-party request (see privacy item 4).
 4. **Privacy details.** Ken to set the "Last updated" date, name the email provider, confirm retention periods, and while fonts come from Fontshare, either self-host them or list Fontshare in the notice.
 5. **Wordmark outlines.** Once fonts are self-hosted, outline the wordmark SVGs (designer) and add a PNG favicon / Apple touch icon for older browsers.
 6. **Foundations example.** `foundations-example` is illustrative; replace with a real case study once a founding client approves one (a `[TODO` comment marks the spot).
-7. **Open copy questions** are listed under "Needs Ken" in `brand/website-copy.md`.
+7. **Open copy questions** from earlier drafts are in `brand/archive/copy-2026-09-30/` under "Needs Ken".
 
 ## Example edit requests
 
