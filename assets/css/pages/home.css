@@ -27,3 +27,14 @@
   .ladder--four { grid-template-columns: 1fr; }
   .home-lead .btn-link { display: flex; margin: var(--space-3) 0 0; }
 }
+
+/* home-ladder: three rungs (AI Office Hours removed until it has a date) */
+.ladder--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ladder--three .rung:nth-child(1) { min-height: 300px; }
+.ladder--three .rung:nth-child(2) { min-height: 400px; }
+.ladder--three .rung:nth-child(3) { min-height: 460px; }
+@media (max-width: 1000px) { .ladder--three { grid-template-columns: 1fr; } .ladder--three .rung { min-height: 0 !important; } }
+
+/* home-operations: Stone block with a split intro and example rows */
+.ops-gets { margin-top: var(--space-6); }
+.ops-gets h3 { font-size: clamp(21px, 2vw, 28px); }

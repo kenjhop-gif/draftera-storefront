@@ -65,3 +65,11 @@
 .pt-who { padding: 0 0 var(--section-y); }
 .pt-who p { margin: 0; font-size: var(--text-lede); max-width: 48em; }
 .pt-who a { color: var(--accent); font-weight: var(--weight-medium); }
+
+/* partnership-first-quarter: three steps instead of four */
+.pt-flow--three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .pt-flow--three { grid-template-columns: 1fr; } }
+
+/* partnership-operations: Stone block with a split intro and example rows */
+.ops-gets { margin-top: var(--space-6); }
+.ops-gets h3 { font-size: clamp(21px, 2vw, 28px); }

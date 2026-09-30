@@ -29,3 +29,26 @@
 .faq summary:hover { color: var(--accent); }
 .faq .faq-answer { padding: 0 0 var(--space-5); max-width: var(--measure); }
 .faq .faq-answer p { color: var(--text-muted); margin: 0; }
+
+/* Hero price card: founding-client price under each regular price */
+.pc-founding { margin: -10px 0 var(--space-2); font-size: 15px; font-weight: var(--weight-semibold); color: var(--accent); }
+
+/* foundations-price: regular and founding-client prices side by side */
+.fee-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0 var(--space-5); }
+.fee-table th, .fee-table td { text-align: left; padding: 16px 16px 16px 0; border-top: var(--rule-hair); vertical-align: baseline; }
+.fee-table thead th { border-top: 0; font-size: var(--text-small); font-weight: var(--weight-semibold); color: var(--text-muted); padding-bottom: 10px; }
+.fee-table tbody th { font-size: clamp(18px, 1.6vw, 21px); font-weight: var(--weight-medium); }
+.fee-table td { font-size: clamp(22px, 2.4vw, 32px); font-weight: var(--weight-semibold); letter-spacing: -0.03em; }
+.fee-table .fee-founding { color: var(--accent); }
+.fee-table thead .fee-founding { color: var(--accent); }
+.fee-conditions { max-width: var(--measure); }
+.fee-conditions p { margin: 0 0 var(--space-3); }
+.fee-conditions p:first-child { font-weight: var(--weight-medium); }
+@media (max-width: 600px) {
+  .fee-table thead { display: none; }
+  .fee-table, .fee-table tbody, .fee-table tr { display: block; }
+  .fee-table tr { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; padding: 14px 0; border-top: var(--rule-hair); }
+  .fee-table th, .fee-table td { border: 0; padding: 0; }
+  .fee-table tbody th { grid-column: 1 / -1; margin-bottom: 6px; }
+  .fee-table td::before { content: attr(data-label); display: block; font-size: 13px; font-weight: var(--weight-semibold); color: var(--text-muted); letter-spacing: 0; }
+}
