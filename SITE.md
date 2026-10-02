@@ -185,7 +185,7 @@ The Calendly booking widget is an iframe that agents may not be able to use; the
 1. (Done 2026-09-29) **Booking link.** Calendly button and inline embed in `conversation.html` `#book`; privacy notice names Calendly.
 2. (Done 2026-09-29) **Ken's photo** is on Home and About.
 3. (Decided 2026-09-30: not now) **Self-host General Sans.** Kept on Fontshare because the repo is public (see "Font" above). Revisit only if the site moves to a private repo or other hosting.
-4. **Privacy details.** Ken to set the "Last updated" date, name the email provider and confirm retention periods. Fontshare is listed in the notice and stays.
+4. **Privacy details.** Brevo (sending) and Gmail (inbox) added 2026-10-02. Ken still to confirm retention periods. Fontshare is listed in the notice and stays.
 5. (Done 2026-09-30) **Wordmark outlines and PNG icons.**
 6. **Foundations example.** `foundations-example` is illustrative; replace with a real case study once a founding client approves one (a `[TODO` comment marks the spot).
 7. **Open copy questions** from earlier drafts are in `brand/archive/copy-2026-09-30/` under "Needs Ken".
