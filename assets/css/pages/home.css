@@ -38,3 +38,8 @@
 /* home-operations: Stone block with a split intro and example rows */
 .ops-gets { margin-top: var(--space-6); }
 .ops-gets h3 { font-size: clamp(21px, 2vw, 28px); }
+
+/* Information sessions and workshops (home-sessions): bulleted list, same treatment as .pt-list on Partnership */
+.hw-list { padding-left: 1.2em; max-width: var(--measure); margin: var(--space-3) 0 var(--space-4); }
+.hw-list li { margin-bottom: var(--space-2); padding-left: 0.2em; }
+.hw-list li::marker { color: var(--accent); }

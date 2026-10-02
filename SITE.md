@@ -75,7 +75,8 @@ Exact wording lives in the HTML. `brand/copy/<page>.md` is generated from it by 
 | `home-changes` | 03 | What you can expect, plus four flow steps |
 | `home-ladder` | 04 | Offer staircase, three rungs (`ladder--three`): Introductory Conversation, Foundations Engagement (with founding-client price line), Embedded AI Partnership. Note on CAD plus taxes. AI Office Hours removed until it has a date |
 | `home-operations` | 05 | Stone block: "Have an operational challenge that goes beyond AI?", four specific examples (`ops-gets`); not a separate package, fits the Partnership or a fixed-fee project |
-| `home-principles` | 06 | Responsible, practical, measured |
+| `home-sessions` | 06 | "Information sessions and workshops on AI": situation, three areas each session covers (`hw-list`, styled in `pages/home.css`), audience/format/fee agreed case by case, link to booking. No prices or formats (Ken, 2026-10-02) |
+| `home-principles` | 07 | Responsible, practical, measured |
 | `home-lead` | | One line on a Stone strip: who leads the work, link to About |
 | `cta-band` | | Shared CTA |
 
