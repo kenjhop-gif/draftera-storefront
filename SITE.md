@@ -9,7 +9,7 @@ How the site is built and where everything lives, so any change can be made from
 | `nonprofit-redesign` | Working branch. All edits happen here. |
 | `(root)` | Live branch. GitHub Pages publishes draftera.ca from it. Never commit or push here without Ken's explicit yes (use the `publish-site` skill). Quote it in Git: `git checkout "(root)"`. |
 
-Do not touch `CNAME` (it holds `draftera.ca`), GitHub Pages settings or DNS.
+Do not touch `CNAME` (it holds `draftera.ca`), GitHub Pages settings or DNS. "Enforce HTTPS" is on (Ken, 2026-10-13), so http:// addresses forward to https://. If it ever turns off, Ken re-ticks it in the repository's Settings > Pages (only the kenjhop-gif account sees Settings).
 
 ## Preview
 
