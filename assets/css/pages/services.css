@@ -1,0 +1,14 @@
+/* Services page only. Loaded after site.css. Colours come from tokens only. */
+
+/* Hero intro paragraph under the lede */
+.services-intro { margin-top: var(--space-5); }
+.services-intro p { font-size: 19px; }
+
+/* Service rows (gets): name, price and framework piece on the left; description on the right */
+.svc-list .svc-head h3 { margin-bottom: 8px; }
+.svc-list .svc-price { font-size: 19px; font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); color: var(--text); margin: 0; }
+.svc-list .svc-piece { margin: 10px 0 0; font-size: var(--text-label); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-muted); }
+.svc-list .svc-piece a { color: var(--accent); text-decoration: none; }
+.svc-list .svc-piece a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.svc-list .svc-body .btn-link { margin-top: var(--space-2); }
+.svc-list li { scroll-margin-top: 24px; }
