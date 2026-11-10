@@ -84,7 +84,7 @@
   --space-8: 64px;
   --space-9: 96px;
   --space-10: 136px;
-  --section-y: clamp(72px, 9vw, 136px);
+  --section-y: clamp(44px, 5vw, 72px);   /* halved 2026-11-10 at Ken's request (was clamp(72px, 9vw, 136px)) */
   --gutter: clamp(16px, 4vw, 48px);
   --container: 1240px;
 

@@ -103,7 +103,7 @@ h3 { font-size: var(--text-h3); font-weight: var(--weight-semibold); letter-spac
 }
 .eyebrow::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--accent); }
 .lede { font-size: var(--text-lede); color: var(--text-muted); max-width: 30em; line-height: 1.5; }
-.hero { padding: clamp(48px, 7vw, 112px) 0 clamp(64px, 8vw, 120px); }
+.hero { padding: clamp(48px, 7vw, 112px) 0 clamp(40px, 5vw, 72px); }
 
 /* Home hero: rule, then lede | actions | founder line */
 .hero-row {
@@ -142,7 +142,7 @@ h3 { font-size: var(--text-h3); font-weight: var(--weight-semibold); letter-spac
 .sec > .wrap:first-child { position: relative; }
 .sec > .wrap:first-child::before {
   content: ""; position: absolute; left: var(--gutter); right: var(--gutter);
-  top: calc(-1 * clamp(40px, 5vw, 72px)); height: 1px; background: var(--rule-strong);
+  top: calc(-1 * clamp(28px, 3vw, 40px)); height: 1px; background: var(--rule-strong);
 }
 .sec--no-rule > .wrap:first-child::before { display: none; }
 .split { display: grid; grid-template-columns: 4fr 8fr; gap: clamp(28px, 6vw, 96px); }
