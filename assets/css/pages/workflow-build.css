@@ -46,5 +46,5 @@
   .fee-table tr { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; padding: 14px 0; border-top: var(--rule-hair); }
   .fee-table th, .fee-table td { border: 0; padding: 0; }
   .fee-table tbody th { grid-column: 1 / -1; margin-bottom: 6px; }
-  .fee-table td::before { content: attr(data-label); display: block; font-size: 13px; font-weight: var(--weight-semibold); color: var(--text-muted); letter-spacing: 0; }
+  .fee-table td { grid-column: 1 / -1; white-space: nowrap; }
 }
