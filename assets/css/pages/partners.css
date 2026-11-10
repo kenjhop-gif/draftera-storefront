@@ -1,0 +1,11 @@
+/* For partners page only. Loaded after site.css. Colours come from tokens only. */
+
+/* Hero intro paragraph under the lede */
+.partners-intro { margin-top: var(--space-5); }
+.partners-intro p { font-size: 19px; }
+
+/* What Draftera offers each kind of partner: bulleted, same treatment as .pt-list on Partnership */
+.partner-list { padding-left: 1.2em; max-width: var(--measure); margin: 0; }
+.partner-list li { margin-bottom: var(--space-3); padding-left: 0.2em; font-size: 19px; color: var(--text-muted); }
+.partner-list li:last-child { margin-bottom: 0; }
+.partner-list li::marker { color: var(--accent); }
