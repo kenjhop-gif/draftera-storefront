@@ -6,7 +6,7 @@
 @media (max-width: 1200px) { .hero-buttons { flex-direction: row; flex-wrap: wrap; } }
 
 /* home-help: closing line under the gets rows */
-.home-help-close { max-width: var(--measure); margin-top: var(--space-4); padding-top: 28px; border-top: var(--rule-hair); color: var(--text-muted); }
+.home-help-close { max-width: var(--measure); margin-top: 0; padding-top: 28px; border-top: var(--rule-hair); color: var(--text-muted); }
 
 /* home-lead: one line on a Stone strip above the CTA band */
 .home-lead { padding-bottom: 0; }
