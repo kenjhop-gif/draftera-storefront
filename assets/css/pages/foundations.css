@@ -1,0 +1,10 @@
+/* Draftera Foundations (framework) page only. Loaded after site.css. Colours come from tokens only. */
+
+/* The six pieces: descriptions under the diagram; each diagram card links to its row */
+.fw-pieces { margin-top: clamp(40px, 5vw, 64px); }
+.fw-pieces li { scroll-margin-top: 24px; }
+.fw-pieces li:target h3 { color: var(--accent); }
+
+/* How organizations use it: three steps on rules */
+.flow.flow--three { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; }
+@media (max-width: 900px) { .flow.flow--three { grid-template-columns: 1fr; } }
