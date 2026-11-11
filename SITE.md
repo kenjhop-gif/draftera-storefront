@@ -169,7 +169,7 @@ All nine bullets confirmed by Ken 2026-11-10.
 | Section id | Label | Purpose |
 | --- | --- | --- |
 | `about-hero` | | Headline "Over two decades of leading organizations...", lede, 4:5 portrait |
-| `about-sla` | 01 | School Lunch Association, six years; proof numbers (3x revenue, 34 locations, 1 million+ meals, 80+ people) |
+| `about-sla` | 01 | School Lunch Association, seven years; proof numbers (3x revenue, 34 locations, 1 million+ meals, 80+ people) |
 | `about-university` | 02 | "Leading operations in a large institution": operational leadership in a large Canadian university. Never say Ken works there now, never name the title or Memorial |
 | `about-why` | 03 | Why AI, and why nonprofits and social enterprises; hands-on AI work; ends with "I developed Draftera Foundations…", linked to the framework page |
 | `about-principles` | 04 | The principles behind every engagement |
