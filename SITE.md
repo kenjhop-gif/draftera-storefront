@@ -71,10 +71,10 @@ Exact wording lives in the HTML. `brand/copy/<page>.md` is generated from it by 
 
 | Section id | Label | Purpose |
 | --- | --- | --- |
-| `home-hero` | | Eyebrow, headline "Give your team time back, and use AI safely." (h1, "time back" in Green), lede, two buttons (`hero-buttons`: booking, "See the services"), email line, small portrait with founder line |
+| `home-hero` | | Eyebrow, headline "Practical AI, built with your team." (h1, "your team" in Green), lede, two buttons (`hero-buttons`: booking, "See the services"), email line, small portrait with founder line |
 | `home-lead` | | Stone strip directly under the hero: Ken's introduction with his School Lunch Association record in the About page's exact wording, link to About |
 | `home-situation` | 01 | Staff already use AI without shared guidelines (one short paragraph); Imagine Canada statistic with source as a callout |
-| `home-starters` | 02 | "Three ways to start": three cards (`ladder ladder--cards ladder--three`) with one line, fixed price and link each; line on the Embedded AI Partnership (typically two to three days a month); CAD and taxes note |
+| `home-starters` | 02 | "Three ways to start": three cards (`ladder ladder--cards ladder--three`) with one line, fixed price and link each; line on the Embedded AI Partnership (about three to four days a month); CAD and taxes note |
 | `home-ladder` | 03 | "How we work together": three steps (`flow flow--three`): free conversation, a starter, ongoing support |
 | `home-principles` | 04 | Responsible, practical, measured (one sentence each), then one line linking to Draftera Foundations |
 | `cta-band` | | Shared CTA |
