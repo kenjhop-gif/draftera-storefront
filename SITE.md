@@ -56,31 +56,27 @@ Numbered sections show a small green number (`<p class="label">01</p>`). If you 
 | Fonts link | `<!-- shared:fonts -->` in `<head>` | Fontshare stylesheet for General Sans |
 | Analytics | `<!-- shared:analytics -->` in `<head>` | Google Analytics GA4 `G-L787TEY7BD`, Google signals and ad personalization off. Must stay on every page. |
 | Machine-readable data | `<!-- shared:machine -->` in `<head>` | PNG icon links, Open Graph tags and schema.org JSON-LD (Draftera as ProfessionalService on Home, Ken as Person on About, each offer as a Service with CAD prices, FAQPage from each page's `<details>`). Generated; never edit by hand. Run `python .claude/skills/edit-site/machine_data.py` from the project root after any change (prices are hard-coded in that script). No JSON-LD on Privacy or 404. |
-| Header | `section:site-header` | Wordmark, nav (Foundations, Services, Partnership, For partners, About Ken), "Book a conversation" button (to `/conversation.html`). Only `aria-current="page"` differs per page. Under 900px the nav drops to a second row. |
-| CTA band | `section:cta-band` | Green block, heading "Book a 30-minute conversation with Ken", one paragraph that differs per page, button to `/conversation.html#booking-embed` (lands straight on the Calendly calendar; every booking button on the site, including the header button, uses this link), then the email backup line. On `conversation.html` the band has id `book` and its button is the booking action (see to-do 1). On `index.html` it also contains `<span id="contact">` so old `#contact` links still land. |
-| Email backup line | `<p class="email-alt">` | "Prefer email? Write to hello@draftera.ca." (mailto link) directly under every "Book a 30-minute conversation with Ken" button: hero CTAs and every CTA band. Small secondary text; never a second button. Not in the header. |
-| Footer | `section:site-footer` | Wordmark, tagline, links (Home, Draftera Foundations, Services, Workflow Build, Embedded AI Partnership, For partners, About Ken, Book a conversation, Privacy), location, hello@draftera.ca, copyright. Only `aria-current` differs. |
+| Header | `section:site-header` | Wordmark, nav (Services, Workflow Build, For partners, About Ken; changed 2026-11-15), "Book a conversation" button (to `/conversation.html`). Only `aria-current="page"` differs per page. Under 900px the nav drops to a second row. |
+| CTA band | `section:cta-band` | Green block, heading, one paragraph that differs per page, button "Book a 30-minute conversation" (the one call-to-action wording everywhere except the header button, 2026-11-15) to `/conversation.html#booking-embed` (lands straight on the Calendly calendar; every booking button on the site, including the header button, uses this link), then the email backup line. On `conversation.html` the band has id `book` and its button is the booking action (see to-do 1). On `index.html` it also contains `<span id="contact">` so old `#contact` links still land. |
+| Email backup line | `<p class="email-alt">` | "Prefer email? Write to hello@draftera.ca." (mailto link) directly under every "Book a 30-minute conversation" button: hero CTAs and every CTA band. Small secondary text; never a second button. Not in the header. |
+| Footer | `section:site-footer` | Wordmark, tagline, links (Home, Services, Workflow Build, Embedded AI Partnership, For partners, Draftera Foundations, About Ken, Book a conversation, Privacy), location, hello@draftera.ca, copyright. Only `aria-current` differs. |
 
 Each page also has its own `<title>`, meta description and canonical link in `<head>`.
 
 ## Pages and sections
 
-Exact wording lives in the HTML. `brand/copy/<page>.md` is generated from it by `.claude/skills/edit-site/export_copy.py`; run it after every change. Facts and offers must match `CLAUDE.md`. Updated 2026-11-10 (foundations-rework: framework page, Services, Workflow Build, For partners; brief in `draftera-website-brief.md` at the project root).
+Exact wording lives in the HTML. `brand/copy/<page>.md` is generated from it by `.claude/skills/edit-site/export_copy.py`; run it after every change. Facts and offers must match `CLAUDE.md`. Updated 2026-11-15 (Ken's change brief: three fixed-price starters, Home cut down, Services rebuilt, new menu). Old section ids that other sites may link to are kept as empty `<span class="svc-anchor" id="...">` landing points.
 
 ### Home: `index.html`
 
 | Section id | Label | Purpose |
 | --- | --- | --- |
-| `home-hero` | | Eyebrow, headline "Practical AI, built with your team." (h1, "your team" in Green), lede, two buttons (`hero-buttons`: booking, "See the services"; stacked above 1200px so the lede keeps its width), email line, small portrait with founder line |
-| `home-situation` | 01 | Staff already use AI without shared guidelines; Imagine Canada statistic as a callout |
-| `home-help` | 02 | The work I help with: five task examples, closing line |
-| `home-changes` | 03 | What you can expect, plus four flow steps |
-| `home-foundations` | 04 | Draftera Foundations: subtitle, paragraph, the framework diagram (`fw`, whole diagram links to `/foundations.html`), "See the framework" and "See the services" links |
-| `home-ladder` | 05 | "How we work together" as four equal-height priced cards (`ladder ladder--cards`): Introductory Conversation (Free), Start with one piece (From $950), Build the whole (Full Foundations, From $6,500, the Green `feature` card), Keep it current (From $1,500 per year). CAD and taxes note |
-| `home-operations` | 06 | Stone block: "Have an operational challenge that goes beyond AI?", four specific examples (`ops-gets`); not a separate package, fits the Partnership or a fixed-fee project |
-| `home-sessions` | 07 | "Information sessions and workshops on AI": three areas each session covers (`hw-list`), "Sessions start from $950", link to Training on Services |
-| `home-principles` | 08 | Responsible, practical, measured |
-| `home-lead` | | One line on a Stone strip: who leads the work, link to About |
+| `home-hero` | | Eyebrow, headline "Give your team time back, and use AI safely." (h1, "time back" in Green), lede, two buttons (`hero-buttons`: booking, "See the services"), email line, small portrait with founder line |
+| `home-lead` | | Stone strip directly under the hero: Ken's introduction with his School Lunch Association record in the About page's exact wording, link to About |
+| `home-situation` | 01 | Staff already use AI without shared guidelines (one short paragraph); Imagine Canada statistic with source as a callout |
+| `home-starters` | 02 | "Three ways to start": three cards (`ladder ladder--cards ladder--three`) with one line, fixed price and link each; line on the Embedded AI Partnership (typically two to three days a month); CAD and taxes note |
+| `home-ladder` | 03 | "How we work together": three steps (`flow flow--three`): free conversation, a starter, ongoing support |
+| `home-principles` | 04 | Responsible, practical, measured (one sentence each), then one line linking to Draftera Foundations |
 | `cta-band` | | Shared CTA |
 
 ### Draftera Foundations (the framework): `foundations.html`
@@ -89,26 +85,26 @@ Always pair the name with its subtitle on first use on a page: "a framework for 
 
 | Section id | Label | Purpose |
 | --- | --- | --- |
-| `framework-hero` | | Eyebrow "The framework", h1 "Draftera Foundations", subtitle |
+| `framework-hero` | | Eyebrow "The framework", h1 "Draftera Foundations", subtitle, opening line (the method behind every service) |
 | `framework-purpose` | 01 | Why it exists; Imagine Canada figures (80% use AI, 10% have a policy, 64% of users have none and aren't developing one; checked against the report 2026-11-10) |
 | `framework-who` | 02 | Who it is for |
-| `framework-pieces` | 03 | The diagram (`fw`, each card links to its row) and the seven descriptions (`gets fw-pieces`, ids `piece-leadership`, `piece-people`, `piece-data`, `piece-oversight`, `piece-transparency`, `piece-value`, `piece-inventory`) |
-| `framework-evidence` | 04 | International frameworks, Canadian standards and guidance, sector evidence |
-| `framework-use` | 05 | Start with one piece, build the whole, seek independent verification if desired (`flow flow--three`) |
+| `framework-pieces` | 03 | The diagram (`fw`, each card links to its row) and the seven descriptions (`gets fw-pieces`, ids `piece-leadership`, `piece-people`, `piece-data`, `piece-oversight`, `piece-transparency`, `piece-value`, `piece-inventory`); each row ends with a `fw-starter` line linking to the starter that puts it in place |
+| `framework-evidence` | 04 | International frameworks, Canadian standards and guidance, sector evidence (no mapping-in-progress note since 2026-11-15) |
+| `framework-use` | 05 | Start with one piece, build the rest in stages, seek independent verification if desired (`flow flow--three`) |
 | `framework-principles` | 06 | People stay responsible, plain language, documented evidence, independence |
-| `framework-scope` | 07 | Not legal advice; "Version 0.1, November 2026. Reviewed annually."; link to Services |
+| `framework-scope` | 07 | Not legal advice; "Draftera Foundations is reviewed annually." (no version label since 2026-11-15); link to Services |
 | `cta-band` | | Shared CTA (heading and button) |
 
 ### Services: `services.html`
 
 | Section id | Label | Purpose |
 | --- | --- | --- |
-| `services-hero` | | Eyebrow "Services and prices", h1, subtitle, intro naming the framework |
-| `services-one` | 01 | Start with one piece (`gets svc-list`; each row: name, from-price, piece label linking to the framework). Row ids `ai-policy` (from $1,500), `training` (from $950 per session; "Information sessions and workshops…"), `data-privacy-review` (from $1,250), `workflow-build` (from $2,500; two from $4,000; final report, no time-saved promise), `transparency-statement` (from $350 add-on) |
-| `services-whole` | 02 | `full-foundations` (from $6,500), `foundations-check-up` (from $1,500 per year) |
-| `services-ongoing` | 03 | The Partnership, link |
-| `services-networks` | 04 | One session for several organizations, link to For partners |
-| `services-start` | 05 | Free conversation, written fixed-price proposal; fine print on CAD, taxes, size of organization, Digital Governance Council fee |
+| `services-hero` | | Eyebrow "Services and prices", h1, lede (three fixed-price ways to start), intro naming the framework |
+| `services-policy` | 01 | AI policy and staff session, $1,950 (h2 id `ai-policy-staff-session`). Labelled facts (`dl.svc-facts`; colons allowed here, Ken 2026-11-15): who it is for, what you get, how long, also available, what comes next. Old ids `ai-policy`, `training`, `data-privacy-review`, `transparency-statement` land here |
+| `services-workshop` | 02 | Group workshop, $1,500; half-day $2,500 (h2 id `group-workshop`) |
+| `services-workflow` | 03 | Workflow Build, $2,500; two $4,000 (h2 id `workflow-build`), link to the Workflow Build page |
+| `services-ongoing` | 04 | The Partnership, link (old id `foundations-check-up` lands here) |
+| `services-start` | 05 | Free conversation, written fixed-price proposal; CAD and taxes note; CAN/DGSI 101 named in full; Digital Governance Council fee (old id `full-foundations` lands here) |
 | `cta-band` | | Shared CTA |
 
 ### Workflow Build: `workflow-build.html`
@@ -117,33 +113,32 @@ The former Draftera AI Foundations Engagement page, moved and renamed 2026-11-10
 
 | Section id | Label | Purpose |
 | --- | --- | --- |
-| `workflow-hero` | | Eyebrow "Workflow Build", headline, lede, framework line (value and measurement, and human oversight), booking button, price card (From $2,500 one workflow, From $4,000 two), delivered-by line |
+| `workflow-hero` | | Eyebrow "Workflow Build", headline, lede, framework line (value and measurement, and human oversight), booking button, price card ($2,500 one workflow, $4,000 two; fixed prices since 2026-11-15), delivered-by line |
 | `workflow-problem` | 01 | The work that crowds out the mission |
 | `workflow-who` | 02 | Who it is for, numbered rows |
 | `workflow-gets` | 03 | What the fee includes |
 | `workflow-how` | 04 | Weeks 1 to 3 |
 | `workflow-workflows` | 05 | Typical workflows I build |
 | `workflow-example` | 06 | Illustrative example (replace with a real case study later; `[TODO` comment marks it) |
-| `workflow-outcomes` | 07 | What you will have at the end |
+| `workflow-outcomes` | 07 | What you will have at the end (shortened 2026-11-15: lede and one paragraph, no repeat of 03) |
 | `workflow-data` | 08 | Data protection statement |
-| `workflow-price` | 09 | Stone panel: fee table (from-prices only) and one conditions paragraph (CAD, taxes, size of organization, licences) |
+| `workflow-price` | 09 | Stone panel: fee table (fixed prices) and one conditions paragraph (CAD, taxes, licences) |
 | `workflow-faq` | 10 | Common questions, ending with "Can we do another project later without the Partnership?" |
+| `workflow-next` | | Stone strip: the usual next step is the Embedded AI Partnership, link |
 | `cta-band` | | Shared CTA |
 
 ### For partners: `partners.html`
 
 | Section id | Label | Purpose |
 | --- | --- | --- |
-| `partners-hero` | | Eyebrow "Partner work", h1 "For partners", subtitle, opening paragraph |
-| `partners-need` | 01 | The need (Imagine Canada figures and barriers) |
-| `partners-networks` | 02 | Networks and associations, three bullets (`partner-list`) |
-| `partners-funders` | 03 | Funders, three bullets |
-| `partners-sector` | 04 | Sector and standards bodies, three bullets |
+| `partners-hero` | | Eyebrow "Partner work", h1 "For partners", subtitle, opening paragraph (first step is a group workshop) |
+| `partners-workshop` | 01 | Start with a group workshop: $1,500, half-day $2,500, what is included, CAD note, link to Services |
+| `partners-need` | 02 | The need (Imagine Canada figures and barriers) |
+| `partners-next` | 03 | What can follow a workshop, without prices: for networks and associations (library template or module, cohort delivery) and for funders (cohort support, aggregate summary, disclosure guidance). Old ids `partners-networks`, `partners-funders` land here |
+| `partners-sector` | 04 | Sector and standards bodies, one sentence |
 | `partners-framework` | 05 | The framework behind the work, link |
-| `partners-talk` | 06 | Let's talk: scoped to fit, email or book; no prices |
+| `partners-talk` | 06 | Let's talk: work beyond the workshop is scoped to fit |
 | `cta-band` | | Shared CTA |
-
-All nine bullets confirmed by Ken 2026-11-10.
 
 
 ### Draftera Embedded AI Partnership: `partnership.html`
@@ -152,7 +147,7 @@ All nine bullets confirmed by Ken 2026-11-10.
 | --- | --- | --- |
 | `partnership-hero` | | "An ongoing partner for AI and operations", lede, booking button, price card (Core, Plus, three-month minimum, scope lines) |
 | `partnership-why` | 01 | Why ongoing support matters, ending "For organizations that have put the framework in place, the Partnership keeps it working day to day." (no Check-up promise); callout names implementation, adoption, maintenance, operational advice |
-| `partnership-does` | 02 | Five areas of support: implementation, adoption, maintenance, operational advice, reporting |
+| `partnership-does` | 02 | Six areas of support: implementation, adoption, maintenance, operational support (process simplification, change management, role and structure reviews), reporting, yearly Foundations Check-up (included since 2026-11-15) |
 | `partnership-levels` | 03 | Core vs Plus table (`compare`, column ids `partnership-core`, `partnership-plus`): fee, scope, typical time as a guide, minimum term, suited to, review, quarterly report; credit note |
 | `partnership-rhythm` | 04 | Monthly rhythm: review, build, train, report |
 | `partnership-first-quarter` | 05 | Illustrative first three months (`pt-flow--three`) |

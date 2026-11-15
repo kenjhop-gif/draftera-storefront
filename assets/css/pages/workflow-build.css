@@ -48,3 +48,9 @@
   .fee-table tbody th { grid-column: 1 / -1; margin-bottom: 6px; }
   .fee-table td { grid-column: 1 / -1; white-space: nowrap; }
 }
+
+/* workflow-next: closing line on a Stone strip above the CTA band (2026-11-15) */
+.workflow-next { padding-bottom: 0; }
+.workflow-next .block { padding: clamp(24px, 4vw, 40px) clamp(24px, 5vw, 56px); }
+.workflow-next p { margin: 0; max-width: none; font-size: clamp(19px, 1.8vw, 24px); font-weight: var(--weight-medium); letter-spacing: -0.02em; line-height: 1.35; }
+.workflow-next .btn-link { margin-left: var(--space-2); font-size: 17px; letter-spacing: 0; white-space: normal; }

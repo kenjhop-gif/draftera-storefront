@@ -6,3 +6,11 @@
 .fw-pieces li:target h3 { color: var(--accent); }
 
 /* How organizations use it: three steps on rules */
+
+/* Opening line under the subtitle, and the starter that puts each piece in place (2026-11-15) */
+.fw-intro { margin-top: var(--space-4); }
+.fw-intro p { font-size: 19px; }
+.fw-pieces .fw-starter { margin: var(--space-2) 0 0; font-size: 16px; color: var(--text-muted); }
+.fw-pieces .fw-starter a { color: var(--accent); }
+.fw-pieces li .fw-starter { grid-column: 2; margin-top: calc(-1 * clamp(8px, 2vw, 40px)); }
+@media (max-width: 900px) { .fw-pieces li .fw-starter { grid-column: auto; margin-top: 0; } }

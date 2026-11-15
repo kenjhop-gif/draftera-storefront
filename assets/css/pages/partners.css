@@ -9,3 +9,9 @@
 .partner-list li { margin-bottom: var(--space-3); padding-left: 0.2em; font-size: 19px; color: var(--text-muted); }
 .partner-list li:last-child { margin-bottom: 0; }
 .partner-list li::marker { color: var(--accent); }
+
+/* partners-workshop price and partners-next subheads (2026-11-15) */
+.partners-price { margin: var(--space-3) 0 0; font-size: 23px; font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); }
+.partners-price-alt { margin: 4px 0 0; font-size: 16px; color: var(--text-muted); }
+.partners-sub { font-size: 21px; margin: var(--space-5) 0 var(--space-2); }
+.partners-sub:first-child { margin-top: 0; }

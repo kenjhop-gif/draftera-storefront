@@ -28,4 +28,3 @@
 .svc-facts li { margin-bottom: 6px; padding-left: 0.2em; }
 .svc-facts li::marker { color: var(--accent); }
 .svc-more { margin-top: var(--space-5); }
-.svc-anchor { display: block; position: relative; top: -24px; }
