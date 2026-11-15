@@ -26,3 +26,13 @@
 .hw-list { padding-left: 1.2em; max-width: var(--measure); margin: var(--space-3) 0 var(--space-4); }
 .hw-list li { margin-bottom: var(--space-2); padding-left: 0.2em; }
 .hw-list li::marker { color: var(--accent); }
+
+/* home-starters: three starter cards (ladder--cards with three columns; one column under 1000px) */
+.ladder.ladder--cards.ladder--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .ladder.ladder--cards.ladder--three { grid-template-columns: 1fr; } }
+.ladder--three .rung-link { margin-top: var(--space-3); }
+.ladder--three .rung-link .btn-link { font-size: 16px; white-space: normal; }
+.home-starters-more { max-width: var(--measure); margin-top: var(--space-5); font-size: 19px; }
+
+/* home-lead: Ken's introduction directly under the hero */
+.home-lead .home-lead-more { margin-top: var(--space-3); font-size: 19px; font-weight: var(--weight-regular); color: var(--text-muted); }

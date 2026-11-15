@@ -6,5 +6,3 @@
 .fw-pieces li:target h3 { color: var(--accent); }
 
 /* How organizations use it: three steps on rules */
-.flow.flow--three { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; }
-@media (max-width: 900px) { .flow.flow--three { grid-template-columns: 1fr; } }
