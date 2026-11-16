@@ -104,30 +104,32 @@
   <main id="main">
 
     <!-- section:conversation-hero -->
-    <section class="hero" id="conversation-hero">
+    <section class="hero conversation-hero" id="conversation-hero">
       <div class="wrap">
-        <p class="eyebrow">Introductory Conversation</p>
-        <h1 class="h1-inner">Start with a conversation about <em>where your team&rsquo;s time goes.</em></h1>
-        <p class="lede">This free 30-minute Google Meet call is for leaders of nonprofits and social enterprises. We can talk through a recurring task, an operational challenge or an information session on AI for your board or staff. Together we&rsquo;ll work out what would help most and identify a practical next step.</p>
-        <div class="actions"><a class="btn btn-primary btn-lg" href="#booking-embed">Book a 30-minute conversation</a></div>
-        <p class="email-alt">Prefer email? Write to <a href="mailto:hello@draftera.ca">hello@draftera.ca</a>.</p>
+        <p class="eyebrow">30-minute conversation</p>
+        <h1 class="h1-inner">Start with a conversation about <em>where your team&rsquo;s time goes</em>.</h1>
+        <p class="lede">This free 30-minute video call on Google Meet is for leaders of nonprofits and social enterprises. We can talk through a recurring task, an operational challenge or an information session on AI for your board or staff, and together we&rsquo;ll work out where AI could help most and agree on a practical next step.</p>
       </div>
     </section>
     <!-- /section:conversation-hero -->
 
-    <!-- section:conversation-how -->
-    <section class="sec" id="conversation-how" aria-labelledby="conversation-how-title">
-      <div class="wrap split">
-        <div><p class="label">01</p><p class="eyebrow">The call</p><h2 id="conversation-how-title">How the call works</h2></div>
-        <div class="prose"><p>I&rsquo;ll ask how your organization runs and where your team&rsquo;s time goes in a typical week. Together we&rsquo;ll identify two or three places where AI could help. The conversation stays focused on your work rather than the technology, and my aim is for you to leave with something you can act on straight away.</p></div>
+    <!-- section:conversation-book (the calendar sits directly under the intro; id "book" keeps old #book links working) -->
+    <section class="sec sec--no-rule conversation-book" id="book" aria-label="Choose a time">
+      <div class="wrap">
+        <!-- Booking: Calendly (hello@draftera.ca account), event "30min". To change the booking page, update the iframe URL and the fallback link below. -->
+        <p class="conversation-book-line">Choose a time that suits you, and you&rsquo;ll receive a confirmation email with the details for joining the call.</p>
+        <div class="booking-embed" id="booking-embed">
+          <iframe src="https://calendly.com/hello-draftera/30min?embed_domain=draftera.ca&amp;embed_type=Inline&amp;hide_gdpr_banner=1" title="Book a 30-minute conversation with Ken Hopkins"></iframe>
+        </div>
+        <p class="email-alt">Calendar not loading? <a href="https://calendly.com/hello-draftera/30min">Open the booking page on Calendly</a>. Prefer email? Write to <a href="mailto:hello@draftera.ca">hello@draftera.ca</a>.</p>
       </div>
     </section>
-    <!-- /section:conversation-how -->
+    <!-- /section:conversation-book -->
 
     <!-- section:conversation-talk -->
     <section class="sec" id="conversation-talk" aria-labelledby="conversation-talk-title">
       <div class="wrap split">
-        <div><p class="label">02</p><h2 id="conversation-talk-title">What we&rsquo;ll talk about</h2></div>
+        <div><p class="label">01</p><h2 id="conversation-talk-title">What we&rsquo;ll talk about</h2></div>
         <ul class="checks">
           <li>Where your team&rsquo;s time goes, and which recurring tasks take longer than they should.</li>
           <li>How staff are already using AI, whether formally or informally.</li>
@@ -144,28 +146,11 @@
         <h2 id="conversation-details-title" class="visually-hidden">About the call</h2>
         <ul class="gets">
           <li id="conversation-leave-with"><h3>What you&rsquo;ll leave with</h3><p>At least one practical idea you can try with your team, even if we never work together.</p></li>
-          <li id="conversation-what-to-expect"><h3>What to expect</h3><p>We&rsquo;ll discuss one recurring task or operational challenge, whether I could help and what a sensible next step might look like. If working together makes sense, I&rsquo;ll explain the options. There&rsquo;s no obligation to proceed.</p></li>
-          <li id="conversation-who"><h3>Who it&rsquo;s for</h3><p>Executive directors and operations leads at nonprofits, charities, social enterprises and associations. Board members are welcome to join.</p></li>
           <li id="conversation-before"><h3>Before we meet</h3><p>There is nothing to prepare. If it helps, bring one task that takes more of your team&rsquo;s time than it should, and we can use it as a starting point.</p></li>
         </ul>
       </div>
     </section>
     <!-- /section:conversation-details -->
-
-    <!-- section:cta-band (shared: same design on every page; on this page it holds the booking button and the Calendly booking embed) -->
-    <section class="cta" id="book" aria-labelledby="cta-band-title">
-      <div class="wrap"><div class="cta-inner">
-        <h2 id="cta-band-title">Book a 30&#8209;minute conversation with Ken</h2>
-        <!-- Booking: Calendly (hello@draftera.ca account), event "30min". To change the booking page, update the iframe URL and the fallback link below. -->
-        <p>Choose a time that suits you below, and you&rsquo;ll receive a confirmation email with the details for joining the call.</p>
-        <a class="btn btn-primary btn-lg" href="https://calendly.com/hello-draftera/30min">Book a 30-minute conversation</a>
-        <div class="booking-embed" id="booking-embed">
-          <iframe src="https://calendly.com/hello-draftera/30min?embed_domain=draftera.ca&amp;embed_type=Inline&amp;hide_gdpr_banner=1" title="Book a 30-minute conversation with Ken Hopkins" loading="lazy"></iframe>
-        </div>
-        <p class="email-alt">Calendar not loading? <a href="https://calendly.com/hello-draftera/30min">Open the booking page on Calendly</a>. Prefer email? Write to <a href="mailto:hello@draftera.ca">hello@draftera.ca</a>.</p>
-      </div></div>
-    </section>
-    <!-- /section:cta-band -->
   </main>
 
   <!-- section:site-footer (shared: identical on every page except aria-current) -->

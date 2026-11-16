@@ -432,3 +432,16 @@ a.fw-link:hover .fw-card h4 { text-decoration: underline; text-underline-offset:
 
 /* Booking button directly under a set of starters or at the end of one */
 .starter-book { margin-top: var(--space-6); }
+
+/* Booking page (round 2): calendar directly under a compact intro, so the first times
+   show within one scroll on a phone */
+.conversation-hero { padding-bottom: 0; }
+.conversation-hero .eyebrow { margin-bottom: var(--space-5); }
+.conversation-book { padding-top: var(--space-5); }
+.conversation-book-line { margin: 0; color: var(--text-muted); font-size: var(--text-small); }
+.conversation-book .booking-embed { margin-top: var(--space-3); background: var(--surface-raised); border: var(--rule-hair); border-top: 3px solid var(--accent); }
+@media (max-width: 640px) {
+  .conversation-hero { padding-top: var(--space-6); }
+  .conversation-hero .h1-inner { font-size: 34px; }
+  .conversation-hero .lede { font-size: 17px; }
+}
