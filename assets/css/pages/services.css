@@ -33,3 +33,7 @@
 .svc-head .svc-price { color: var(--accent); font-size: clamp(26px, 2.4vw, 32px); }
 .svc-head .svc-price-alt { font-weight: var(--weight-semibold); color: var(--accent); }
 .svc-head .pill { margin-top: var(--space-3); }
+.starter-panel .svc-head .label { margin-bottom: var(--space-3); }
+.starter-panel .svc-head .pill { margin: 0 0 var(--space-3); }
+.starter-panel .starter-book { margin-top: var(--space-6); }
+.sec--band .starter-panel.split { gap: clamp(24px, 5vw, 72px); }
