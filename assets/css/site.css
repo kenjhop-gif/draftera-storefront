@@ -406,3 +406,29 @@ a.fw-link:hover .fw-card h4 { text-decoration: underline; text-underline-offset:
 
 /* Old section ids kept as landing points after the 2026-11-15 restructure */
 .svc-anchor { display: block; position: relative; top: -24px; }
+
+/* ============ Decision points (change brief round 2, 2026-11-16) ============
+   Colour marks where a visitor decides: a Mist band behind the starters, white starter
+   cards with a 3px Green top edge, Green prices and step numbers, and one audience pill
+   per starter. Existing tokens only. Green on Mist 7.79:1, Green on White 9.25:1. */
+.sec.sec--band { background: var(--surface-accent-soft); padding: clamp(40px, 5vw, 72px) 0; margin: var(--section-y) 0; }
+.sec--band > .wrap:first-child::before { display: none; }
+.sec--band + .sec--band { margin-top: calc(-1 * var(--section-y)); padding-top: 0; }
+
+/* Starter card: white surface, hairline, 3px Green top edge, card radius. All starters alike. */
+.starter-card { background: var(--surface-raised); border: var(--rule-hair); border-top: 3px solid var(--accent); border-radius: var(--radius-card); }
+.ladder--cards .rung.starter-card { border: var(--rule-hair); border-top: 3px solid var(--accent); }
+.starter-panel { padding: clamp(24px, 4vw, 48px); }
+
+/* Audience pill: Mist background, Green text (7.79:1) */
+.pill { display: inline-block; align-self: flex-start; margin: 0; padding: 4px 10px; border-radius: var(--radius-sm);
+  background: var(--surface-accent-soft); color: var(--accent); font-size: 13px; font-weight: var(--weight-semibold); letter-spacing: 0.01em; line-height: 1.4; }
+
+/* Prices and step numbers in Green, prices larger than card body text */
+.rung-n { color: var(--accent); }
+.rung .price { color: var(--accent); font-size: clamp(24px, 2.2vw, 30px); letter-spacing: var(--tracking-tight); }
+.rung .price small { margin-top: 4px; font-size: 15px; font-weight: var(--weight-semibold); color: var(--accent); }
+.price-alt-label, .rung .price small .price-alt-label { font-weight: var(--weight-medium); color: var(--text-muted); }
+
+/* Booking button directly under a set of starters or at the end of one */
+.starter-book { margin-top: var(--space-6); }

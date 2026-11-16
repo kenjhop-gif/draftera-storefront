@@ -15,3 +15,8 @@
 .partners-price-alt { margin: 4px 0 0; font-size: 16px; color: var(--text-muted); }
 .partners-sub { font-size: 21px; margin: var(--space-5) 0 var(--space-2); }
 .partners-sub:first-child { margin-top: 0; }
+
+/* Round 2 (2026-11-16): group workshop as a white card in the Mist band; Green prices; sample agenda */
+.partners-price { color: var(--accent); font-size: clamp(26px, 2.4vw, 32px); }
+.partners-price-alt { font-weight: var(--weight-semibold); color: var(--accent); }
+.partners-workshop .pill { margin-top: var(--space-3); }

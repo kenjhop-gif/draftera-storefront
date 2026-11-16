@@ -28,3 +28,8 @@
 .svc-facts li { margin-bottom: 6px; padding-left: 0.2em; }
 .svc-facts li::marker { color: var(--accent); }
 .svc-more { margin-top: var(--space-5); }
+
+/* Round 2 (2026-11-16): each starter is a white card in the Mist band; Green prices */
+.svc-head .svc-price { color: var(--accent); font-size: clamp(26px, 2.4vw, 32px); }
+.svc-head .svc-price-alt { font-weight: var(--weight-semibold); color: var(--accent); }
+.svc-head .pill { margin-top: var(--space-3); }
