@@ -54,3 +54,8 @@
 .workflow-next .block { padding: clamp(24px, 4vw, 40px) clamp(24px, 5vw, 56px); }
 .workflow-next p { margin: 0; max-width: none; font-size: clamp(19px, 1.8vw, 24px); font-weight: var(--weight-medium); letter-spacing: -0.02em; line-height: 1.35; }
 .workflow-next .btn-link { margin-left: var(--space-2); font-size: 17px; letter-spacing: 0; white-space: normal; }
+
+/* Round 2 (2026-11-16): fee note under the price card, closing line under What the fee includes, example under the typical workflows */
+.price-note { margin-top: var(--space-4); }
+.gets-close { max-width: var(--measure); margin: 0; padding-top: 28px; border-top: var(--rule-hair); color: var(--text-muted); font-size: 19px; }
+#workflow-workflows .example { margin-top: var(--space-6); }

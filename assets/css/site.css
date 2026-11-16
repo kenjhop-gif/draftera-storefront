@@ -445,3 +445,6 @@ a.fw-link:hover .fw-card h4 { text-decoration: underline; text-underline-offset:
   .conversation-hero .h1-inner { font-size: 34px; }
   .conversation-hero .lede { font-size: 17px; }
 }
+/* Prices in Green on the Workflow Build and Partnership price cards too (round 2) */
+.price-card .pc-price { color: var(--accent); }
+.price-card .pc-price small { color: var(--text-muted); }

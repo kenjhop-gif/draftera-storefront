@@ -73,3 +73,11 @@
 /* partnership-operations: Stone block with a split intro and example rows */
 .ops-gets { margin-top: var(--space-6); }
 .ops-gets h3 { font-size: clamp(21px, 2vw, 28px); }
+
+/* Round 2 (2026-11-16): hero second paragraph, report list inside the Reporting row, first-three-months note, About link */
+.pt-hero-more { max-width: 34em; color: var(--text-muted); margin-top: var(--space-4); }
+.gets li .pt-list li { display: list-item; padding: 0 0 0 0.2em; border: 0; color: var(--text-muted); font-size: 19px; }
+.gets li .pt-list { margin-bottom: 0; }
+.pt-first { max-width: var(--measure); margin: var(--space-6) 0 0; color: var(--text-muted); font-size: 19px; }
+.pt-about { margin-top: var(--space-5); }
+.gets li .pt-list { list-style: disc; }
