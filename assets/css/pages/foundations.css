@@ -14,3 +14,8 @@
 .fw-pieces .fw-starter a { color: var(--accent); }
 .fw-pieces li .fw-starter { grid-column: 2; margin-top: calc(-1 * clamp(8px, 2vw, 40px)); }
 @media (max-width: 900px) { .fw-pieces li .fw-starter { grid-column: auto; margin-top: 0; } }
+
+/* Round 2 (2026-11-16): inventory and annual review set apart from the six pieces, on a Mist panel */
+.fw-hold { margin-top: var(--space-6); background: var(--surface-accent-soft); border-radius: var(--radius-block); padding: clamp(20px, 3vw, 36px) clamp(20px, 3vw, 40px) var(--space-2); }
+.fw-hold .fw-label { color: var(--accent); margin-bottom: 0; }
+.fw-hold .gets li:first-child { border-top: 0; }
